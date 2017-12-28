@@ -18,9 +18,10 @@
 		92D8EF1F1FF48048005491E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C06AA71FF47CC7004D6B5C /* Main.storyboard */; };
 		92D8EF211FF48058005491E6 /* StoryboardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF201FF48058005491E6 /* StoryboardParser.swift */; };
 		92D8EF231FF48161005491E6 /* StoryboardParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF221FF48161005491E6 /* StoryboardParserTests.swift */; };
-		92D8EF261FF482B4005491E6 /* TestStoryboard.xml in Resources */ = {isa = PBXBuildFile; fileRef = 92D8EF241FF4829A005491E6 /* TestStoryboard.xml */; };
-		92D8EF271FF482BB005491E6 /* TestStoryboard.xml in Resources */ = {isa = PBXBuildFile; fileRef = 92D8EF241FF4829A005491E6 /* TestStoryboard.xml */; };
+		92D8EF261FF482B4005491E6 /* iOSTestStoryboard.xml in Resources */ = {isa = PBXBuildFile; fileRef = 92D8EF241FF4829A005491E6 /* iOSTestStoryboard.xml */; };
+		92D8EF271FF482BB005491E6 /* iOSTestStoryboard.xml in Resources */ = {isa = PBXBuildFile; fileRef = 92D8EF241FF4829A005491E6 /* iOSTestStoryboard.xml */; };
 		92D8EF281FF485FF005491E6 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C06ACF1FF47D38004D6B5C /* SWXMLHash.framework */; };
+		92D8EF2C1FF49DC5005491E6 /* IBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +59,8 @@
 		92C06AD31FF47E26004D6B5C /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D8EF201FF48058005491E6 /* StoryboardParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardParser.swift; sourceTree = "<group>"; };
 		92D8EF221FF48161005491E6 /* StoryboardParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardParserTests.swift; sourceTree = "<group>"; };
-		92D8EF241FF4829A005491E6 /* TestStoryboard.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TestStoryboard.xml; sourceTree = "<group>"; };
+		92D8EF241FF4829A005491E6 /* iOSTestStoryboard.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOSTestStoryboard.xml; sourceTree = "<group>"; };
+		92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +118,11 @@
 			children = (
 				92C06AA11FF47CC7004D6B5C /* AppDelegate.swift */,
 				92D8EF201FF48058005491E6 /* StoryboardParser.swift */,
+				92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */,
 				92C06AA31FF47CC7004D6B5C /* ViewController.swift */,
 				92C06AA51FF47CC7004D6B5C /* Assets.xcassets */,
 				92C06AA71FF47CC7004D6B5C /* Main.storyboard */,
-				92D8EF241FF4829A005491E6 /* TestStoryboard.xml */,
+				92D8EF241FF4829A005491E6 /* iOSTestStoryboard.xml */,
 				92C06AAA1FF47CC7004D6B5C /* Info.plist */,
 				92C06AAB1FF47CC7004D6B5C /* SwiftyIB.entitlements */,
 			);
@@ -261,7 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92D8EF271FF482BB005491E6 /* TestStoryboard.xml in Resources */,
+				92D8EF271FF482BB005491E6 /* iOSTestStoryboard.xml in Resources */,
 				92C06AA61FF47CC7004D6B5C /* Assets.xcassets in Resources */,
 				92C06AA91FF47CC7004D6B5C /* Main.storyboard in Resources */,
 			);
@@ -271,7 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92D8EF261FF482B4005491E6 /* TestStoryboard.xml in Resources */,
+				92D8EF261FF482B4005491E6 /* iOSTestStoryboard.xml in Resources */,
 				92D8EF1F1FF48048005491E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +295,7 @@
 			files = (
 				92D8EF211FF48058005491E6 /* StoryboardParser.swift in Sources */,
 				92C06AA41FF47CC7004D6B5C /* ViewController.swift in Sources */,
+				92D8EF2C1FF49DC5005491E6 /* IBKeys.swift in Sources */,
 				92C06AA21FF47CC7004D6B5C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

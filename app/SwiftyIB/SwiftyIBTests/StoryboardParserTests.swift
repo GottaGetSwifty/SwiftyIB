@@ -26,6 +26,9 @@ class StoryboardParserTests: QuickSpec {
                 it("Loads the xml") {
                     expect(parser.loadXML()).toNot(beNil())
                 }
+                it("Parses Storyboard") {
+                    expect(parser.parse()).toNot(beNil())
+                }
             }
         }
     }
