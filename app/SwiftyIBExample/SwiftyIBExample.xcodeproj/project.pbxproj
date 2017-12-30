@@ -138,6 +138,7 @@
 				9299EE9C1FF47A390083320B /* Sources */,
 				9299EE9D1FF47A390083320B /* Frameworks */,
 				9299EE9E1FF47A390083320B /* Resources */,
+				922501591FF6F32D00AD828A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -256,6 +257,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		922501591FF6F32D00AD828A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "current_dir=$(pwd)\n./SwiftyIBToolRunnable -xcp SwiftyIBExample.xcodeproj";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9299EE9C1FF47A390083320B /* Sources */ = {

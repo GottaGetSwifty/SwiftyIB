@@ -6,7 +6,6 @@
 //  Copyright © 2017 peejweej.inc. All rights reserved.
 //
 
-import SWXMLHash
 import Cocoa
 
 class StoryboardParser {
@@ -15,12 +14,6 @@ class StoryboardParser {
     
     init(with storyboardPath: URL) {
         self.storyboardPath = storyboardPath
-    }
-    
-    static func getTestStoryboard() ->  URL? {
-        let path = Bundle.main.path(forResource: "iOSTestStoryboard", ofType: "xml")!
-        let url = URL(fileURLWithPath: path)
-        return url
     }
     
     func loadData() -> Data? {
@@ -44,30 +37,35 @@ class StoryboardParser {
             return nil
         }
         
-        let storyboard = try? IBStoryboard.deserialize(xml[IBStoryboard.ElementKeys.document])
+        guard let document = try? xml.byKey(IBStoryboard.ElementKeys.document) else {
+            return nil
+        }
+        let storyboard = try? IBStoryboard.deserialize(document, with: storyboardPath.deletingPathExtension().lastPathComponent)
+        Bundle.main.url(forResource: "soundfile.ext", withExtension: "")
         return storyboard
+        
     }
 }
 
 struct IBStoryboard: XMLIndexerDeserializable {
     let initialScene: IBScene?
     let scenes: [IBScene]
+    let name: String
     
-    static func deserialize(_ node: XMLIndexer) throws -> IBStoryboard {
+    static func deserialize(_ node: XMLIndexer, with name: String) throws -> IBStoryboard {
         let initalVC: String? = node.value(of: AttributeKeys.initialViewController)
-        let initalScene: IBScene?
-        let scenes = try node[ElementKeys.scenes][ElementKeys.scene].all.map(IBScene.deserialize)
+        var initalScene: IBScene? = nil
+        let sceneNodes = node[ElementKeys.scenes][ElementKeys.scene]
+        let scenes = try sceneNodes.all.map(IBScene.deserialize)
+        
+        guard !scenes.isEmpty else {
+            throw NSError()
+        }
         if let realInitial = initalVC {
             initalScene = scenes.first(where: {$0.viewController.id == realInitial}) 
         }
-        else {
-            initalScene = nil
-        }
         
-        return IBStoryboard(
-            initialScene: initalScene,
-            scenes: scenes
-        )
+        return IBStoryboard(initialScene: initalScene, scenes: scenes, name: name)
     }
 }
 
@@ -84,7 +82,7 @@ struct IBScene: XMLIndexerDeserializable {
                 return try IBViewController.deserialize(element[ElementKeys.objects][key])
             }
         }
-        throw NSError.init()
+        throw NSError()
     }
 }
 
@@ -120,7 +118,11 @@ extension XMLIndexer {
         return value(ofAttribute: attr.rawValue)
     }
     
-    public subscript<T: RawRepresentable>(key: T) -> XMLIndexer where T.RawValue == String{
+    public subscript<T: RawRepresentable>(key: T) -> XMLIndexer where T.RawValue == String {
         return self[key.rawValue]
+    }
+    
+    public func byKey<T: RawRepresentable>(_ key: T) throws -> XMLIndexer where T.RawValue == String {
+        return try byKey(key.rawValue)
     }
 }

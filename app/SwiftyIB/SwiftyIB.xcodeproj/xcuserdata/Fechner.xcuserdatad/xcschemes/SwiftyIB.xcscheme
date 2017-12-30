@@ -50,6 +50,16 @@
                ReferencedContainer = "container:SwiftyIB.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9225013C1FF6F2A500AD828A"
+               BuildableName = "SwiftyIBKitTests.xctest"
+               BlueprintName = "SwiftyIBKitTests"
+               ReferencedContainer = "container:SwiftyIB.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
