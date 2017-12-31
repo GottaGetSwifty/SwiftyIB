@@ -14,6 +14,15 @@
 		9225014A1FF6F2A500AD828A /* SwiftyIBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922501351FF6F2A500AD828A /* SwiftyIBKit.framework */; };
 		9225014B1FF6F2A500AD828A /* SwiftyIBKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 922501351FF6F2A500AD828A /* SwiftyIBKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		922501551FF6F2D100AD828A /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C06ACF1FF47D38004D6B5C /* SWXMLHash.framework */; };
+		92545EF51FF847760037D166 /* TestProject.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92545EF41FF847750037D166 /* TestProject.txt */; };
+		92545EF91FF847A00037D166 /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EF81FF847A00037D166 /* ProjectParser.swift */; };
+		92545EFA1FF8487F0037D166 /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EF81FF847A00037D166 /* ProjectParser.swift */; };
+		92545EFC1FF965150037D166 /* ProjectParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFB1FF965150037D166 /* ProjectParserTests.swift */; };
+		92545EFE1FF966290037D166 /* EmptyFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92545EFD1FF966290037D166 /* EmptyFile.txt */; };
+		92545F001FF97BC60037D166 /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
+		92545F011FF9987B0037D166 /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
+		92545F031FF99D8D0037D166 /* SwiftyIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545F021FF99D8D0037D166 /* SwiftyIB.swift */; };
+		92545F041FF99F390037D166 /* SwiftyIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545F021FF99D8D0037D166 /* SwiftyIB.swift */; };
 		92C06AA21FF47CC7004D6B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06AA11FF47CC7004D6B5C /* AppDelegate.swift */; };
 		92C06AA41FF47CC7004D6B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06AA31FF47CC7004D6B5C /* ViewController.swift */; };
 		92C06AA61FF47CC7004D6B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C06AA51FF47CC7004D6B5C /* Assets.xcassets */; };
@@ -113,6 +122,12 @@
 		9225013D1FF6F2A500AD828A /* SwiftyIBKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyIBKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		922501441FF6F2A500AD828A /* SwiftyIBKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyIBKitTests.swift; sourceTree = "<group>"; };
 		922501461FF6F2A500AD828A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92545EF41FF847750037D166 /* TestProject.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestProject.txt; sourceTree = "<group>"; };
+		92545EF81FF847A00037D166 /* ProjectParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectParser.swift; sourceTree = "<group>"; };
+		92545EFB1FF965150037D166 /* ProjectParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectParserTests.swift; sourceTree = "<group>"; };
+		92545EFD1FF966290037D166 /* EmptyFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmptyFile.txt; sourceTree = "<group>"; };
+		92545EFF1FF97BC60037D166 /* FilesFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesFinder.swift; sourceTree = "<group>"; };
+		92545F021FF99D8D0037D166 /* SwiftyIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyIB.swift; sourceTree = "<group>"; };
 		92C06A9E1FF47CC7004D6B5C /* SwiftyIB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyIB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C06AA11FF47CC7004D6B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92C06AA31FF47CC7004D6B5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +234,28 @@
 			path = SwiftyIBKitTests;
 			sourceTree = "<group>";
 		};
+		92545EF61FF8477D0037D166 /* TestFiles */ = {
+			isa = PBXGroup;
+			children = (
+				92D8EF241FF4829A005491E6 /* iOSTestStoryboard.xml */,
+				92E3D0F71FF74F820080EC12 /* EmptyStoryboard.xml */,
+				92545EF41FF847750037D166 /* TestProject.txt */,
+				92545EFD1FF966290037D166 /* EmptyFile.txt */,
+			);
+			path = TestFiles;
+			sourceTree = "<group>";
+		};
+		92545EF71FF8478D0037D166 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				92545EF81FF847A00037D166 /* ProjectParser.swift */,
+				92D8EF201FF48058005491E6 /* StoryboardParser.swift */,
+				92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */,
+				92545EFF1FF97BC60037D166 /* FilesFinder.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
 		92C06A951FF47CC7004D6B5C = {
 			isa = PBXGroup;
 			children = (
@@ -251,15 +288,14 @@
 		92C06AA01FF47CC7004D6B5C /* SwiftyIB */ = {
 			isa = PBXGroup;
 			children = (
+				92545EF71FF8478D0037D166 /* Parsing */,
 				92E3D0FB1FF755BA0080EC12 /* Exporting */,
+				92545F021FF99D8D0037D166 /* SwiftyIB.swift */,
 				92C06AA11FF47CC7004D6B5C /* AppDelegate.swift */,
-				92D8EF201FF48058005491E6 /* StoryboardParser.swift */,
-				92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */,
 				92C06AA31FF47CC7004D6B5C /* ViewController.swift */,
+				92545EF61FF8477D0037D166 /* TestFiles */,
 				92C06AA51FF47CC7004D6B5C /* Assets.xcassets */,
 				92C06AA71FF47CC7004D6B5C /* Main.storyboard */,
-				92D8EF241FF4829A005491E6 /* iOSTestStoryboard.xml */,
-				92E3D0F71FF74F820080EC12 /* EmptyStoryboard.xml */,
 				92C06AAA1FF47CC7004D6B5C /* Info.plist */,
 				92C06AAB1FF47CC7004D6B5C /* SwiftyIB.entitlements */,
 			);
@@ -272,6 +308,7 @@
 				92D8EF221FF48161005491E6 /* StoryboardParserTests.swift */,
 				92E3D0FE1FF7579B0080EC12 /* StringEnumConverterTests.swift */,
 				92E3D1011FF75EE40080EC12 /* StoryboardConverterTests.swift */,
+				92545EFB1FF965150037D166 /* ProjectParserTests.swift */,
 				92C06AB61FF47CC8004D6B5C /* Info.plist */,
 			);
 			path = SwiftyIBTests;
@@ -509,9 +546,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92545EFE1FF966290037D166 /* EmptyFile.txt in Resources */,
 				92D8EF271FF482BB005491E6 /* iOSTestStoryboard.xml in Resources */,
 				92C06AA61FF47CC7004D6B5C /* Assets.xcassets in Resources */,
 				92E3D0F81FF74F820080EC12 /* EmptyStoryboard.xml in Resources */,
+				92545EF51FF847760037D166 /* TestProject.txt in Resources */,
 				92C06AA91FF47CC7004D6B5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,10 +580,13 @@
 			files = (
 				92E3D1041FF768BE0080EC12 /* StoryboardConverter.swift in Sources */,
 				92E3D0E91FF748F60080EC12 /* StoryboardParser.swift in Sources */,
+				92545EFA1FF8487F0037D166 /* ProjectParser.swift in Sources */,
 				92E3D0E81FF748F20080EC12 /* IBKeys.swift in Sources */,
 				9211AF7C1FF747E6005E26D0 /* main.swift in Sources */,
 				92E3D0F61FF74DCE0080EC12 /* SWXMLHash.swift in Sources */,
+				92545F011FF9987B0037D166 /* FilesFinder.swift in Sources */,
 				92E3D1031FF768BC0080EC12 /* StringEnumConverter.swift in Sources */,
+				92545F041FF99F390037D166 /* SwiftyIB.swift in Sources */,
 				92E3D0F51FF74DCC0080EC12 /* SWXMLHash+TypeConversion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,11 +613,14 @@
 				92E3D0FD1FF755CB0080EC12 /* StringEnumConverter.swift in Sources */,
 				92E3D0FA1FF755B20080EC12 /* StoryboardConverter.swift in Sources */,
 				92E3D0EE1FF74D990080EC12 /* SWXMLHash.swift in Sources */,
+				92545F001FF97BC60037D166 /* FilesFinder.swift in Sources */,
 				92E3D0EF1FF74D990080EC12 /* SWXMLHash+TypeConversion.swift in Sources */,
 				92D8EF211FF48058005491E6 /* StoryboardParser.swift in Sources */,
 				92C06AA41FF47CC7004D6B5C /* ViewController.swift in Sources */,
+				92545EF91FF847A00037D166 /* ProjectParser.swift in Sources */,
 				92D8EF2C1FF49DC5005491E6 /* IBKeys.swift in Sources */,
 				92C06AA21FF47CC7004D6B5C /* AppDelegate.swift in Sources */,
+				92545F031FF99D8D0037D166 /* SwiftyIB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +630,7 @@
 			files = (
 				92E3D1021FF75EE40080EC12 /* StoryboardConverterTests.swift in Sources */,
 				92E3D0FF1FF7579B0080EC12 /* StringEnumConverterTests.swift in Sources */,
+				92545EFC1FF965150037D166 /* ProjectParserTests.swift in Sources */,
 				92D8EF231FF48161005491E6 /* StoryboardParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

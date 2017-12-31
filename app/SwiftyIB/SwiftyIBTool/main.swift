@@ -10,7 +10,8 @@
 import Foundation
 
 enum CommandLineOption: String {
-    case xcodeProject = "-xcodeProject"
+    case directory = "-directory"
+    case absolute = "-absolute"
 
     case unknown
     
@@ -20,28 +21,55 @@ enum CommandLineOption: String {
             return
         }
         switch value {
-        case CommandLineOption.xcodeProject.rawValue, "-xcp": 
-            self = .xcodeProject
+        case CommandLineOption.directory.rawValue, "-d": 
+            self = .directory
+        case CommandLineOption.absolute.rawValue, "-a":
+            self = .absolute
         default: self = .unknown
         }
     }
 }
 
+struct LaunchOptions {
+    let directory: URL
+    let absoluteURL: Bool
+    
+    static func makeFromArguments() -> LaunchOptions? {
+        guard CommandLine.argc >= 3, CommandLineOption(value: CommandLine.arguments[1]) == .directory else {
+            return nil
+        }
+        var usesAbsoluteURL = false
+        var relativeURL: URL? = nil
+        if CommandLine.argc > 3 {
+            usesAbsoluteURL = CommandLineOption(value: CommandLine.arguments[3]) == .absolute
+        }
+        if usesAbsoluteURL {
+            relativeURL = URL(string: FileManager.default.currentDirectoryPath)
+        }
+        let url = URL(fileURLWithPath: CommandLine.arguments[2], isDirectory: true, relativeTo: relativeURL)
+        
+        return LaunchOptions(directory: url, absoluteURL: usesAbsoluteURL)
+    }
+}
 
-guard CommandLine.argc > 2 else {
+func findAllStorboards(from url: URL) {
+    guard let foundStoryboards = SwiftyIB(containingURL: url)?.buildStoryboards() else {
+        return
+    }
+    let storyboardEnum = StoryboardConverter.makeStoryboardNameEnum(from: foundStoryboards)
+    let scenesEnum = StoryboardConverter.makeSceneNameEnum(from: foundStoryboards)
+    let seguesEnum = StoryboardConverter.makeSegueNameEnum(from: foundStoryboards)
+    print("storboards:\n\n\(storyboardEnum!)\n")
+    print("scenes:\n\n\(scenesEnum!)\n")
+    print("segue:\n\n\(seguesEnum!)\n")
+}
+
+guard let launchOptions = LaunchOptions.makeFromArguments() else {
     print("Please add your .xcodeproj path using the argument -xcodeProject flag")
     exit(1)
 }
-let firstArgument = CommandLine.arguments[1]
+findAllStorboards(from: launchOptions.directory)
 
-let option = CommandLineOption(value: firstArgument)
-switch option {
-    case .xcodeProject:
-        print("xcode project Arugment was:\(CommandLine.arguments[2])")
-        exit(0)
-    default:
-        print("Please add your .xcodeproj path using the argument -xcodeProject flag")
-        exit(1)
-}
+
 
 

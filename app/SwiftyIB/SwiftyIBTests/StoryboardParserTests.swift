@@ -24,6 +24,7 @@ extension StoryboardParser {
         return url
     }
 }
+
 class StoryboardParserTests: QuickSpec {
     override func spec() {
         describe(String(describing:StoryboardParser.self)) {
@@ -40,9 +41,7 @@ class StoryboardParserTests: QuickSpec {
                 }
             }
             describe("handlesEmptyXML") {
-                it("Loads the empty storyboard") {
-                    expect(StoryboardParser.emptyStoryboardURL).toNot(beNil())
-                }
+                expect(StoryboardParser.emptyStoryboardURL).toNot(beNil())
                 let parser = StoryboardParser(with: StoryboardParser.emptyStoryboardURL!)
                 it("translates into data") {
                     expect(parser.loadData()).toNot(beNil())
