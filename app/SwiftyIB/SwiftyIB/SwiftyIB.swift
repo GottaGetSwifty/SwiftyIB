@@ -19,7 +19,6 @@ class SwiftyIB {
     
     func findAllStorboardURLs() -> [URL] {
         let allURLs = FilesFinder.getAllStoryboardFiles(in: self.containingURL) ?? []
-        allURLs.forEach{print($0.absoluteString)}
         return allURLs
     }
     

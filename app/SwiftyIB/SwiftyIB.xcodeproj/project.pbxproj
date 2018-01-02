@@ -23,6 +23,8 @@
 		92545F011FF9987B0037D166 /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
 		92545F031FF99D8D0037D166 /* SwiftyIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545F021FF99D8D0037D166 /* SwiftyIB.swift */; };
 		92545F041FF99F390037D166 /* SwiftyIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545F021FF99D8D0037D166 /* SwiftyIB.swift */; };
+		9281365E1FFAEBD600DBB2D1 /* StoryboardExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */; };
+		9281365F1FFAEF2500DBB2D1 /* StoryboardExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */; };
 		92C06AA21FF47CC7004D6B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06AA11FF47CC7004D6B5C /* AppDelegate.swift */; };
 		92C06AA41FF47CC7004D6B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06AA31FF47CC7004D6B5C /* ViewController.swift */; };
 		92C06AA61FF47CC7004D6B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C06AA51FF47CC7004D6B5C /* Assets.xcassets */; };
@@ -128,6 +130,7 @@
 		92545EFD1FF966290037D166 /* EmptyFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmptyFile.txt; sourceTree = "<group>"; };
 		92545EFF1FF97BC60037D166 /* FilesFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesFinder.swift; sourceTree = "<group>"; };
 		92545F021FF99D8D0037D166 /* SwiftyIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyIB.swift; sourceTree = "<group>"; };
+		9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExporter.swift; sourceTree = "<group>"; };
 		92C06A9E1FF47CC7004D6B5C /* SwiftyIB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyIB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C06AA11FF47CC7004D6B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92C06AA31FF47CC7004D6B5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +341,7 @@
 			children = (
 				92E3D0F91FF755B20080EC12 /* StoryboardConverter.swift */,
 				92E3D0FC1FF755CB0080EC12 /* StringEnumConverter.swift */,
+				9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */,
 			);
 			path = Exporting;
 			sourceTree = "<group>";
@@ -582,6 +586,7 @@
 				92E3D0E91FF748F60080EC12 /* StoryboardParser.swift in Sources */,
 				92545EFA1FF8487F0037D166 /* ProjectParser.swift in Sources */,
 				92E3D0E81FF748F20080EC12 /* IBKeys.swift in Sources */,
+				9281365F1FFAEF2500DBB2D1 /* StoryboardExporter.swift in Sources */,
 				9211AF7C1FF747E6005E26D0 /* main.swift in Sources */,
 				92E3D0F61FF74DCE0080EC12 /* SWXMLHash.swift in Sources */,
 				92545F011FF9987B0037D166 /* FilesFinder.swift in Sources */,
@@ -617,6 +622,7 @@
 				92E3D0EF1FF74D990080EC12 /* SWXMLHash+TypeConversion.swift in Sources */,
 				92D8EF211FF48058005491E6 /* StoryboardParser.swift in Sources */,
 				92C06AA41FF47CC7004D6B5C /* ViewController.swift in Sources */,
+				9281365E1FFAEBD600DBB2D1 /* StoryboardExporter.swift in Sources */,
 				92545EF91FF847A00037D166 /* ProjectParser.swift in Sources */,
 				92D8EF2C1FF49DC5005491E6 /* IBKeys.swift in Sources */,
 				92C06AA21FF47CC7004D6B5C /* AppDelegate.swift in Sources */,

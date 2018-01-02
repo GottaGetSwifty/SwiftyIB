@@ -10,7 +10,8 @@
 import Foundation
 
 enum CommandLineOption: String {
-    case directory = "-directory"
+    case source = "-source"
+    case destination = "-destination"
     case absolute = "-absolute"
 
     case unknown
@@ -21,8 +22,10 @@ enum CommandLineOption: String {
             return
         }
         switch value {
-        case CommandLineOption.directory.rawValue, "-d": 
-            self = .directory
+        case CommandLineOption.source.rawValue, "-s", "-S": 
+            self = .source
+        case CommandLineOption.destination.rawValue, "-d", "-D": 
+            self = .destination
         case CommandLineOption.absolute.rawValue, "-a":
             self = .absolute
         default: self = .unknown
@@ -31,44 +34,49 @@ enum CommandLineOption: String {
 }
 
 struct LaunchOptions {
-    let directory: URL
-    let absoluteURL: Bool
+    let source: URL
+    let destination: URL
+    let isAbsoluteURL: Bool
     
     static func makeFromArguments() -> LaunchOptions? {
-        guard CommandLine.argc >= 3, CommandLineOption(value: CommandLine.arguments[1]) == .directory else {
+        guard CommandLine.argc >= 5, CommandLineOption(value: CommandLine.arguments[1]) == .source, CommandLineOption(value: CommandLine.arguments[3]) == .destination else {
             return nil
         }
         var usesAbsoluteURL = false
         var relativeURL: URL? = nil
-        if CommandLine.argc > 3 {
-            usesAbsoluteURL = CommandLineOption(value: CommandLine.arguments[3]) == .absolute
+        if CommandLine.argc > 5 {
+            usesAbsoluteURL = CommandLineOption(value: CommandLine.arguments[5]) == .absolute
         }
         if usesAbsoluteURL {
             relativeURL = URL(string: FileManager.default.currentDirectoryPath)
         }
-        let url = URL(fileURLWithPath: CommandLine.arguments[2], isDirectory: true, relativeTo: relativeURL)
-        
-        return LaunchOptions(directory: url, absoluteURL: usesAbsoluteURL)
+        let sourceURL = URL(fileURLWithPath: CommandLine.arguments[2], isDirectory: true, relativeTo: relativeURL)
+        let destinationURL = URL(fileURLWithPath: CommandLine.arguments[4], isDirectory: true, relativeTo: relativeURL)
+        return LaunchOptions(source: sourceURL, destination: destinationURL, isAbsoluteURL: usesAbsoluteURL)
     }
 }
 
-func findAllStorboards(from url: URL) {
-    guard let foundStoryboards = SwiftyIB(containingURL: url)?.buildStoryboards() else {
+func exportIBInfo(with launchOptions: LaunchOptions) {
+    print("Launched successfully with\nsource: \(launchOptions.source)\ndestination: \(launchOptions.destination)")
+    guard let foundStoryboards = SwiftyIB(containingURL: launchOptions.source)?.buildStoryboards() else {
+        print("Did not find/parse storboards")
         return
     }
-    let storyboardEnum = StoryboardConverter.makeStoryboardNameEnum(from: foundStoryboards)
-    let scenesEnum = StoryboardConverter.makeSceneNameEnum(from: foundStoryboards)
-    let seguesEnum = StoryboardConverter.makeSegueNameEnum(from: foundStoryboards)
-    print("storboards:\n\n\(storyboardEnum!)\n")
-    print("scenes:\n\n\(scenesEnum!)\n")
-    print("segue:\n\n\(seguesEnum!)\n")
+    do {
+        print("Found and parsed storboards, will attempt exporting")
+        try StoryboardExporter.export(storboards: foundStoryboards, to: launchOptions.destination, absoluteURL: launchOptions.isAbsoluteURL)
+    }
+    catch let e {
+        print(e.localizedDescription)
+    }
+
 }
 
 guard let launchOptions = LaunchOptions.makeFromArguments() else {
-    print("Please add your .xcodeproj path using the argument -xcodeProject flag")
+    print("Incorrect arguments")
     exit(1)
 }
-findAllStorboards(from: launchOptions.directory)
+exportIBInfo(with: launchOptions)
 
 
 

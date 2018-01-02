@@ -13,19 +13,33 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController restorationIdentifier="ViewControllerRest" storyboardIdentifier="ViewControllerasd" id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftyIBExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ViewControllerRest" storyboardIdentifier="MainVCScene" id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftyIBExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEr-Up-Vs5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <segue destination="nFN-zL-KHN" kind="embed" identifier="EmbeddedVC" id="dlw-e6-poh"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zEr-Up-Vs5" secondAttribute="bottom" id="VSP-v2-pzp"/>
+                            <constraint firstItem="zEr-Up-Vs5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uj1-ZU-IrY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zEr-Up-Vs5" secondAttribute="trailing" id="vXB-Bu-EO9"/>
+                            <constraint firstItem="zEr-Up-Vs5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wv2-AR-IDQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="tl3-U3-vOk" appends="YES" id="veL-cs-fKg"/>
                         </connections>
                     </view>
                     <connections>
-                        <segue destination="bmt-EW-U4n" kind="show" identifier="TestSegueID" id="Jnv-hr-91t"/>
+                        <segue destination="bmt-EW-U4n" kind="show" identifier="ViewControllerSegue" id="Jnv-hr-91t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -35,7 +49,7 @@
         <!--View Controller-->
         <scene sceneID="Mfw-K5-AwP">
             <objects>
-                <viewController id="bmt-EW-U4n" sceneMemberID="viewController">
+                <viewController id="bmt-EW-U4n" customClass="ViewController" customModule="SwiftyIBExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kgb-rt-IUN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +64,7 @@
         <!--Table View Controller-->
         <scene sceneID="PxM-Jo-aZX">
             <objects>
-                <tableViewController id="9KN-ry-MMo" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TableVC" id="9KN-ry-MMo" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0ZG-gd-UZ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,7 +92,7 @@
         <!--Collection View Controller-->
         <scene sceneID="yE7-gJ-PhG">
             <objects>
-                <collectionViewController id="ODg-3I-Hx5" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="CollectionVC" id="ODg-3I-Hx5" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hyC-zW-dm8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +126,7 @@
         <!--View Controller-->
         <scene sceneID="qjY-O4-GOF">
             <objects>
-                <viewController id="Wqh-Jc-Fo7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplitChildVC" id="Wqh-Jc-Fo7" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VZt-fy-8CA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +141,7 @@
         <!--Root View Controller-->
         <scene sceneID="rm3-3y-bnp">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="3uc-vC-ZUr" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SplitNavTable" clearsSelectionOnViewWillAppear="NO" id="3uc-vC-ZUr" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bK7-9s-WhD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +170,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9lh-Ef-4wg">
             <objects>
-                <navigationController id="0bY-QY-YcE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SplitNav" id="0bY-QY-YcE" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E1s-Zj-Ojp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -172,7 +186,7 @@
         <!--Split View Controller-->
         <scene sceneID="Wjv-Qh-W9x">
             <objects>
-                <splitViewController id="H1R-ol-u2p" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="SplitVC" id="H1R-ol-u2p" sceneMemberID="viewController">
                     <connections>
                         <segue destination="0bY-QY-YcE" kind="relationship" relationship="masterViewController" id="Kat-YI-9nl"/>
                         <segue destination="Wqh-Jc-Fo7" kind="relationship" relationship="detailViewController" id="ce1-y3-dCR"/>
@@ -181,6 +195,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZs-u0-Qsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3604" y="143"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="C5g-37-1Ty">
+            <objects>
+                <viewController storyboardIdentifier="EmbededVC" id="nFN-zL-KHN" customClass="ViewController" customModule="SwiftyIBExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9I8-8T-kKx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tm5-7a-cnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="890"/>
         </scene>
     </scenes>
 </document>

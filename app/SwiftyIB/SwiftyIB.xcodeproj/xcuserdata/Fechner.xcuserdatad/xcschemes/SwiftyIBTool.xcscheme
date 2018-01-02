@@ -65,11 +65,19 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-d"
+            argument = "-s"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIBExample/SwiftyIBExample "
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-d"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIBExample/SwiftyIBExample/Identifiers"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
