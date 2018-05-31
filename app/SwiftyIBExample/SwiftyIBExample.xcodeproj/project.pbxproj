@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		920737321FFB35DA00E0FA92 /* ScenesIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207372F1FFB35DA00E0FA92 /* ScenesIdentifier.swift */; };
 		920737331FFB35DA00E0FA92 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920737301FFB35DA00E0FA92 /* SegueIdentifier.swift */; };
-		920737341FFB35DA00E0FA92 /* StorboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920737311FFB35DA00E0FA92 /* StorboardIdentifier.swift */; };
-		920737361FFB365D00E0FA92 /* IBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920737351FFB365D00E0FA92 /* IBExtensions.swift */; };
+		920737341FFB35DA00E0FA92 /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920737311FFB35DA00E0FA92 /* StoryboardIdentifier.swift */; };
+		9288B23B20C0707A00176AE8 /* SceneExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B23A20C0707A00176AE8 /* SceneExtensions.swift */; };
+		9288B23D20C0732E00176AE8 /* IBTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B23C20C0732D00176AE8 /* IBTypes.swift */; };
+		9288B23F20C0795700176AE8 /* IBTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B23E20C0795700176AE8 /* IBTypeExtensions.swift */; };
+		9288B24120C0934400176AE8 /* SecondMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9288B24020C0934400176AE8 /* SecondMain.storyboard */; };
 		9299EEA41FF47A390083320B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299EEA31FF47A390083320B /* AppDelegate.swift */; };
 		9299EEA61FF47A390083320B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299EEA51FF47A390083320B /* ViewController.swift */; };
 		9299EEA91FF47A390083320B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9299EEA71FF47A390083320B /* Main.storyboard */; };
@@ -41,8 +44,11 @@
 /* Begin PBXFileReference section */
 		9207372F1FFB35DA00E0FA92 /* ScenesIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesIdentifier.swift; sourceTree = "<group>"; };
 		920737301FFB35DA00E0FA92 /* SegueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
-		920737311FFB35DA00E0FA92 /* StorboardIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorboardIdentifier.swift; sourceTree = "<group>"; };
-		920737351FFB365D00E0FA92 /* IBExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBExtensions.swift; sourceTree = "<group>"; };
+		920737311FFB35DA00E0FA92 /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifier.swift; sourceTree = "<group>"; };
+		9288B23A20C0707A00176AE8 /* SceneExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneExtensions.swift; sourceTree = "<group>"; };
+		9288B23C20C0732D00176AE8 /* IBTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBTypes.swift; sourceTree = "<group>"; };
+		9288B23E20C0795700176AE8 /* IBTypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBTypeExtensions.swift; sourceTree = "<group>"; };
+		9288B24020C0934400176AE8 /* SecondMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondMain.storyboard; sourceTree = "<group>"; };
 		9299EEA01FF47A390083320B /* SwiftyIBExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyIBExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9299EEA31FF47A390083320B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9299EEA51FF47A390083320B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,10 +101,12 @@
 		9207372E1FFB35DA00E0FA92 /* IBIdentifiers */ = {
 			isa = PBXGroup;
 			children = (
+				9288B23C20C0732D00176AE8 /* IBTypes.swift */,
+				9288B23E20C0795700176AE8 /* IBTypeExtensions.swift */,
+				9288B23A20C0707A00176AE8 /* SceneExtensions.swift */,
 				9207372F1FFB35DA00E0FA92 /* ScenesIdentifier.swift */,
 				920737301FFB35DA00E0FA92 /* SegueIdentifier.swift */,
-				920737311FFB35DA00E0FA92 /* StorboardIdentifier.swift */,
-				920737351FFB365D00E0FA92 /* IBExtensions.swift */,
+				920737311FFB35DA00E0FA92 /* StoryboardIdentifier.swift */,
 			);
 			path = IBIdentifiers;
 			sourceTree = "<group>";
@@ -130,6 +138,7 @@
 				9299EEA31FF47A390083320B /* AppDelegate.swift */,
 				9299EEA51FF47A390083320B /* ViewController.swift */,
 				9299EEA71FF47A390083320B /* Main.storyboard */,
+				9288B24020C0934400176AE8 /* SecondMain.storyboard */,
 				9299EEAD1FF47A390083320B /* Assets.xcassets */,
 				9299EEAF1FF47A390083320B /* LaunchScreen.storyboard */,
 				9299EEB21FF47A390083320B /* Info.plist */,
@@ -220,7 +229,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = peejweej.inc;
 				TargetAttributes = {
 					9299EE9F1FF47A390083320B = {
@@ -265,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9299EEB11FF47A390083320B /* LaunchScreen.storyboard in Resources */,
+				9288B24120C0934400176AE8 /* SecondMain.storyboard in Resources */,
 				9299EEAE1FF47A390083320B /* Assets.xcassets in Resources */,
 				9299EEA91FF47A390083320B /* Main.storyboard in Resources */,
 			);
@@ -308,11 +318,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9299EEA61FF47A390083320B /* ViewController.swift in Sources */,
-				920737341FFB35DA00E0FA92 /* StorboardIdentifier.swift in Sources */,
+				920737341FFB35DA00E0FA92 /* StoryboardIdentifier.swift in Sources */,
 				920737321FFB35DA00E0FA92 /* ScenesIdentifier.swift in Sources */,
-				920737361FFB365D00E0FA92 /* IBExtensions.swift in Sources */,
 				920737331FFB35DA00E0FA92 /* SegueIdentifier.swift in Sources */,
 				9299EEA41FF47A390083320B /* AppDelegate.swift in Sources */,
+				9288B23F20C0795700176AE8 /* IBTypeExtensions.swift in Sources */,
+				9288B23B20C0707A00176AE8 /* SceneExtensions.swift in Sources */,
+				9288B23D20C0732E00176AE8 /* IBTypes.swift in Sources */,
 				9299EEAC1FF47A390083320B /* SwiftyIBExample.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +394,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -389,6 +402,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -439,6 +453,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -446,6 +461,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

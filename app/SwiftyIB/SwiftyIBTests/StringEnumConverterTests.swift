@@ -26,11 +26,11 @@ class StringEnumConverterTests: QuickSpec {
     override func spec() {
         describe(String(describing:StringEnumConverter.self)) {
             describe("Converts strings propperly") {
-                let result = StringEnumConverter.makeEnum(with: StringEnumConverterTests.testName, from: StringEnumConverterTests.testCases)
+                let result = StringEnumConverter.makeEnum(with: StringEnumConverterTests.testName, and: "", from: StringEnumConverterTests.testCases)
                 expect(result).to(equal(StringEnumConverterTests.expectedResult))
             }
             describe("Handles bad input") {
-                expect(StringEnumConverter.makeEnum(with: "", from: [])).to(beNil())
+                expect(StringEnumConverter.makeEnum(with: "", and: "", from: [])).to(beNil())
             }
         }
     }

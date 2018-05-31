@@ -61,7 +61,7 @@ struct IBStoryboard: XMLIndexerDeserializable {
         let initalVC: String? = node.value(of: AttributeKeys.initialViewController)
         var initalScene: IBScene? = nil
         let sceneNodes = node[ElementKeys.scenes][ElementKeys.scene]
-        let scenes = try sceneNodes.all.map(IBScene.deserialize)
+        let scenes = try sceneNodes.all.map({try IBScene.deserialize($0, storyboardName: name)})
         
         guard !scenes.isEmpty else {
             throw StoryboardParser.Errors.noScenesFound
@@ -77,8 +77,10 @@ struct IBStoryboard: XMLIndexerDeserializable {
 struct IBScene: XMLIndexerDeserializable {
     let sceneID: String
     let viewController: IBViewController
-    static func deserialize(_ node: XMLIndexer) throws -> IBScene {
-        return try IBScene(sceneID: node.value(of: AttributeKeys.sceneID), viewController: findViewController(in: node))
+    let storyboardName: String
+    
+    static func deserialize(_ node: XMLIndexer, storyboardName: String) throws -> IBScene {
+        return try IBScene(sceneID: node.value(of: AttributeKeys.sceneID), viewController: findViewController(in: node), storyboardName: storyboardName)
     }
     
     static func findViewController(in element: XMLIndexer) throws -> IBViewController  {

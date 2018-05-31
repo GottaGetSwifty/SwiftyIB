@@ -23,8 +23,19 @@ class SwiftyIB {
     }
     
     func buildStoryboards() -> [IBStoryboard] {
-        let allStoryboards = findAllStorboardURLs().map(StoryboardParser.init).flatMap{ $0.parse() }
+        let allStoryboards = findAllStorboardURLs().map(StoryboardParser.init).compactMap{ $0.parse() }
         
         return allStoryboards
-    } 
+    }
+    
+    static func export(storboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws {
+        try StoryboardExporter.exportIdentifiers(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
+        try StoryboardExporter.exportExtensions(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
+        try StoryboardExporter.exportIBTypes(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
+        try StoryboardExporter.exportIBTypeExtensions(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
+        
+    }
 }
+
+
+

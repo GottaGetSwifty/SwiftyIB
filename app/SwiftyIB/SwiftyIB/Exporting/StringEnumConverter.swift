@@ -26,7 +26,7 @@ struct StringEnumConverter {
         return "\(makeEnumHeader(for: name))\n\n\(documentation)\nenum \(name): String {"
     }
     
-    private static let enumEnd = "\n}"
+    private static let enumEnd = "\n\tcase none\n}"
     
     private static func makeEnumHeader(for name: String) -> String {
         return  """

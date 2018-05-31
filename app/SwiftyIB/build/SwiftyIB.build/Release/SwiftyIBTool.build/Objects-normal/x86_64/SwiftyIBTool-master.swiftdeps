@@ -1,0 +1,15 @@
+version: "Apple Swift version 4.1.2 (swiftlang-902.0.54 clang-902.0.39.2)"
+options: "2f1c5fe44c84fe4bf551daa09d747ce7"
+build_time: [1527801402, 649028000]
+inputs:
+  "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIB/SwiftyIB/Exporting/StoryboardConverter.swift": [9223372036, 854775807]
+  "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIB/SwiftyIB/Parsing/StoryboardParser.swift": [9223372036, 854775807]
+  "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIB/SwiftyIB/Parsing/ProjectParser.swift": [9223372036, 854775807]
+  "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIB/SwiftyIB/Parsing/IBKeys.swift": [9223372036, 854775807]
+  "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIB/SwiftyIB/Exporting/StoryboardExporter.swift": [9223372036, 854775807]
+  "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIB/SwiftyIBTool/main.swift": [9223372036, 854775807]
+  "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/SubModules/XML/SWXMLHash/Source/SWXMLHash.swift": [9223372036, 854775807]
+  "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIB/SwiftyIB/Parsing/FilesFinder.swift": [9223372036, 854775807]
+  "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIB/SwiftyIB/Exporting/StringEnumConverter.swift": [9223372036, 854775807]
+  "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIB/SwiftyIB/SwiftyIB.swift": [9223372036, 854775807]
+  "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/SubModules/XML/SWXMLHash/Source/SWXMLHash+TypeConversion.swift": [9223372036, 854775807]

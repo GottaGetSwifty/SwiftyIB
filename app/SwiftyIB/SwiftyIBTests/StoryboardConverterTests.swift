@@ -52,11 +52,20 @@ class StoryboardConverterTests: QuickSpec {
                     expect(result).to(equal(StoryboardConverterTests.expectedSegueResult))
                 }
             }
+            describe("Creates Extensions") {
+                let storyboard = StoryboardParser(with: StoryboardParser.testStoryboardURL!).parse()!
+                it("For Scene structs") {
+                    let result = StoryboardConverter.makeScenesStructExtensions(from: [storyboard])
+                    print(result as Any)
+                }
+            }
+            
             describe("Handles bad input") {
                 expect(StoryboardConverter.makeStoryboardNameEnum(from: [])).to(beNil())
                 expect(StoryboardConverter.makeSceneNameEnum(from: [])).to(beNil())
                 expect(StoryboardConverter.makeSegueNameEnum(from: [])).to(beNil())
             }
+            
         }
     }
 }
