@@ -13,6 +13,7 @@ enum SceneIdentifier: String {
 	case EmbededVC
 	case MainVCScene
 	case SecondMainVCScene
+	case SecondVC
 	case SplitChildVC
 	case SplitNav
 	case SplitNavTable

@@ -7,28 +7,30 @@
 //
 
 import Foundation
-class SwiftyIB {
+import AppKit
+
+public class SwiftyIB {
     let containingURL: URL
     
-    init?(containingURL: URL) {
+    public init?(containingURL: URL) {
         guard containingURL.hasDirectoryPath else{
             return nil
         }
         self.containingURL = containingURL
     }
     
-    func findAllStorboardURLs() -> [URL] {
+    public func findAllStorboardURLs() -> [URL] {
         let allURLs = FilesFinder.getAllStoryboardFiles(in: self.containingURL) ?? []
         return allURLs
     }
     
-    func buildStoryboards() -> [IBStoryboard] {
+    public func buildStoryboards() -> [IBStoryboard] {
         let allStoryboards = findAllStorboardURLs().map(StoryboardParser.init).compactMap{ $0.parse() }
         
         return allStoryboards
     }
     
-    static func export(storboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws {
+    public static func export(storboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws {
         try StoryboardExporter.exportIdentifiers(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
         try StoryboardExporter.exportExtensions(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
         try StoryboardExporter.exportIBTypes(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)

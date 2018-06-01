@@ -9,20 +9,20 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
+		<key>SwiftyIBBundle.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 		<key>SwiftyIBExport.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>13</integer>
 		</dict>
 		<key>SwiftyIBKit.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>11</integer>
-		</dict>
-		<key>SwiftyIBLibrary.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>14</integer>
 		</dict>
 		<key>SwiftyIBTool.xcscheme</key>
 		<dict>

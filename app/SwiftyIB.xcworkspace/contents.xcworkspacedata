@@ -11,9 +11,9 @@
       location = "group:SwiftyIB/SwiftyIB.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../SubModules/XML/SWXMLHash/SWXMLHash.xcodeproj">
+      location = "group:SwiftyIBExample/SwiftyIBExample.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SwiftyIBExample/SwiftyIBExample.xcodeproj">
+      location = "group:../SubModules/XML/SWXMLHash/SWXMLHash.xcodeproj">
    </FileRef>
 </Workspace>

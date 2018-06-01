@@ -6,9 +6,9 @@
 //  Copyright © 2017 peejweej.inc. All rights reserved.
 //
 
-struct StringEnumConverter {
+public struct StringEnumConverter {
     
-    static func makeEnum(with name: String, and documentation: String, from strings: [String]) -> String? {
+    public static func makeEnum(with name: String, and documentation: String, from strings: [String]) -> String? {
         guard !name.isEmpty else {
             return nil
         }

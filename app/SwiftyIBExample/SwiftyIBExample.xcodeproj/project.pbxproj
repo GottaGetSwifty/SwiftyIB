@@ -11,8 +11,6 @@
 		920737331FFB35DA00E0FA92 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920737301FFB35DA00E0FA92 /* SegueIdentifier.swift */; };
 		920737341FFB35DA00E0FA92 /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920737311FFB35DA00E0FA92 /* StoryboardIdentifier.swift */; };
 		9288B23B20C0707A00176AE8 /* SceneExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B23A20C0707A00176AE8 /* SceneExtensions.swift */; };
-		9288B23D20C0732E00176AE8 /* IBTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B23C20C0732D00176AE8 /* IBTypes.swift */; };
-		9288B23F20C0795700176AE8 /* IBTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B23E20C0795700176AE8 /* IBTypeExtensions.swift */; };
 		9288B24120C0934400176AE8 /* SecondMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9288B24020C0934400176AE8 /* SecondMain.storyboard */; };
 		9299EEA41FF47A390083320B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299EEA31FF47A390083320B /* AppDelegate.swift */; };
 		9299EEA61FF47A390083320B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299EEA51FF47A390083320B /* ViewController.swift */; };
@@ -22,6 +20,11 @@
 		9299EEB11FF47A390083320B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9299EEAF1FF47A390083320B /* LaunchScreen.storyboard */; };
 		9299EEBC1FF47A390083320B /* SwiftyIBExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299EEBB1FF47A390083320B /* SwiftyIBExampleTests.swift */; };
 		9299EEC71FF47A390083320B /* SwiftyIBExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299EEC61FF47A390083320B /* SwiftyIBExampleUITests.swift */; };
+		92B24DD620C1C25B00AEE476 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DD520C1C25B00AEE476 /* SecondViewController.swift */; };
+		92B24DDC20C1CBB400AEE476 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B24DDB20C1CBB400AEE476 /* UIKit.framework */; };
+		92B24DDE20C1CBBB00AEE476 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B24DDD20C1CBBB00AEE476 /* Foundation.framework */; };
+		92B24DDF20C1CBDE00AEE476 /* IBTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B23E20C0795700176AE8 /* IBTypeExtensions.swift */; };
+		92B24DE020C1CBE000AEE476 /* IBTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B23C20C0732D00176AE8 /* IBTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,10 @@
 		9299EEC21FF47A390083320B /* SwiftyIBExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyIBExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9299EEC61FF47A390083320B /* SwiftyIBExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyIBExampleUITests.swift; sourceTree = "<group>"; };
 		9299EEC81FF47A390083320B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92B24DD520C1C25B00AEE476 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		92B24DD820C1C76500AEE476 /* SwiftyIBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyIBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92B24DDB20C1CBB400AEE476 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		92B24DDD20C1CBBB00AEE476 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B24DDE20C1CBBB00AEE476 /* Foundation.framework in Frameworks */,
+				92B24DDC20C1CBB400AEE476 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +127,7 @@
 				9299EEBA1FF47A390083320B /* SwiftyIBExampleTests */,
 				9299EEC51FF47A390083320B /* SwiftyIBExampleUITests */,
 				9299EEA11FF47A390083320B /* Products */,
+				92B24DD720C1C76500AEE476 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +147,7 @@
 				9207372D1FFB35DA00E0FA92 /* identifiers */,
 				9299EEA31FF47A390083320B /* AppDelegate.swift */,
 				9299EEA51FF47A390083320B /* ViewController.swift */,
+				92B24DD520C1C25B00AEE476 /* SecondViewController.swift */,
 				9299EEA71FF47A390083320B /* Main.storyboard */,
 				9288B24020C0934400176AE8 /* SecondMain.storyboard */,
 				9299EEAD1FF47A390083320B /* Assets.xcassets */,
@@ -163,6 +174,16 @@
 				9299EEC81FF47A390083320B /* Info.plist */,
 			);
 			path = SwiftyIBExampleUITests;
+			sourceTree = "<group>";
+		};
+		92B24DD720C1C76500AEE476 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92B24DDD20C1CBBB00AEE476 /* Foundation.framework */,
+				92B24DDB20C1CBB400AEE476 /* UIKit.framework */,
+				92B24DD820C1C76500AEE476 /* SwiftyIBKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +329,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n./SwiftyIBToolRunnable -s SwiftyIBExample -d SwiftyIBExample/identifiers";
+			shellScript = "buildscript_path=../SwiftyIB/SwiftyIBBuild.sh\ngenerator_path=SwiftyIBGenerator\ngenerator_file_name=SwiftyIBGenerator\ngenerator_file_path=$generator_path/$generator_file_name\n\nIB_search_directory=SwiftyIBExample\nIB_files_export_path=SwiftyIBExample/identifiers\n\nif [ -e \"$generator_file_path\" ]\n    then echo \"Generator already built.\"\nelse\n    echo \"Will build generator\"\n    sh $buildscript_path -o $generator_path -n $generator_file_name\nfi\n\n./$generator_file_path -s $IB_search_directory -o $IB_files_export_path\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -317,14 +338,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B24DE020C1CBE000AEE476 /* IBTypes.swift in Sources */,
 				9299EEA61FF47A390083320B /* ViewController.swift in Sources */,
 				920737341FFB35DA00E0FA92 /* StoryboardIdentifier.swift in Sources */,
 				920737321FFB35DA00E0FA92 /* ScenesIdentifier.swift in Sources */,
 				920737331FFB35DA00E0FA92 /* SegueIdentifier.swift in Sources */,
 				9299EEA41FF47A390083320B /* AppDelegate.swift in Sources */,
-				9288B23F20C0795700176AE8 /* IBTypeExtensions.swift in Sources */,
+				92B24DDF20C1CBDE00AEE476 /* IBTypeExtensions.swift in Sources */,
 				9288B23B20C0707A00176AE8 /* SceneExtensions.swift in Sources */,
-				9288B23D20C0732E00176AE8 /* IBTypes.swift in Sources */,
+				92B24DD620C1C25B00AEE476 /* SecondViewController.swift in Sources */,
 				9299EEAC1FF47A390083320B /* SwiftyIBExample.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

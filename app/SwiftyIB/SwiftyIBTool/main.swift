@@ -12,7 +12,7 @@ import Foundation
 enum CommandLineOption: String {
     case help = "--help"
     case source = "--source"
-    case destination = "--destination"
+    case destination = "--output-dir"
     case absolute = "--absolute"
 
     case unknown
@@ -25,7 +25,7 @@ enum CommandLineOption: String {
         switch value {
         case CommandLineOption.source.rawValue, "-s", "-S": 
             self = .source
-        case CommandLineOption.destination.rawValue, "-d", "-D": 
+        case CommandLineOption.destination.rawValue, "-o", "-O": 
             self = .destination
         case CommandLineOption.absolute.rawValue, "-a", "-A":
             self = .absolute
@@ -40,7 +40,7 @@ enum CommandLineOption: String {
             switch self {
             case .help:         return "help:          (--help, -h, -H)           Instructions"
             case .source:       return "source:        (--source, -s, -S          The Source directory to recursively search for all IB files"
-            case .destination:  return "destination:   (--destination, d, D)      Output directory to put the generated files." 
+            case .destination:  return "output dir:    (--output-dir, o, O)       Output directory to put the generated files." 
             case .absolute:     return "absolute:      (--absolute, -a, -A        Boolean flag to indicate whether the passed URLs are absolute."
             case .unknown: return ""
             }

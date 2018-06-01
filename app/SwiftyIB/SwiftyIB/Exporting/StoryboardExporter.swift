@@ -7,29 +7,29 @@
 //
 import Foundation
 
-class StoryboardExporter {
+public class StoryboardExporter {
     
     static let storyboardIDFileName = "IBIdentifiers/StoryboardIdentifier.swift"
     static let sceneseIDFileName = "IBIdentifiers/ScenesIdentifier.swift"
     static let segueIDFileName = "IBIdentifiers/SegueIdentifier.swift"
     
-    static func exportIdentifiers(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws {
+    public static func exportIdentifiers(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws {
         
-        if let storyboardEnum = StoryboardConverter.makeStoryboardNameEnum(from: storyboards) {
+        if let storyboardEnum = StoryboardEnumsGenerator.makeStoryboardNameEnum(from: storyboards) {
             let result = exportFile(fileText: storyboardEnum, to: destination.appendingPathComponent(storyboardIDFileName), isAbsoluteURL: isAbsoluteURL)
             print("Exporting storyboard enum result: \(result)")
         }
         else {
             print("Did not find any storyboard identifiers")
         }
-        if let scenesEnum = StoryboardConverter.makeSceneNameEnum(from: storyboards) {
+        if let scenesEnum = StoryboardEnumsGenerator.makeSceneNameEnum(from: storyboards) {
             let result = exportFile(fileText: scenesEnum, to: destination.appendingPathComponent(sceneseIDFileName), isAbsoluteURL: isAbsoluteURL)
             print("Exporting scene enum result: \(result)")
         }
         else {
             print("Did not find any scene identifiers")
         }
-        if let seguesEnum = StoryboardConverter.makeSegueNameEnum(from: storyboards) {
+        if let seguesEnum = StoryboardEnumsGenerator.makeSegueNameEnum(from: storyboards) {
             let result = exportFile(fileText: seguesEnum, to: destination.appendingPathComponent(segueIDFileName), isAbsoluteURL: isAbsoluteURL)
             print("Exporting segues enum result: \(result)")
         }
@@ -41,7 +41,7 @@ class StoryboardExporter {
     
     static let sceneExtensionsFileName = "IBIdentifiers/SceneExtensions.swift"
     static func exportExtensions(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
-        if let sceneExtensions = StoryboardConverter.makeScenesStructExtensions(from: storyboards) {
+        if let sceneExtensions = StoryboardStructureExtensionGenerator.makeScenesStructExtensions(from: storyboards) {
             let result = exportFile(fileText: sceneExtensions, to: destination.appendingPathComponent(sceneExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
             print("Exporting Scene extensions result: \(result)")
         }
@@ -49,7 +49,7 @@ class StoryboardExporter {
     
     static let ibTypesFileName = "IBIdentifiers/IBTypes.swift"
     static func exportIBTypes(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
-        let ibTypes = StoryboardConverter.makeIBTypes() 
+        let ibTypes = StoryboardTypesGenerator.makeIBTypes() 
         let result = exportFile(fileText: ibTypes, to: destination.appendingPathComponent(ibTypesFileName), isAbsoluteURL: isAbsoluteURL)
         print("Exporting IBTypes result: \(result)")
         
@@ -57,9 +57,9 @@ class StoryboardExporter {
     
     static let ibTypeExtensionsFileName = "IBIdentifiers/IBTypeExtensions.swift"
     static func exportIBTypeExtensions(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
-        let ibTypeExtensions = StoryboardConverter.makeIBTypeExtensions()
+        let ibTypeExtensions = StoryboardExtensionsGenerator.makeIBTypeExtensions()
         let result = exportFile(fileText: ibTypeExtensions, to: destination.appendingPathComponent(ibTypeExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
-        print("Exporting IBTypes result: \(result)")
+        print("Exporting IBType Extensions result: \(result)")
         
     }
     

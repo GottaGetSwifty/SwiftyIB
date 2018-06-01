@@ -5,9 +5,7 @@
 //  Created by Paul Fechner on 12/27/17.
 //  Copyright © 2017 peejweej.inc. All rights reserved.
 //
-
-import Cocoa
-
+import Foundation
 class StoryboardParser {
     
     enum Errors: Error {
@@ -52,7 +50,7 @@ class StoryboardParser {
     }
 }
 
-struct IBStoryboard: XMLIndexerDeserializable {
+public struct IBStoryboard: XMLIndexerDeserializable {
     let initialScene: IBScene?
     let scenes: [IBScene]
     let name: String
@@ -74,7 +72,7 @@ struct IBStoryboard: XMLIndexerDeserializable {
     }
 }
 
-struct IBScene: XMLIndexerDeserializable {
+public struct IBScene: XMLIndexerDeserializable {
     let sceneID: String
     let viewController: IBViewController
     let storyboardName: String
@@ -93,13 +91,13 @@ struct IBScene: XMLIndexerDeserializable {
     }
 }
 
-struct IBViewController: XMLIndexerDeserializable {
+public struct IBViewController: XMLIndexerDeserializable {
     let id: String
     let storyboardIdentifier: String?
     let restorationIdentifier: String?
     let customClass: String?
     let segues: [IBSegue]
-    static func deserialize(_ node: XMLIndexer) throws -> IBViewController {
+    public static func deserialize(_ node: XMLIndexer) throws -> IBViewController {
         return try IBViewController(id: node.value(of: AttributeKeys.id), 
                                     storyboardIdentifier: node.value(of: AttributeKeys.storyboardIdentifier), 
                                     restorationIdentifier: node.value(of: AttributeKeys.restorationIdentifier),
@@ -108,10 +106,10 @@ struct IBViewController: XMLIndexerDeserializable {
     }
 }
 
-struct IBSegue: XMLIndexerDeserializable{
+public struct IBSegue: XMLIndexerDeserializable{
     let destination: String
     let identifier: String?
-    static func deserialize(_ node: XMLIndexer) throws -> IBSegue {
+    public static func deserialize(_ node: XMLIndexer) throws -> IBSegue {
         return try IBSegue(destination: node.value(of: AttributeKeys.destination), identifier: node.value(of: AttributeKeys.identifier))
     }
 }
