@@ -3,6 +3,7 @@
 
 import UIKit
 
+/// Perform segue with identifiers and/or string representables
 extension UIViewController {
 
     func performSegue<E: RawRepresentable>(withStringIdentifier stringIdentifier: E,
@@ -12,13 +13,15 @@ extension UIViewController {
     
     func performSegue(with segueIdentifier: SegueIdentifier,
         sender: Any? = nil) {
-    
-        if segueIdentifier != .none {
-            performSegue(withStringIdentifier: segueIdentifier, sender: sender)
+        guard segueIdentifier != .none else {
+            assertionFailure("Attempted to segue to .none. This should never happen")
+            return
         }
+        performSegue(withStringIdentifier: segueIdentifier, sender: sender)
     }
 }
 
+/// Conversions of the segue.identifier to SegueIdentifier and/or a String RawRepresentable
 extension UIStoryboardSegue {
 
     func getAsStringRawRepresentable<E: RawRepresentable>() -> E? where E.RawValue == String {
@@ -43,12 +46,14 @@ extension UIStoryboardSegue {
     }
 }
         
+/// Simplified Segue performance
 extension IBSegue {
     func perform(sender: Any? = nil) {
-        viewController.performSegue(with: identifier, sender: sender)
+        viewController.performSegue(with: segueIdentifier, sender: sender)
     }
 }
         
+/// Convenience properties get the identifiers from within an instance. 
 extension IBScene {
     var storyboardIdentifier: StoryboardIdentifier { 
         return Self.storyboardIdentifier
@@ -59,37 +64,43 @@ extension IBScene {
     }
 }
 
+/// Builds a storyboard from the storyboardIdentifier
 extension StoryboardIdentifiable {
     static var storyboard: UIStoryboard {
-        return UIStoryboard(name: storyboardIdentifier.rawValue, bundle: nil)
+        return UIStoryboard(identifier: storyboardIdentifier, bundle: nil)
     }
 }
 
+/// builds the scene from the identifiers.
 extension SceneIdentifiable where Self: StoryboardIdentifiable {
-    static func makeViewControllerFromStoryboard<T: UIViewController>() -> T {
+    static func makeFromStoryboard<T: UIViewController>() -> T {
         return storyboard.makeViewController(with: sceneIdentifier) as! T
     }
 }
 
+// Convenience methods for instantiating scenes/ViewControllers from identifiers
 extension UIStoryboard {
 
     func makeViewController<T: UIViewController>(with identifier: SceneIdentifier) -> T? {
         return instantiateViewController(withIdentifier: identifier.rawValue) as? T
     }
     
-    static func makeViewController<T: UIViewController>(storyboard: StoryboardIdentifier, scene: SceneIdentifier) -> T? {
-        return UIStoryboard(name: storyboard.rawValue, bundle: nil).makeViewController(with: scene) as? T
+    static func makeViewController<T: UIViewController>(storyboard: StoryboardIdentifier, scene: SceneIdentifier, bundle: Bundle? = nil) -> T? {
+        return UIStoryboard(name: storyboard.rawValue, bundle: bundle).makeViewController(with: scene) as? T
     }
 }
 
+/// Build a storyboard from a StoryboardIdentifier
 extension UIStoryboard {
-    convenience init(identifier: StoryboardIdentifier, bundle: Bundle?) {
+    convenience init(identifier: StoryboardIdentifier, bundle: Bundle? = nil) {
         self.init(name: identifier.rawValue, bundle: bundle )
     }
 }
 
+/// Build the initialVC
 extension StoryboardIdentifier {
-    func makeInitialVC() -> UIViewController {
-        return UIStoryboard(identifier: self, bundle: nil).instantiateInitialViewController()!
+    func makeInitialVC(bundle: Bundle? = nil) -> UIViewController {
+        return UIStoryboard(identifier: self, bundle: bundle).instantiateInitialViewController()!
     }
 }
+

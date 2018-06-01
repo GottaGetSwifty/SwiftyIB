@@ -329,7 +329,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "buildscript_path=../SwiftyIB/SwiftyIBBuild.sh\ngenerator_path=SwiftyIBGenerator\ngenerator_file_name=SwiftyIBGenerator\ngenerator_file_path=$generator_path/$generator_file_name\n\nIB_search_directory=SwiftyIBExample\nIB_files_export_path=SwiftyIBExample/identifiers\n\nif [ -e \"$generator_file_path\" ]\n    then echo \"Generator already built.\"\nelse\n    echo \"Will build generator\"\n    sh $buildscript_path -o $generator_path -n $generator_file_name\nfi\n\n./$generator_file_path -s $IB_search_directory -o $IB_files_export_path\n";
+			shellScript = "#gdate is used here. \n#Comment out if you don't have coreutils installed\n#or install with homebrew: \"brew install coreutils\"\necho \"$(gdate +%s.%N)\"\n#Vars for building the generator\nbuildscript_path=../SwiftyIB/SwiftyIBBuild.sh\ngenerator_path=SwiftyIBGenerator\ngenerator_file_name=SwiftyIBGenerator\ngenerator_file_path=$generator_path/$generator_file_name\n\n#Vars for generation\nIB_search_directory=SwiftyIBExample\nIB_files_export_path=SwiftyIBExample/identifiers\n\n#Uncomment to remove the generator and rebuild it from source\n#rm -r $generator_file_path\n\nif [ -e \"$generator_file_path\" ]\n    then echo \"Generator already built.\"\nelse\n    #Builds the generator. This should only happen once. Delete the generator if you want to re-build\n    echo \"Will build generator\"\n    sh $buildscript_path -o $generator_path -n $generator_file_name\nfi\n\n# This should be the only line that runs every time.\n./$generator_file_path -s $IB_search_directory -o $IB_files_export_path\n\necho \"$(gdate +%s.%N)\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

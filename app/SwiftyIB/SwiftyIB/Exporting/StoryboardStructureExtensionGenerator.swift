@@ -14,6 +14,7 @@ public class StoryboardStructureExtensionGenerator {
     
     private static let scenesStructDocumentation = """
                                             /// Automatically generated from SwiftyIB
+                                            import UIKit
                                             """
     public static func makeScenesStructExtensions(from storyboards: [IBStoryboard]) -> String? {
         let scenesDictionary = makeScenesDictionary(from: storyboards)
@@ -51,11 +52,12 @@ public class StoryboardStructureExtensionGenerator {
         
 extension \(className) {
             
-    var scenes: _Scenes { return _Scenes(viewController: self) }
+    var Scenes: _Scenes { return _Scenes(_viewController: self) }
     struct _Scenes {
             
-        fileprivate let viewController: \(className)
-"""         + (scenes.count > 1 ? buildMultipleScenesStruct(scenes: scenes, viewControllerClass: className) : buildSingleSceneStruct(scene: scenes[0], viewControllerClass: className))
+        fileprivate let _viewController: \(className)
+        var viewController: UIViewController { return _viewController }
+"""         + (scenes.count > 1 ? buildMultipleScenesStruct(scenes: scenes, viewControllerClassName: className) : buildSingleSceneStruct(scene: scenes[0], viewControllerClassName: className))
             + """
         
     }
@@ -65,7 +67,7 @@ extension \(className) {
         return extensionText
     }
     
-    private static func buildMultipleScenesStruct(scenes: [IBScene], viewControllerClass: String) -> String {
+    private static func buildMultipleScenesStruct(scenes: [IBScene], viewControllerClassName: String) -> String {
         
         return """
         \(scenes.map {
@@ -75,14 +77,16 @@ extension \(className) {
             let sceneName = $0.storyboardName + storyboardID
             return """
             
-            var \(sceneName): _\(sceneName) { return _\(sceneName)(viewController: viewController) }
-            struct _\(sceneName): IBScene {
-                fileprivate let viewController: \(viewControllerClass)
-                static let storyboardIdentifier: StoryboardIdentifier = .\($0.storyboardName)
-                static let sceneIdentifier: SceneIdentifier = .\(storyboardID)\(makeSegueExtensionText(segues: $0.viewController.segues, viewControllerClassName: viewControllerClass) )     
-                }
+        
+        var \(sceneName): _\(sceneName) { return _\(sceneName)(_viewController: _viewController) }
+        struct _\(sceneName): IBScene {
+            fileprivate let _viewController: \(viewControllerClassName)
+            var viewController: UIViewController { return _viewController }
+            static let storyboardIdentifier: StoryboardIdentifier = .\($0.storyboardName)
+            static let sceneIdentifier: SceneIdentifier = .\(storyboardID)\(makeSegueExtensionText(segues: $0.viewController.segues, viewControllerClassName: viewControllerClassName) )     
+        }
 """
-            }.reduce("", +)) 
+        }.reduce("", +)) 
         
         var scenes: [IBScene] { return [\(scenes.map {
             guard let storyboardID = $0.viewController.storyboardIdentifier else {
@@ -100,18 +104,19 @@ extension \(className) {
 """
     }
     
-    private static func buildSingleSceneStruct(scene: IBScene, viewControllerClass: String) -> String {
+    private static func buildSingleSceneStruct(scene: IBScene, viewControllerClassName: String) -> String {
         guard let sceneName = scene.viewController.storyboardIdentifier else {
             return ""
         }
         return """
             
         
-        var \(sceneName): _\(sceneName) { return _\(sceneName)(viewController: viewController) }
+        var \(sceneName): _\(sceneName) { return _\(sceneName)(_viewController: _viewController) }
         struct _\(sceneName): IBScene {
-            fileprivate let viewController: \(viewControllerClass)
+            fileprivate let _viewController: \(viewControllerClassName)
+            var viewController: UIViewController { return _viewController }
             static let storyboardIdentifier: StoryboardIdentifier = .\(scene.storyboardName)
-            static let sceneIdentifier: SceneIdentifier = .\(sceneName)\(makeSegueExtensionText(segues: scene.viewController.segues, viewControllerClassName: viewControllerClass) )     
+            static let sceneIdentifier: SceneIdentifier = .\(sceneName)\(makeSegueExtensionText(segues: scene.viewController.segues, viewControllerClassName: viewControllerClassName) )     
         }
     
         var currentScene: _\(sceneName) { return \(sceneName) }
@@ -125,15 +130,16 @@ extension \(className) {
         return """
         
         
-            var Segues: _Segues { return _Segues(viewController: viewController) }
+            var Segues: _Segues { return _Segues(_viewController: _viewController) }
             struct _Segues {
-                fileprivate let viewController: \(viewControllerClassName)\( segues.compactMap {
+                fileprivate let _viewController: \(viewControllerClassName)
+                var viewController: UIViewController { return _viewController }\( segues.compactMap {
                     guard let identifier = $0.identifier else {
                         return nil
                     }
                     return """
         
-                var \(identifier): IBSegue { return IBSegue(identifier: .\(identifier), viewController: viewController)}
+                var \(identifier): IBSegue { return IBSegue(segueIdentifier: .\(identifier), viewController: viewController)}
 """
                     }.reduce("", +))
             }

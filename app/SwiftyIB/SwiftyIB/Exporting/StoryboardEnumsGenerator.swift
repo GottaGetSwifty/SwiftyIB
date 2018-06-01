@@ -30,7 +30,7 @@ public class StoryboardEnumsGenerator {
     
     public static func makeStoryboardNameEnum(from storyboards: [IBStoryboard]) -> String? {
         let identifierAction = { storyboards.map{ $0.name } }
-        return makeEnum(with: storyboardEnumName, and: storboardEnumDocumentation, from: storyboards, using: identifierAction) 
+        return makeEnum(with: storyboardEnumName, and: storboardEnumDocumentation, from: storyboards, using: identifierAction)
     }
     
     

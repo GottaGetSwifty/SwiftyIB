@@ -1,22 +1,26 @@
-/// Automatically generated from SwiftyIB        
+/// Automatically generated from SwiftyIB
+import UIKit        
         
 extension SecondViewController {
             
-    var scenes: _Scenes { return _Scenes(viewController: self) }
+    var Scenes: _Scenes { return _Scenes(_viewController: self) }
     struct _Scenes {
             
-        fileprivate let viewController: SecondViewController            
+        fileprivate let _viewController: SecondViewController
+        var viewController: UIViewController { return _viewController }            
         
-        var SecondVC: _SecondVC { return _SecondVC(viewController: viewController) }
+        var SecondVC: _SecondVC { return _SecondVC(_viewController: _viewController) }
         struct _SecondVC: IBScene {
-            fileprivate let viewController: SecondViewController
+            fileprivate let _viewController: SecondViewController
+            var viewController: UIViewController { return _viewController }
             static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
             static let sceneIdentifier: SceneIdentifier = .SecondVC        
         
-            var Segues: _Segues { return _Segues(viewController: viewController) }
+            var Segues: _Segues { return _Segues(_viewController: _viewController) }
             struct _Segues {
-                fileprivate let viewController: SecondViewController        
-                var GoToDetail: IBSegue { return IBSegue(identifier: .GoToDetail, viewController: viewController)}
+                fileprivate let _viewController: SecondViewController
+                var viewController: UIViewController { return _viewController }        
+                var GoToDetail: IBSegue { return IBSegue(segueIdentifier: .GoToDetail, viewController: viewController)}
             }     
         }
     
@@ -27,46 +31,57 @@ extension SecondViewController {
         
 extension ViewController {
             
-    var scenes: _Scenes { return _Scenes(viewController: self) }
+    var Scenes: _Scenes { return _Scenes(_viewController: self) }
     struct _Scenes {
             
-        fileprivate let viewController: ViewController                    
-            var SecondMainSecondMainVCScene: _SecondMainSecondMainVCScene { return _SecondMainSecondMainVCScene(viewController: viewController) }
-            struct _SecondMainSecondMainVCScene: IBScene {
-                fileprivate let viewController: ViewController
-                static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
-                static let sceneIdentifier: SceneIdentifier = .SecondMainVCScene        
+        fileprivate let _viewController: ViewController
+        var viewController: UIViewController { return _viewController }                    
         
-            var Segues: _Segues { return _Segues(viewController: viewController) }
-            struct _Segues {
-                fileprivate let viewController: ViewController        
-                var ViewControllerSegue: IBSegue { return IBSegue(identifier: .ViewControllerSegue, viewController: viewController)}
-            }     
-                }            
-            var SecondMainEmbededVC: _SecondMainEmbededVC { return _SecondMainEmbededVC(viewController: viewController) }
-            struct _SecondMainEmbededVC: IBScene {
-                fileprivate let viewController: ViewController
-                static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
-                static let sceneIdentifier: SceneIdentifier = .EmbededVC     
-                }            
-            var MainMainVCScene: _MainMainVCScene { return _MainMainVCScene(viewController: viewController) }
-            struct _MainMainVCScene: IBScene {
-                fileprivate let viewController: ViewController
-                static let storyboardIdentifier: StoryboardIdentifier = .Main
-                static let sceneIdentifier: SceneIdentifier = .MainVCScene        
+        var SecondMainSecondMainVCScene: _SecondMainSecondMainVCScene { return _SecondMainSecondMainVCScene(_viewController: _viewController) }
+        struct _SecondMainSecondMainVCScene: IBScene {
+            fileprivate let _viewController: ViewController
+            var viewController: UIViewController { return _viewController }
+            static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
+            static let sceneIdentifier: SceneIdentifier = .SecondMainVCScene        
         
-            var Segues: _Segues { return _Segues(viewController: viewController) }
+            var Segues: _Segues { return _Segues(_viewController: _viewController) }
             struct _Segues {
-                fileprivate let viewController: ViewController        
-                var ViewControllerSegue: IBSegue { return IBSegue(identifier: .ViewControllerSegue, viewController: viewController)}
+                fileprivate let _viewController: ViewController
+                var viewController: UIViewController { return _viewController }        
+                var ViewControllerSegue: IBSegue { return IBSegue(segueIdentifier: .ViewControllerSegue, viewController: viewController)}
             }     
-                }            
-            var MainEmbededVC: _MainEmbededVC { return _MainEmbededVC(viewController: viewController) }
-            struct _MainEmbededVC: IBScene {
-                fileprivate let viewController: ViewController
-                static let storyboardIdentifier: StoryboardIdentifier = .Main
-                static let sceneIdentifier: SceneIdentifier = .EmbededVC     
-                } 
+        }            
+        
+        var SecondMainEmbededVC: _SecondMainEmbededVC { return _SecondMainEmbededVC(_viewController: _viewController) }
+        struct _SecondMainEmbededVC: IBScene {
+            fileprivate let _viewController: ViewController
+            var viewController: UIViewController { return _viewController }
+            static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
+            static let sceneIdentifier: SceneIdentifier = .EmbededVC     
+        }            
+        
+        var MainMainVCScene: _MainMainVCScene { return _MainMainVCScene(_viewController: _viewController) }
+        struct _MainMainVCScene: IBScene {
+            fileprivate let _viewController: ViewController
+            var viewController: UIViewController { return _viewController }
+            static let storyboardIdentifier: StoryboardIdentifier = .Main
+            static let sceneIdentifier: SceneIdentifier = .MainVCScene        
+        
+            var Segues: _Segues { return _Segues(_viewController: _viewController) }
+            struct _Segues {
+                fileprivate let _viewController: ViewController
+                var viewController: UIViewController { return _viewController }        
+                var ViewControllerSegue: IBSegue { return IBSegue(segueIdentifier: .ViewControllerSegue, viewController: viewController)}
+            }     
+        }            
+        
+        var MainEmbededVC: _MainEmbededVC { return _MainEmbededVC(_viewController: _viewController) }
+        struct _MainEmbededVC: IBScene {
+            fileprivate let _viewController: ViewController
+            var viewController: UIViewController { return _viewController }
+            static let storyboardIdentifier: StoryboardIdentifier = .Main
+            static let sceneIdentifier: SceneIdentifier = .EmbededVC     
+        } 
         
         var scenes: [IBScene] { return [SecondMainSecondMainVCScene, SecondMainEmbededVC, MainMainVCScene, MainEmbededVC, ] }
         

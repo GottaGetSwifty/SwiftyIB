@@ -16,20 +16,26 @@ public class StoryboardTypesGenerator {
         import UIKit
         
         protocol IBScene: StoryboardIdentifiable, SceneIdentifiable {
-            static var storyboardIdentifier: StoryboardIdentifier { get }
-            static var sceneIdentifier: SceneIdentifier { get }
+        
         }
         
         protocol StoryboardIdentifiable {
-            static var storyboardIdentifier: StoryboardIdentifier { get }
+            static var storyboardIdentifier: StoryboardIdentifier { get }   
+            var viewController: UIViewController { get }
         }
         
         protocol SceneIdentifiable {
             static var sceneIdentifier: SceneIdentifier { get }
+            var viewController: UIViewController { get }
         }
         
-        struct IBSegue {
-            let identifier: SegueIdentifier
+        protocol SegueIdentifiable {
+            var segueIdentifier: SegueIdentifier { get }
+            var viewController: UIViewController { get }
+        }
+
+        struct IBSegue: SegueIdentifiable {
+            let segueIdentifier: SegueIdentifier
             let viewController: UIViewController
         }
         

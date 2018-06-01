@@ -20,7 +20,6 @@
 		92545F001FF97BC60037D166 /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
 		9281365E1FFAEBD600DBB2D1 /* StoryboardExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */; };
 		9288B24920C09CA300176AE8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B24820C09CA300176AE8 /* main.swift */; };
-		9288B24F20C1AA7500176AE8 /* StoryboardStructureExtensionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B24E20C1AA7500176AE8 /* StoryboardStructureExtensionGenerator.swift */; };
 		92B24DC120C1AAED00AEE476 /* StoryboardTypesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC020C1AAED00AEE476 /* StoryboardTypesGenerator.swift */; };
 		92B24DC320C1AB1F00AEE476 /* StoryboardExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC220C1AB1F00AEE476 /* StoryboardExtensionsGenerator.swift */; };
 		92B24DC420C1AEB700AEE476 /* StoryboardExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */; };
@@ -799,7 +798,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9288B24F20C1AA7500176AE8 /* StoryboardStructureExtensionGenerator.swift in Sources */,
 				92E3D0FD1FF755CB0080EC12 /* StringEnumConverter.swift in Sources */,
 				92B24DC120C1AAED00AEE476 /* StoryboardTypesGenerator.swift in Sources */,
 				92E3D0FA1FF755B20080EC12 /* StoryboardEnumsGenerator.swift in Sources */,
