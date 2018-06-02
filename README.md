@@ -1,12 +1,77 @@
 # SwiftyIB
 
-A tool that builds a declarative, protocol-oriented structure that greatly simplifies the usage of InterfaceBuilder, and forces (most) run-time InterfaceBuilder failures into compile-time failures
+Generate a static, protocol-oriented structure to greatly simplify the usage of InterfaceBuilder, and turn (most) run-time failures from InterfaceBuilder into compile-time failures.
 
-## What it generates
+
+## Usage
+A few quick examples:
+
+```
+
+// Easily make the initial viewController for a storyboard
+let initialVC = StoryboardIdentifier.Main.makeInitialVC()
+
+// Build ViewControllers programatically with no hassel.
+let secondViewController = SecondViewController._Scene.makeFromStoryboard()
+
+// Easily perform a segue WITH code completion! 
+func startDetailScreen() {
+    Scenes.GoToDetail.perform()
+}
+
+// Easily get the segue identifier in prepare(for segue:)
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    switch segue.getSegueIdentifier() {
+    case .GoToDetail: break //do what you gotta do
+    default: break
+    }
+}
+
+```
+
+## Getting Started
+
+See the SwiftyIBExample project to see how the tooling is generally intended to work. (More tooling info at the bottom of the page)
+
+The quickest way to get going is to download the executable.
+https://github.com/PeeJWeeJ/SwiftyIB/blob/master/app/SwiftyIBExample/SwiftyIBGenerator/SwiftyIBGenerator
+
+And in your project, add a `run script` build phase _before_ `compile sources` with this script:
+
+```
+# vars for building the generator. Should only be used if the full project is available to build.
+buildscript_path=../SwiftyIB/SwiftyIBBuild.sh
+generator_path=SwiftyIBGenerator
+generator_file_name=SwiftyIBGenerator
+generator_file_path=$generator_path/$generator_file_name
+
+#vars for generation
+IB_search_directory=SwiftyIBExample # This directory is searched recurssively for all IB files. 
+IB_files_export_path=SwiftyIBExample/identifiers
+
+if [ -e "$generator_file_path" ]
+    then echo "Generator already built."
+else
+    #Builds the generator. This should only happen once. Delete the generator executable if you have the project and want to re-build.
+    echo "Will build generator"
+    sh $buildscript_path -o $generator_path -n $generator_file_name
+fi
+
+# This should be the only line that runs every time.
+./$generator_file_path -s $IB_search_directory -o $IB_files_export_path
+```
+
+ After the first build, simply add the files to your project located in the `IB_files_export_path`. Subsequent builds should update the files automatically.
+
+Anecdotally the generation is pretty fast. (~20 milliseconds for a simple storyboard on a 3 year old MBP). The goal is to keep it fast enough to run during every build.
+
+## Nerdy details / what's actually generated
+
+See the example project to see full examples of what is generated and available.
 
 ### enum  Identifiers
 
-The tool generates String-backed enums that match the file names and identifiers:
+String-backed enums that match the file names and identifiers:
 
 ```
 enum StoryboardIdentifier: String {
@@ -39,54 +104,46 @@ enum SegueIdentifier: String {
 
 ### Typed Extensions
 
-The tool builds a structure to Typed-elements from Interface Builder to give compile-time guarentees for scene/storyboard information as well as well as segues:
+A Typed structur to generated from Interface Builder to give compile-time guarentees for scene/storyboard information and segues:
 
 ```
 extension SecondViewController {
-            
-    var Scenes: _Scenes { return _Scenes(_viewController: self) }
-    struct _Scenes {
-            
+                        
+    var Scene: _Scene { return _Scene(_viewController: self) }
+    struct _Scene: IBScene {
+        
         fileprivate let _viewController: SecondViewController
-        var viewController: UIViewController { return _viewController }            
+        var viewController: UIViewController { return _viewController }
+        static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
+        static let sceneIdentifier: SceneIdentifier = .SecondVC        
         
-        var SecondVC: _SecondVC { return _SecondVC(_viewController: _viewController) }
-        struct _SecondVC: IBScene {
+        var Segues: _Segues { return _Segues(_viewController: _viewController) }
+        struct _Segues {
             fileprivate let _viewController: SecondViewController
-            var viewController: UIViewController { return _viewController }
-            static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
-            static let sceneIdentifier: SceneIdentifier = .SecondVC        
-        
-            var Segues: _Segues { return _Segues(_viewController: _viewController) }
-            struct _Segues {
-                fileprivate let _viewController: SecondViewController
-                var viewController: UIViewController { return _viewController }        
-                var GoToDetail: IBSegue { return IBSegue(segueIdentifier: .GoToDetail, viewController: viewController)}
-            }     
-        }
-    
-        var currentScene: _SecondVC { return SecondVC }        
-    }
+            var viewController: UIViewController { return _viewController }    
+            var GoToDetail: IBSegue { return IBSegue(segueIdentifier: .GoToDetail, viewController: viewController)}
+        }     
+    }        
 }
 ```
 
-The used approach gives the available access from both a static/class context, as well as an instance context. The static identifiers are always available, but the Segues are only available from within an instance of the ViewController subclass.
+This structure gives propper access from both a static/class context and an instance context. The static identifiers are always available, but the Segues are only available from within an instance of the ViewController subclass.
 
 ```
 // works
-SecondViewController._Scenes._SecondVC.storyboardIdentifier
+SecondViewController._Scene.storyboardIdentifier
 
 // works through an extension
-secondViewControllerInstance.Scenes.SecondVC.storyboardIdentifier
+secondViewControllerInstance.Scene.storyboardIdentifier
 
 // Doesn't work. Segues aren't usable from a static context
-SecondViewController._Scenes._SecondVC._Segues.GoToDetail
+SecondViewController._Scene.storyboardIdentifier
 
 // works
-secondViewControllerInstance.Scenes.SecondVC.Segues.GoToDetail
+secondViewControllerInstance.Scene.Segues.GoToDetail
 ```
 
-Although it's not recommended (as it reduces the compile-time guarentees), ViewControllers used im multiple scenes will be generated with the additional scenes.
+Although it's not recommended (reduces the compile-time guarentees), ViewControllers used in multiple scenes will be generated with the additional scenes.
 
 ```
 extension ViewController {
@@ -135,14 +192,15 @@ extension ViewController {
 
 `currentSceneFromRestorationID` can be used to dynamically guess the correct Scene for the current viewController instance. To use this, ensure the Scene's `Restoration ID` matches the `Storyboard ID`, or check `Use Storyboard ID`
 
-### Extensability 
+## Extensability 
+### Types
 To make things easily extendable, we use a set of protocols and Types:
 
 ```
 protocol IBScene: StoryboardIdentifiable, SceneIdentifiable { }
 
 protocol StoryboardIdentifiable {
-    static var storyboardIdentifier: StoryboardIdentifier { get }   
+    static var storyboardIdentifier: StoryboardIdentifier { get }
     var viewController: UIViewController { get }
 }
 
@@ -160,34 +218,35 @@ struct IBSegue: SegueIdentifiable {
     let segueIdentifier: SegueIdentifier
     let viewController: UIViewController
 }
-````
+```
 
 ### Built in Extensions
 
-There are a lot of possibilities depending on the usage and setup, but that should/will be separated into it's own separate framework. For now there are some automatically generated ones. 
+For now the included extensions are focussed around simplifying creation and navigation. More complex structures and integrations should be optional and only added piecemeal or through other external frameworks.
 
-A few examples:
 
-```
+## Planned Improvements
 
-// Easily make the initial viewController for a storyboard
-let initialVC = StoryboardIdentifier.Main.makeInitialVC()
+* `xib` parsing and generation. This should be pretty simple, but was less of a priority compared to storyboards.
+* `UITableViewCell` and `UICollectionViewCell` parsing and generation. Make working with cell registring as easy and Type safe as possible
+* Type-safe view controllers in Segues.
+* Look into adding support for strings and colors. Although not a stability issue, it's the other most annoying thing about Interface Builder. It's possible this should be it's own project.
+* Improved tooling. Once everything's set up it works well, but any setup process beyond a few clicks is annyoing.
+* The IB parser could be moved to it's own project/framework for easy re-use for other things.
 
-// Build ViewControllers programatically with no hassel.
-let secondViewController = SecondViewController._Scenes._SecondVC.makeFromStoryboard()
+## Even nerdier details
 
-// Easily perform a segue WITH code completion! 
-func startDetailScreen() {
-    Scenes.SecondVC.Segues.GoToDetail.perform()
-}
+https://github.com/drmohundro/SWXMLHash is used to parse the IB files and generate a Typed structure. This _should_ be done in a way that's easily maintainable and extendable.
 
-// Easily get the segue identifier in prepare(for segue:)
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    switch segue.getSegueIdentifier() {
-    case .GoToDetail: //do what you gotta do
-    default: break
-    }
-}
+The current intended tooling is focussed on project build-time performance and project integration simplicity. The example project can be used as a guide. Since we are using a basic executable, the recommended approach is to have the actual project (preferable as a git-submodule) available to an application project so the executable can be built and run locally with 100% code transparency.
 
-```
+### Current build process:
+
+A `run script` is added to the project as a build phase before the files are compiled.
+
+If the generator executable exists, it runs the generator with the input/output directories and then exits.
+
+Otherwise it first runs the SwiftyIBBuild.sh script located in the SwiftIB project.
+
+This script builds the SwiftIBTool project and copies the executable to the provided path.
 

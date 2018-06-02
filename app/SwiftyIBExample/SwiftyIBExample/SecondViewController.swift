@@ -23,18 +23,36 @@ class SecondViewController: UIViewController {
     
     func test() {
     
+        SecondViewController._Scene.storyboardIdentifier
+        
+        // works through an extension
+        Scene.storyboardIdentifier
+        
+        // Doesn't work. Segues aren't usable from a static context
+//        SecondViewController._Scene._Segues.GoToDetail
+        
+        // works
+        Scene.Segues.GoToDetail
     }
 
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Easily make the initial viewController for a storyboard
+    let initialVC = StoryboardIdentifier.Main.makeInitialVC()
+    
+    // Build ViewControllers programatically with no hassel.
+    let secondViewController = SecondViewController._Scene.makeFromStoryboard()
+    
+    // Easily perform a segue WITH code completion! 
+    func startDetailScreen() {
+        Scene.Segues.GoToDetail.perform()
+    }
+    
+    // Easily get the segue identifier in prepare(for segue:)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.getSegueIdentifier() {
-        case .GoToDetail: //do what you gotta do
+        case .GoToDetail: break//do what you gotta do
         default: break
         }
     }
-    
 
 }

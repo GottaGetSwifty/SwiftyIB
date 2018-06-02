@@ -52,15 +52,9 @@ public class StoryboardStructureExtensionGenerator {
         
 extension \(className) {
             
-    var Scenes: _Scenes { return _Scenes(_viewController: self) }
-    struct _Scenes {
-            
-        fileprivate let _viewController: \(className)
-        var viewController: UIViewController { return _viewController }
 """         + (scenes.count > 1 ? buildMultipleScenesStruct(scenes: scenes, viewControllerClassName: className) : buildSingleSceneStruct(scene: scenes[0], viewControllerClassName: className))
             + """
         
-    }
 }
         
 """
@@ -70,6 +64,12 @@ extension \(className) {
     private static func buildMultipleScenesStruct(scenes: [IBScene], viewControllerClassName: String) -> String {
         
         return """
+        
+    var Scenes: _Scenes { return _Scenes(_viewController: self) }
+    struct _Scenes {
+    
+        fileprivate let _viewController: \(viewControllerClassName)
+        var viewController: UIViewController { return _viewController }
         \(scenes.map {
             guard let storyboardID = $0.viewController.storyboardIdentifier else {
                 return ""
@@ -77,14 +77,15 @@ extension \(className) {
             let sceneName = $0.storyboardName + storyboardID
             return """
             
-        
         var \(sceneName): _\(sceneName) { return _\(sceneName)(_viewController: _viewController) }
         struct _\(sceneName): IBScene {
+        
             fileprivate let _viewController: \(viewControllerClassName)
             var viewController: UIViewController { return _viewController }
             static let storyboardIdentifier: StoryboardIdentifier = .\($0.storyboardName)
             static let sceneIdentifier: SceneIdentifier = .\(storyboardID)\(makeSegueExtensionText(segues: $0.viewController.segues, viewControllerClassName: viewControllerClassName) )     
         }
+    
 """
         }.reduce("", +)) 
         
@@ -99,8 +100,9 @@ extension \(className) {
             guard let restorationID = viewController.restorationIdentifier else {
                 return nil
             }
-            return scenes.first {$0.sceneIdentifier.rawValue == restorationID}
+            return scenes.first { $0.sceneIdentifier.rawValue == restorationID }
         }
+    }
 """
     }
     
@@ -110,16 +112,14 @@ extension \(className) {
         }
         return """
             
+    var Scene: _Scene { return _Scene(_viewController: self) }
+    struct _Scene: IBScene {
         
-        var \(sceneName): _\(sceneName) { return _\(sceneName)(_viewController: _viewController) }
-        struct _\(sceneName): IBScene {
-            fileprivate let _viewController: \(viewControllerClassName)
-            var viewController: UIViewController { return _viewController }
-            static let storyboardIdentifier: StoryboardIdentifier = .\(scene.storyboardName)
-            static let sceneIdentifier: SceneIdentifier = .\(sceneName)\(makeSegueExtensionText(segues: scene.viewController.segues, viewControllerClassName: viewControllerClassName) )     
-        }
-    
-        var currentScene: _\(sceneName) { return \(sceneName) }
+        fileprivate let _viewController: \(viewControllerClassName)
+        var viewController: UIViewController { return _viewController }
+        static let storyboardIdentifier: StoryboardIdentifier = .\(scene.storyboardName)
+        static let sceneIdentifier: SceneIdentifier = .\(sceneName)\(makeSingleSceneSegueExtensionText(segues: scene.viewController.segues, viewControllerClassName: viewControllerClassName) )     
+    }
 """
     }
     
@@ -129,7 +129,7 @@ extension \(className) {
         }
         return """
         
-        
+
             var Segues: _Segues { return _Segues(_viewController: _viewController) }
             struct _Segues {
                 fileprivate let _viewController: \(viewControllerClassName)
@@ -143,6 +143,29 @@ extension \(className) {
 """
                     }.reduce("", +))
             }
+"""
+    }
+    
+    private static func makeSingleSceneSegueExtensionText(segues: [IBSegue], viewControllerClassName: String) -> String  {
+        guard !segues.isEmpty else {
+            return ""
+        }
+        return """
+        
+        
+        var Segues: _Segues { return _Segues(_viewController: _viewController) }
+        struct _Segues {
+            fileprivate let _viewController: \(viewControllerClassName)
+            var viewController: UIViewController { return _viewController }\( segues.compactMap {
+                guard let identifier = $0.identifier else {
+                    return nil
+                }
+                return """
+    
+            var \(identifier): IBSegue { return IBSegue(segueIdentifier: .\(identifier), viewController: viewController)}
+"""
+                }.reduce("", +))
+        }
 """
     }
 }

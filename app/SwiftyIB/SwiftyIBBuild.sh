@@ -59,6 +59,6 @@ xcodebuild -scheme SwiftyIBTool archive -archivePath $archive_directory
 cd -
 mkdir -p $output_dir
 cp $BASEDIR/$tool_dir $filepath
-# rm -r $BASEDIR/$archive_directory$archive_extension
+rm -r $BASEDIR/$archive_directory$archive_extension
 
 
