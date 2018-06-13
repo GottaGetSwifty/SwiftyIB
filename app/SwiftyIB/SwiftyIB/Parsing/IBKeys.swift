@@ -29,8 +29,9 @@ extension IBScene {
         case collectionViewController
         case navigationController
         case splitViewController
+        case tabBarController
         
-        static let sceneTypes = [.viewController, .tableViewController, collectionViewController, .collectionViewController, .navigationController, .splitViewController]
+        static let sceneTypes = [.viewController, .tableViewController, collectionViewController, .collectionViewController, .navigationController, .splitViewController, .tabBarController]
     }
 }
 

@@ -1,6 +1,25 @@
 /// Automatically generated from SwiftyIB
 import UIKit        
         
+extension MainTabBarController {
+                        
+    var Scene: _Scene { return _Scene(_viewController: self) }
+    struct _Scene: IBScene {
+        
+        fileprivate let _viewController: MainTabBarController
+        var viewController: UIViewController { return _viewController }
+        static let storyboardIdentifier: StoryboardIdentifier = .MainScreen
+        static let sceneIdentifier: SceneIdentifier = .MainTabBarController        
+        
+        var Segues: _Segues { return _Segues(_viewController: _viewController) }
+        struct _Segues {
+            fileprivate let _viewController: MainTabBarController
+            var viewController: UIViewController { return _viewController }
+        }     
+    }        
+}
+                
+        
 extension SecondViewController {
                         
     var Scene: _Scene { return _Scene(_viewController: self) }

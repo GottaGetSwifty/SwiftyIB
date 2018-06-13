@@ -11,6 +11,7 @@
 enum SceneIdentifier: String {
 	case CollectionVC
 	case EmbededVC
+	case MainTabBarController
 	case MainVCScene
 	case SecondMainVCScene
 	case SecondVC

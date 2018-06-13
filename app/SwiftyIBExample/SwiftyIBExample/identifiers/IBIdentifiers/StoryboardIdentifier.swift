@@ -11,6 +11,7 @@
 enum StoryboardIdentifier: String {
 	case LaunchScreen
 	case Main
+	case MainScreen
 	case SecondMain
 	case none
 }

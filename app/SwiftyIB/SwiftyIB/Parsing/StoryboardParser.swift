@@ -43,7 +43,7 @@ class StoryboardParser {
         guard let document = try? xml.byKey(IBStoryboard.ElementKeys.document) else {
             return nil
         }
-        let storyboard = try? IBStoryboard.deserialize(document, with: storyboardPath.deletingPathExtension().lastPathComponent)
+        let storyboard = IBStoryboard.deserialize(document, with: storyboardPath.deletingPathExtension().lastPathComponent)
         Bundle.main.url(forResource: "soundfile.ext", withExtension: "")
         return storyboard
         
@@ -55,20 +55,19 @@ public struct IBStoryboard: XMLIndexerDeserializable {
     let scenes: [IBScene]
     let name: String
     
-    static func deserialize(_ node: XMLIndexer, with name: String) throws -> IBStoryboard {
+    static func deserialize(_ node: XMLIndexer, with name: String) -> IBStoryboard? {
         let initalVC: String? = node.value(of: AttributeKeys.initialViewController)
         var initalScene: IBScene? = nil
         let sceneNodes = node[ElementKeys.scenes][ElementKeys.scene]
-        let scenes = try sceneNodes.all.map({try IBScene.deserialize($0, storyboardName: name)})
         
-        guard !scenes.isEmpty else {
-            throw StoryboardParser.Errors.noScenesFound
-        }
-        if let realInitial = initalVC {
+        let scenes = sceneNodes.all.compactMap({try? IBScene.deserialize($0, storyboardName: name)})
+        
+        if !scenes.isEmpty, let realInitial = initalVC {
             initalScene = scenes.first(where: {$0.viewController.id == realInitial}) 
         }
         
         return IBStoryboard(initialScene: initalScene, scenes: scenes, name: name)
+
     }
 }
 
