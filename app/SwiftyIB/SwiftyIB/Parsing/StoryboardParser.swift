@@ -96,16 +96,55 @@ public struct IBViewController: XMLIndexerDeserializable {
     let restorationIdentifier: String?
     let customClass: String?
     let segues: [IBSegue]
+    let view: IBView
+    
+    var allSegues: [IBSegue] {
+        return segues + view.allSegues
+    }
+    
     public static func deserialize(_ node: XMLIndexer) throws -> IBViewController {
         return try IBViewController(id: node.value(of: AttributeKeys.id), 
                                     storyboardIdentifier: node.value(of: AttributeKeys.storyboardIdentifier), 
                                     restorationIdentifier: node.value(of: AttributeKeys.restorationIdentifier),
                                     customClass: node.value(of: AttributeKeys.customClass), 
-                                    segues: node[ElementKeys.connections][ElementKeys.segue].all.map(IBSegue.deserialize))
+                                    segues: node[ElementKeys.connections][ElementKeys.segue].all.map(IBSegue.deserialize), view: IBView.deserialize(node[ElementKeys.view]))
     }
 }
 
-public struct IBSegue: XMLIndexerDeserializable{
+public struct IBView: XMLIndexerDeserializable {
+    let id: String
+    let customClass: String?
+    let userLabel: String?
+    let connections: [IBConnection]
+    let subViews: [IBView]
+    
+    var allSegues: [IBSegue] {
+        return connections.flatMap {$0.segues} + subViews.flatMap{$0.allSegues}
+    }
+    
+    public static func deserialize(_ node: XMLIndexer) throws -> IBView {
+        return try IBView(id: node.value(of: AttributeKeys.id),
+                          customClass: node.value(of: AttributeKeys.customClass), 
+                          userLabel: node.value(of: AttributeKeys.customClass), 
+                          connections: node[ElementKeys.connections].all.map(IBConnection.deserialize), 
+                          subViews: findSubviews(in: node))
+    }
+    
+    static func findSubviews(in element: XMLIndexer) throws -> [IBView]  {
+        return ElementKeys.viewTypes.flatMap{  (try? element[ElementKeys.subviews][$0].all.map(IBView.deserialize)) ?? []}
+    }
+}
+
+public struct IBConnection: XMLIndexerDeserializable {
+    
+    let segues: [IBSegue]
+    
+    public static func deserialize(_ node: XMLIndexer) throws -> IBConnection {
+        return try IBConnection(segues: node[ElementKeys.segue].all.map(IBSegue.deserialize))
+    }
+}
+
+public struct IBSegue: XMLIndexerDeserializable {
     let destination: String
     let identifier: String?
     public static func deserialize(_ node: XMLIndexer) throws -> IBSegue {

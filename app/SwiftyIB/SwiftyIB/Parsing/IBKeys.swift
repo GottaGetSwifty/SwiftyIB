@@ -44,7 +44,34 @@ extension IBViewController {
     }
     
     enum ElementKeys: String {
+        case view
         case connections
+        case segue
+    }
+}
+
+extension IBView {
+    enum AttributeKeys: String {
+        case id
+        case userLabel
+        case customClass
+    }
+    
+    enum ElementKeys: String {
+        case subviews
+        case segue
+        case connections
+        
+        case view
+        case imageView
+        case containerView
+     
+        static let viewTypes: [ElementKeys] = [ .view, .imageView, .containerView ]
+    }
+}
+
+extension IBConnection {
+    enum ElementKeys: String {
         case segue
     }
 }

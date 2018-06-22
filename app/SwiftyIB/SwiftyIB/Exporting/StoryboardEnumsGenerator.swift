@@ -59,7 +59,7 @@ public class StoryboardEnumsGenerator {
                                             """
     private static let segueEnumName = "SegueIdentifier"
     public static func makeSegueNameEnum(from storyboards: [IBStoryboard]) -> String? {
-        let identifierAction = { storyboards.flatMap{ $0.scenes }.flatMap{$0.viewController.segues}.compactMap{$0.identifier} }
+        let identifierAction = { storyboards.flatMap{ $0.scenes }.flatMap{$0.viewController.allSegues}.compactMap{$0.identifier} }
         return makeEnum(with: segueEnumName, and: segueEnumDocumentation, from: storyboards, using: identifierAction) 
     }
 }

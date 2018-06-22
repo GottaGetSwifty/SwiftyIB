@@ -12,12 +12,12 @@
 		<key>SwiftyIBBundle.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>11</integer>
 		</dict>
 		<key>SwiftyIBExport.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>10</integer>
 		</dict>
 		<key>SwiftyIBKit.xcscheme_^#shared#^_</key>
 		<dict>
@@ -33,6 +33,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>9211AF781FF747E6005E26D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9288B24520C09CA300176AE8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

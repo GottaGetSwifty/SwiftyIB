@@ -1,21 +1,20 @@
 /// Automatically generated from SwiftyIB
 import UIKit        
         
-extension MainTabBarController {
+extension EquipmentsViewController {
+                    
+}
+                
+        
+extension AssetGroupsViewController {
                         
     var Scene: _Scene { return _Scene(_viewController: self) }
     struct _Scene: IBScene {
         
-        fileprivate let _viewController: MainTabBarController
+        fileprivate let _viewController: AssetGroupsViewController
         var viewController: UIViewController { return _viewController }
-        static let storyboardIdentifier: StoryboardIdentifier = .MainScreen
-        static let sceneIdentifier: SceneIdentifier = .MainTabBarController        
-        
-        var Segues: _Segues { return _Segues(_viewController: _viewController) }
-        struct _Segues {
-            fileprivate let _viewController: MainTabBarController
-            var viewController: UIViewController { return _viewController }
-        }     
+        static let storyboardIdentifier: StoryboardIdentifier = .Assets
+        static let sceneIdentifier: SceneIdentifier = .AssetGroupsViewController     
     }        
 }
                 
@@ -108,5 +107,10 @@ extension ViewController {
             return scenes.first { $0.sceneIdentifier.rawValue == restorationID }
         }
     }        
+}
+                
+        
+extension AssetsHomeViewController {
+                    
 }
         
