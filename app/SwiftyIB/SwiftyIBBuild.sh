@@ -1,10 +1,11 @@
 
+
 archive_directory="archive"
 archive_extension=".xcarchive"
 tool_dir=$archive_directory$archive_extension"/Products/usr/local/bin/SwiftyIBTool"
 output_dir=false
 output_file_name="SwiftyIB"
-echo $tool_dir
+
 
 BASEDIR=$(dirname "$0")
 
@@ -20,7 +21,17 @@ while test $# -gt 0; do
                         echo "-h, --help                        show brief help"
                         echo "-o, --output-dir=DIR              The directory where the generated executable should be sent"
                         echo "-n, --file-name=NAME              An optional file name "
+                        echo "-v, --version                     Returns the current info.plist version number of SwiftyIBTool"
                         exit 0
+                        ;;
+                -v|--version)
+
+                        cd $BASEDIR
+                        buildPlist=SwiftyIBTool/Info.plist
+                        CFBundleShortVersionString=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" $buildPlist)
+                        echo $CFBundleShortVersionString
+                        exit 0
+                        cd - 
                         ;;
                 -o|--output-dir)
                         shift

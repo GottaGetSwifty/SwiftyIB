@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9211AF781FF747E6005E26D0"
-               BuildableName = "SwiftyIBTool"
-               BlueprintName = "SwiftyIBTool"
+               BlueprintIdentifier = "92B24E0A20C1D33C00AEE476"
+               BuildableName = "SwiftyIBBundle.bundle"
+               BlueprintName = "SwiftyIBBundle"
                ReferencedContainer = "container:SwiftyIB.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9211AF781FF747E6005E26D0"
-            BuildableName = "SwiftyIBTool"
-            BlueprintName = "SwiftyIBTool"
-            ReferencedContainer = "container:SwiftyIB.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,42 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9211AF781FF747E6005E26D0"
-            BuildableName = "SwiftyIBTool"
-            BlueprintName = "SwiftyIBTool"
+            BlueprintIdentifier = "92B24E0A20C1D33C00AEE476"
+            BuildableName = "SwiftyIBBundle.bundle"
+            BlueprintName = "SwiftyIBBundle"
             ReferencedContainer = "container:SwiftyIB.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-s"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "/Users/Fechner/ActsMedia/3m/MediaFramework/iOS/SubModules/SwiftyIB/app/SwiftyIBExample/SwiftyIBExample"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-o"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "/Users/Fechner/ActsMedia/3m/MediaFramework/iOS/SubModules/SwiftyIB/app/SwiftyIBExample/SwiftyIBExample/Identifiers"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-a"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-v"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -96,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9211AF781FF747E6005E26D0"
-            BuildableName = "SwiftyIBTool"
-            BlueprintName = "SwiftyIBTool"
+            BlueprintIdentifier = "92B24E0A20C1D33C00AEE476"
+            BuildableName = "SwiftyIBBundle.bundle"
+            BlueprintName = "SwiftyIBBundle"
             ReferencedContainer = "container:SwiftyIB.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

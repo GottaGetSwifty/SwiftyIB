@@ -49,13 +49,30 @@ generator_file_path=$generator_path/$generator_file_name
 IB_search_directory=SwiftyIBExample # This directory is searched recurssively for all IB files. 
 IB_files_export_path=SwiftyIBExample/identifiers
 
-if [ -e "$generator_file_path" ]
-    then echo "Generator already built."
-else
-    #Builds the generator. This should only happen once. Delete the generator executable if you have the project and want to re-build.
-    echo "Will build generator"
-    sh $buildscript_path -o $generator_path -n $generator_file_name
+#Uncomment the following line to remove the generator and rebuild it from source
+#rm -r $generator_file_path
+
+if ! [ -e "$generator_file_path" ] 
+then 
+#Builds the generator. This should only happen once. Delete the generator if you want to force re-build
+echo "Will build generator"
+sh $buildscript_path -o $generator_path -n $generator_file_name
 fi
+latest_version="$(sh $buildscript_path -v)"
+build_version="$(./$generator_file_path -v)"
+echo "latest version: $latest_version"
+echo "build version: $build_version"
+
+if [ $(bc <<< "$latest_version <= $build_version") -eq 1 ]; 
+then
+echo "Generator already built. and updated"
+
+else
+echo "There is an updated version, so the generator will be re-built"
+sh $buildscript_path -o $generator_path -n $generator_file_name
+
+fi
+
 
 # This should be the only line that runs every time.
 ./$generator_file_path -s $IB_search_directory -o $IB_files_export_path

@@ -33,22 +33,7 @@
 		92B24DD020C1B43300AEE476 /* IBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */; };
 		92B24DD120C1B43600AEE476 /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
 		92B24DD220C1B43D00AEE476 /* SwiftyIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545F021FF99D8D0037D166 /* SwiftyIB.swift */; };
-		92B24DD320C1B4A700AEE476 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0EC1FF74D980080EC12 /* SWXMLHash.swift */; };
-		92B24DD420C1B4A900AEE476 /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0ED1FF74D980080EC12 /* SWXMLHash+TypeConversion.swift */; };
 		92B24E1120C1D34F00AEE476 /* SwiftyIBKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = 922501351FF6F2A500AD828A /* SwiftyIBKit.framework */; };
-		92B24E1420C1D3E000AEE476 /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EF81FF847A00037D166 /* ProjectParser.swift */; };
-		92B24E1520C1D3E300AEE476 /* StoryboardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF201FF48058005491E6 /* StoryboardParser.swift */; };
-		92B24E1620C1D3E500AEE476 /* IBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */; };
-		92B24E1820C1D3EA00AEE476 /* StoryboardExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */; };
-		92B24E1920C1D3EA00AEE476 /* StringEnumConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0FC1FF755CB0080EC12 /* StringEnumConverter.swift */; };
-		92B24E1A20C1D3EA00AEE476 /* StoryboardEnumsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0F91FF755B20080EC12 /* StoryboardEnumsGenerator.swift */; };
-		92B24E1B20C1D3EA00AEE476 /* StoryboardStructureExtensionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B24E20C1AA7500176AE8 /* StoryboardStructureExtensionGenerator.swift */; };
-		92B24E1C20C1D3EA00AEE476 /* StoryboardTypesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC020C1AAED00AEE476 /* StoryboardTypesGenerator.swift */; };
-		92B24E1D20C1D3EA00AEE476 /* StoryboardExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC220C1AB1F00AEE476 /* StoryboardExtensionsGenerator.swift */; };
-		92B24E1E20C1D3EC00AEE476 /* SwiftyIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545F021FF99D8D0037D166 /* SwiftyIB.swift */; };
-		92B24E1F20C1D40D00AEE476 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0EC1FF74D980080EC12 /* SWXMLHash.swift */; };
-		92B24E2020C1D40D00AEE476 /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0ED1FF74D980080EC12 /* SWXMLHash+TypeConversion.swift */; };
-		92B24E2420C1D69800AEE476 /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
 		92C06AA21FF47CC7004D6B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06AA11FF47CC7004D6B5C /* AppDelegate.swift */; };
 		92C06AA41FF47CC7004D6B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06AA31FF47CC7004D6B5C /* ViewController.swift */; };
 		92C06AA61FF47CC7004D6B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C06AA51FF47CC7004D6B5C /* Assets.xcassets */; };
@@ -56,6 +41,35 @@
 		92C06AC01FF47CC8004D6B5C /* SwiftyIBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06ABF1FF47CC8004D6B5C /* SwiftyIBUITests.swift */; };
 		92C06AD01FF47DCC004D6B5C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C06AD11FF47DCC004D6B5C /* Quick.framework */; };
 		92C06AD21FF47E26004D6B5C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C06AD31FF47E26004D6B5C /* Nimble.framework */; };
+		92D20B1420E147F3002B21FA /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0EC1FF74D980080EC12 /* SWXMLHash.swift */; };
+		92D20B1520E147F3002B21FA /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0ED1FF74D980080EC12 /* SWXMLHash+TypeConversion.swift */; };
+		92D20B1620E147F6002B21FA /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EF81FF847A00037D166 /* ProjectParser.swift */; };
+		92D20B1720E147F6002B21FA /* StoryboardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF201FF48058005491E6 /* StoryboardParser.swift */; };
+		92D20B1820E147F6002B21FA /* IBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */; };
+		92D20B1920E147F6002B21FA /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
+		92D20B1A20E147FB002B21FA /* StoryboardExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */; };
+		92D20B1B20E147FB002B21FA /* StringEnumConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0FC1FF755CB0080EC12 /* StringEnumConverter.swift */; };
+		92D20B1C20E147FB002B21FA /* StoryboardEnumsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0F91FF755B20080EC12 /* StoryboardEnumsGenerator.swift */; };
+		92D20B1D20E147FB002B21FA /* StoryboardStructureExtensionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B24E20C1AA7500176AE8 /* StoryboardStructureExtensionGenerator.swift */; };
+		92D20B1E20E147FB002B21FA /* StoryboardTypesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC020C1AAED00AEE476 /* StoryboardTypesGenerator.swift */; };
+		92D20B1F20E147FB002B21FA /* StoryboardExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC220C1AB1F00AEE476 /* StoryboardExtensionsGenerator.swift */; };
+		92D20B2020E147FD002B21FA /* SwiftyIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545F021FF99D8D0037D166 /* SwiftyIB.swift */; };
+		92D20B2720E14A6C002B21FA /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0EC1FF74D980080EC12 /* SWXMLHash.swift */; };
+		92D20B2820E14A6C002B21FA /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0ED1FF74D980080EC12 /* SWXMLHash+TypeConversion.swift */; };
+		92D20B2920E14A6F002B21FA /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0EC1FF74D980080EC12 /* SWXMLHash.swift */; };
+		92D20B2A20E14A6F002B21FA /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0ED1FF74D980080EC12 /* SWXMLHash+TypeConversion.swift */; };
+		92D20B2B20E14A74002B21FA /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EF81FF847A00037D166 /* ProjectParser.swift */; };
+		92D20B2C20E14A74002B21FA /* StoryboardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF201FF48058005491E6 /* StoryboardParser.swift */; };
+		92D20B2D20E14A74002B21FA /* IBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */; };
+		92D20B2E20E14A74002B21FA /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
+		92D20B2F20E14A78002B21FA /* StoryboardExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */; };
+		92D20B3020E14A78002B21FA /* StringEnumConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0FC1FF755CB0080EC12 /* StringEnumConverter.swift */; };
+		92D20B3120E14A78002B21FA /* StoryboardEnumsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0F91FF755B20080EC12 /* StoryboardEnumsGenerator.swift */; };
+		92D20B3220E14A78002B21FA /* StoryboardStructureExtensionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B24E20C1AA7500176AE8 /* StoryboardStructureExtensionGenerator.swift */; };
+		92D20B3320E14A78002B21FA /* StoryboardTypesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC020C1AAED00AEE476 /* StoryboardTypesGenerator.swift */; };
+		92D20B3420E14A78002B21FA /* StoryboardExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC220C1AB1F00AEE476 /* StoryboardExtensionsGenerator.swift */; };
+		92D20B3520E14A78002B21FA /* SwiftyIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545F021FF99D8D0037D166 /* SwiftyIB.swift */; };
+		92D20B3720E14B02002B21FA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92D20B3620E14B02002B21FA /* Info.plist */; };
 		92D8EF1F1FF48048005491E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C06AA71FF47CC7004D6B5C /* Main.storyboard */; };
 		92D8EF211FF48058005491E6 /* StoryboardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF201FF48058005491E6 /* StoryboardParser.swift */; };
 		92D8EF231FF48161005491E6 /* StoryboardParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF221FF48161005491E6 /* StoryboardParserTests.swift */; };
@@ -111,13 +125,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9211AF771FF747E6005E26D0 /* CopyFiles */ = {
+		9211AF771FF747E6005E26D0 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			dstPath = usr/share/man/man1;
+			dstSubfolderSpec = 7;
 			files = (
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		922501511FF6F2A500AD828A /* Embed Frameworks */ = {
@@ -182,6 +197,7 @@
 		92C06ACF1FF47D38004D6B5C /* SWXMLHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SWXMLHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C06AD11FF47DCC004D6B5C /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C06AD31FF47E26004D6B5C /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92D20B3620E14B02002B21FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92D8EF201FF48058005491E6 /* StoryboardParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardParser.swift; sourceTree = "<group>"; };
 		92D8EF221FF48161005491E6 /* StoryboardParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardParserTests.swift; sourceTree = "<group>"; };
 		92D8EF241FF4829A005491E6 /* iOSTestStoryboard.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOSTestStoryboard.xml; sourceTree = "<group>"; };
@@ -264,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				9211AF7B1FF747E6005E26D0 /* main.swift */,
+				92D20B3620E14B02002B21FA /* Info.plist */,
 			);
 			path = SwiftyIBTool;
 			sourceTree = SOURCE_ROOT;
@@ -440,7 +457,7 @@
 			buildPhases = (
 				9211AF761FF747E6005E26D0 /* Frameworks */,
 				9211AF751FF747E6005E26D0 /* Sources */,
-				9211AF771FF747E6005E26D0 /* CopyFiles */,
+				9211AF771FF747E6005E26D0 /* Copy Files */,
 				92B24DE120C1CE7E00AEE476 /* Resources */,
 			);
 			buildRules = (
@@ -670,6 +687,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D20B3720E14B02002B21FA /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,20 +751,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92B24E1520C1D3E300AEE476 /* StoryboardParser.swift in Sources */,
-				92B24E2420C1D69800AEE476 /* FilesFinder.swift in Sources */,
-				92B24E1F20C1D40D00AEE476 /* SWXMLHash.swift in Sources */,
-				92B24E1C20C1D3EA00AEE476 /* StoryboardTypesGenerator.swift in Sources */,
-				92B24E1420C1D3E000AEE476 /* ProjectParser.swift in Sources */,
-				92B24E1620C1D3E500AEE476 /* IBKeys.swift in Sources */,
 				9211AF7C1FF747E6005E26D0 /* main.swift in Sources */,
-				92B24E2020C1D40D00AEE476 /* SWXMLHash+TypeConversion.swift in Sources */,
-				92B24E1B20C1D3EA00AEE476 /* StoryboardStructureExtensionGenerator.swift in Sources */,
-				92B24E1920C1D3EA00AEE476 /* StringEnumConverter.swift in Sources */,
-				92B24E1820C1D3EA00AEE476 /* StoryboardExporter.swift in Sources */,
-				92B24E1D20C1D3EA00AEE476 /* StoryboardExtensionsGenerator.swift in Sources */,
-				92B24E1A20C1D3EA00AEE476 /* StoryboardEnumsGenerator.swift in Sources */,
-				92B24E1E20C1D3EC00AEE476 /* SwiftyIB.swift in Sources */,
+				92D20B2E20E14A74002B21FA /* FilesFinder.swift in Sources */,
+				92D20B2A20E14A6F002B21FA /* SWXMLHash+TypeConversion.swift in Sources */,
+				92D20B2D20E14A74002B21FA /* IBKeys.swift in Sources */,
+				92D20B3020E14A78002B21FA /* StringEnumConverter.swift in Sources */,
+				92D20B3220E14A78002B21FA /* StoryboardStructureExtensionGenerator.swift in Sources */,
+				92D20B3520E14A78002B21FA /* SwiftyIB.swift in Sources */,
+				92D20B2B20E14A74002B21FA /* ProjectParser.swift in Sources */,
+				92D20B3420E14A78002B21FA /* StoryboardExtensionsGenerator.swift in Sources */,
+				92D20B2F20E14A78002B21FA /* StoryboardExporter.swift in Sources */,
+				92D20B3120E14A78002B21FA /* StoryboardEnumsGenerator.swift in Sources */,
+				92D20B2920E14A6F002B21FA /* SWXMLHash.swift in Sources */,
+				92D20B3320E14A78002B21FA /* StoryboardTypesGenerator.swift in Sources */,
+				92D20B2C20E14A74002B21FA /* StoryboardParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,12 +773,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				92B24DC720C1AEC600AEE476 /* StoryboardStructureExtensionGenerator.swift in Sources */,
-				92B24DD320C1B4A700AEE476 /* SWXMLHash.swift in Sources */,
+				92D20B2720E14A6C002B21FA /* SWXMLHash.swift in Sources */,
 				92B24DC520C1AEC000AEE476 /* StringEnumConverter.swift in Sources */,
 				92B24DCF20C1B42F00AEE476 /* ProjectParser.swift in Sources */,
 				92B24DD120C1B43600AEE476 /* FilesFinder.swift in Sources */,
 				92B24DCE20C1B42700AEE476 /* StoryboardParser.swift in Sources */,
-				92B24DD420C1B4A900AEE476 /* SWXMLHash+TypeConversion.swift in Sources */,
+				92D20B2820E14A6C002B21FA /* SWXMLHash+TypeConversion.swift in Sources */,
 				92B24DCB20C1AECC00AEE476 /* StoryboardExtensionsGenerator.swift in Sources */,
 				92B24DD020C1B43300AEE476 /* IBKeys.swift in Sources */,
 				92B24DC420C1AEB700AEE476 /* StoryboardExporter.swift in Sources */,
@@ -791,6 +809,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				92B24E1120C1D34F00AEE476 /* SwiftyIBKit.framework in Sources */,
+				92D20B1920E147F6002B21FA /* FilesFinder.swift in Sources */,
+				92D20B1520E147F3002B21FA /* SWXMLHash+TypeConversion.swift in Sources */,
+				92D20B1820E147F6002B21FA /* IBKeys.swift in Sources */,
+				92D20B1B20E147FB002B21FA /* StringEnumConverter.swift in Sources */,
+				92D20B1D20E147FB002B21FA /* StoryboardStructureExtensionGenerator.swift in Sources */,
+				92D20B2020E147FD002B21FA /* SwiftyIB.swift in Sources */,
+				92D20B1620E147F6002B21FA /* ProjectParser.swift in Sources */,
+				92D20B1F20E147FB002B21FA /* StoryboardExtensionsGenerator.swift in Sources */,
+				92D20B1A20E147FB002B21FA /* StoryboardExporter.swift in Sources */,
+				92D20B1C20E147FB002B21FA /* StoryboardEnumsGenerator.swift in Sources */,
+				92D20B1420E147F3002B21FA /* SWXMLHash.swift in Sources */,
+				92D20B1E20E147FB002B21FA /* StoryboardTypesGenerator.swift in Sources */,
+				92D20B1720E147F6002B21FA /* StoryboardParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,7 +911,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftyIBTool/Info.plist";
+				INFOPLIST_PREPROCESS = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftyIBTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -891,7 +926,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftyIBTool/Info.plist";
+				INFOPLIST_PREPROCESS = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftyIBTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -1014,7 +1053,7 @@
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.swiftyibbundle.SwiftyIBBundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1031,7 +1070,7 @@
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.swiftyibbundle.SwiftyIBBundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
