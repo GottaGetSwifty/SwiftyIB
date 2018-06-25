@@ -39,6 +39,8 @@ https://github.com/PeeJWeeJ/SwiftyIB/blob/master/app/SwiftyIBExample/SwiftyIBGen
 And in your project, add a `run script` build phase _before_ `compile sources` with this script:
 
 ```
+#!/bin/bash
+
 # vars for building the generator. Should only be used if the full project is available to build.
 buildscript_path=../SwiftyIB/SwiftyIBBuild.sh
 generator_path=SwiftyIBGenerator
@@ -49,28 +51,30 @@ generator_file_path=$generator_path/$generator_file_name
 IB_search_directory=SwiftyIBExample # This directory is searched recurssively for all IB files. 
 IB_files_export_path=SwiftyIBExample/identifiers
 
-#Uncomment the following line to remove the generator and rebuild it from source
+#Uncomment to remove the generator and rebuild it from source
 #rm -r $generator_file_path
+if ! [ -e "$generator_file_path" ]; then
 
-if ! [ -e "$generator_file_path" ] 
-then 
-#Builds the generator. This should only happen once. Delete the generator if you want to force re-build
+#Builds the generator. This should only happen once. Delete the generator if you want to re-build
 echo "Will build generator"
 sh $buildscript_path -o $generator_path -n $generator_file_name
+
 fi
+
 latest_version="$(sh $buildscript_path -v)"
 build_version="$(./$generator_file_path -v)"
-echo "latest version: $latest_version"
-echo "build version: $build_version"
 
-if [ $(bc <<< "$latest_version <= $build_version") -eq 1 ]; 
-then
-echo "Generator already built. and updated"
+echo "latest version: $(echo $latest_version)"
+echo "build version: $(echo $build_version)"
 
-else
-echo "There is an updated version, so the generator will be re-built"
+function version { printf "%03d%03d%03d%03d" $(echo "$1" | tr '.' ' '); }
+
+if [ "$(version "$latest_version")" -gt "$(version "$build_version")" ]; then
+echo "There is an updated version, so will rebuild"
 sh $buildscript_path -o $generator_path -n $generator_file_name
 
+else
+echo "Generator already built. and updated"
 fi
 
 
