@@ -1,11 +1,6 @@
 /// Automatically generated from SwiftyIB
 import UIKit        
         
-extension EquipmentsViewController {
-                    
-}
-                
-        
 extension AssetGroupsViewController {
                         
     var Scene: _Scene { return _Scene(_viewController: self) }
@@ -14,7 +9,78 @@ extension AssetGroupsViewController {
         fileprivate let _viewController: AssetGroupsViewController
         var viewController: UIViewController { return _viewController }
         static let storyboardIdentifier: StoryboardIdentifier = .Assets
-        static let sceneIdentifier: SceneIdentifier = .AssetGroupsViewController     
+        static let sceneIdentifier: SceneIdentifier = .AssetGroupsViewController        
+        
+        var Segues: _Segues { return _Segues(_viewController: _viewController) }
+        struct _Segues {
+            fileprivate let _viewController: AssetGroupsViewController
+            var viewController: UIViewController { return _viewController }    
+            var AssetGroupsCollectionViewController: IBSegue { return IBSegue(segueIdentifier: .AssetGroupsCollectionViewController, viewController: viewController)}
+        }     
+    }        
+}
+                
+        
+extension AssetsSplitViewController {
+                        
+    var Scene: _Scene { return _Scene(_viewController: self) }
+    struct _Scene: IBScene {
+        
+        fileprivate let _viewController: AssetsSplitViewController
+        var viewController: UIViewController { return _viewController }
+        static let storyboardIdentifier: StoryboardIdentifier = .Assets
+        static let sceneIdentifier: SceneIdentifier = .SplitView     
+    }        
+}
+                
+        
+extension AssetViewerViewController {
+                        
+    var Scene: _Scene { return _Scene(_viewController: self) }
+    struct _Scene: IBScene {
+        
+        fileprivate let _viewController: AssetViewerViewController
+        var viewController: UIViewController { return _viewController }
+        static let storyboardIdentifier: StoryboardIdentifier = .Assets
+        static let sceneIdentifier: SceneIdentifier = .AssetViewerViewController     
+    }        
+}
+                
+        
+extension FileListViewController {
+                    
+}
+                
+        
+extension AssetGroupsCollectionViewController {
+                        
+    var Scene: _Scene { return _Scene(_viewController: self) }
+    struct _Scene: IBScene {
+        
+        fileprivate let _viewController: AssetGroupsCollectionViewController
+        var viewController: UIViewController { return _viewController }
+        static let storyboardIdentifier: StoryboardIdentifier = .Assets
+        static let sceneIdentifier: SceneIdentifier = .AssetGroupsCollectionViewController        
+        
+        var Segues: _Segues { return _Segues(_viewController: _viewController) }
+        struct _Segues {
+            fileprivate let _viewController: AssetGroupsCollectionViewController
+            var viewController: UIViewController { return _viewController }    
+            var AssetsSplitVC: IBSegue { return IBSegue(segueIdentifier: .AssetsSplitVC, viewController: viewController)}
+        }     
+    }        
+}
+                
+        
+extension MainTabBarController {
+                        
+    var Scene: _Scene { return _Scene(_viewController: self) }
+    struct _Scene: IBScene {
+        
+        fileprivate let _viewController: MainTabBarController
+        var viewController: UIViewController { return _viewController }
+        static let storyboardIdentifier: StoryboardIdentifier = .MainScreen
+        static let sceneIdentifier: SceneIdentifier = .MainTabBarController     
     }        
 }
                 
@@ -59,7 +125,8 @@ extension ViewController {
             struct _Segues {
                 fileprivate let _viewController: ViewController
                 var viewController: UIViewController { return _viewController }        
-                var ViewControllerSegue: IBSegue { return IBSegue(segueIdentifier: .ViewControllerSegue, viewController: viewController)}
+                var ViewControllerSegue: IBSegue { return IBSegue(segueIdentifier: .ViewControllerSegue, viewController: viewController)}        
+                var EmbeddedVC: IBSegue { return IBSegue(segueIdentifier: .EmbeddedVC, viewController: viewController)}
             }     
         }
                 
@@ -84,7 +151,8 @@ extension ViewController {
             struct _Segues {
                 fileprivate let _viewController: ViewController
                 var viewController: UIViewController { return _viewController }        
-                var ViewControllerSegue: IBSegue { return IBSegue(segueIdentifier: .ViewControllerSegue, viewController: viewController)}
+                var ViewControllerSegue: IBSegue { return IBSegue(segueIdentifier: .ViewControllerSegue, viewController: viewController)}        
+                var EmbeddedVC: IBSegue { return IBSegue(segueIdentifier: .EmbeddedVC, viewController: viewController)}
             }     
         }
                 
@@ -110,7 +178,15 @@ extension ViewController {
 }
                 
         
-extension AssetsHomeViewController {
-                    
+extension PDFAssetViewController {
+                        
+    var Scene: _Scene { return _Scene(_viewController: self) }
+    struct _Scene: IBScene {
+        
+        fileprivate let _viewController: PDFAssetViewController
+        var viewController: UIViewController { return _viewController }
+        static let storyboardIdentifier: StoryboardIdentifier = .Assets
+        static let sceneIdentifier: SceneIdentifier = .PDFAssetViewController     
+    }        
 }
         

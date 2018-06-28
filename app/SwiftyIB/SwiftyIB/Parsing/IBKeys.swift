@@ -31,7 +31,7 @@ extension IBScene {
         case splitViewController
         case tabBarController
         
-        static let sceneTypes = [.viewController, .tableViewController, collectionViewController, .collectionViewController, .navigationController, .splitViewController, .tabBarController]
+        static let sceneTypes = [.viewController, .tableViewController, collectionViewController, .navigationController, .splitViewController, .tabBarController]
     }
 }
 
@@ -44,9 +44,16 @@ extension IBViewController {
     }
     
     enum ElementKeys: String {
-        case view
         case connections
         case segue
+        
+        case view
+        case imageView
+        case containerView
+        case collectionView
+        case tableView
+        
+        static let viewTypes: [ElementKeys] = [ .view, .imageView, .containerView, .collectionView, .tableView ]
     }
 }
 
@@ -65,8 +72,10 @@ extension IBView {
         case view
         case imageView
         case containerView
+        case collectionView
+        case tableView
      
-        static let viewTypes: [ElementKeys] = [ .view, .imageView, .containerView ]
+        static let viewTypes: [ElementKeys] = [ .view, .imageView, .containerView, .collectionView, .tableView ]
     }
 }
 

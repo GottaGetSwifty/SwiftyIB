@@ -44,7 +44,6 @@ class StoryboardParser {
             return nil
         }
         let storyboard = IBStoryboard.deserialize(document, with: storyboardPath.deletingPathExtension().lastPathComponent)
-        Bundle.main.url(forResource: "soundfile.ext", withExtension: "")
         return storyboard
         
     }
@@ -63,7 +62,7 @@ public struct IBStoryboard: XMLIndexerDeserializable {
         let scenes = sceneNodes.all.compactMap({try? IBScene.deserialize($0, storyboardName: name)})
         
         if !scenes.isEmpty, let realInitial = initalVC {
-            initalScene = scenes.first(where: {$0.viewController.id == realInitial}) 
+            initalScene = scenes.first(where: {$0.viewController?.id == realInitial}) 
         }
         
         return IBStoryboard(initialScene: initalScene, scenes: scenes, name: name)
@@ -73,11 +72,17 @@ public struct IBStoryboard: XMLIndexerDeserializable {
 
 public struct IBScene: XMLIndexerDeserializable {
     let sceneID: String
-    let viewController: IBViewController
+    let viewController: IBViewController?
     let storyboardName: String
     
     static func deserialize(_ node: XMLIndexer, storyboardName: String) throws -> IBScene {
-        return try IBScene(sceneID: node.value(of: AttributeKeys.sceneID), viewController: findViewController(in: node), storyboardName: storyboardName)
+        do {
+            return try IBScene(sceneID: node.value(of: AttributeKeys.sceneID), viewController: try? findViewController(in: node), storyboardName: storyboardName)
+        }
+        catch let e {
+            print(e.localizedDescription)
+            throw e
+        }
     }
     
     static func findViewController(in element: XMLIndexer) throws -> IBViewController  {
@@ -95,11 +100,11 @@ public struct IBViewController: XMLIndexerDeserializable {
     let storyboardIdentifier: String?
     let restorationIdentifier: String?
     let customClass: String?
-    let segues: [IBSegue]
-    let view: IBView
+    private let segues: [IBSegue]
+    let view: IBView?
     
     var allSegues: [IBSegue] {
-        return segues + view.allSegues
+        return segues + (view?.allSegues ?? [])
     }
     
     public static func deserialize(_ node: XMLIndexer) throws -> IBViewController {
@@ -107,7 +112,24 @@ public struct IBViewController: XMLIndexerDeserializable {
                                     storyboardIdentifier: node.value(of: AttributeKeys.storyboardIdentifier), 
                                     restorationIdentifier: node.value(of: AttributeKeys.restorationIdentifier),
                                     customClass: node.value(of: AttributeKeys.customClass), 
-                                    segues: node[ElementKeys.connections][ElementKeys.segue].all.map(IBSegue.deserialize), view: IBView.deserialize(node[ElementKeys.view]))
+                                    segues: getSegues(from: node), 
+                                    view: findView(in: node))
+    }
+    
+    static func findView(in element: XMLIndexer)  -> IBView?  {
+        let views = ElementKeys.viewTypes.compactMap{ try? IBView.deserialize(element[$0])} 
+        return views.first
+    }
+    
+    static func getSegues(from element: XMLIndexer) -> [IBSegue] {
+        let segues = element[ElementKeys.connections][ElementKeys.segue].all
+        do {
+            return try segues.map(IBSegue.deserialize) 
+        }
+        catch let e {
+            print(e.localizedDescription)
+            return []
+        }
     }
 }
 
@@ -124,14 +146,24 @@ public struct IBView: XMLIndexerDeserializable {
     
     public static func deserialize(_ node: XMLIndexer) throws -> IBView {
         return try IBView(id: node.value(of: AttributeKeys.id),
-                          customClass: node.value(of: AttributeKeys.customClass), 
-                          userLabel: node.value(of: AttributeKeys.customClass), 
-                          connections: node[ElementKeys.connections].all.map(IBConnection.deserialize), 
-                          subViews: findSubviews(in: node))
+                          customClass: try? node.value(of: AttributeKeys.customClass), 
+                          userLabel: try? node.value(of: AttributeKeys.customClass), 
+                          connections: (try? node[ElementKeys.connections].all.map(IBConnection.deserialize)) ?? [], 
+                          subViews: findSubviews(in: node)) 
     }
     
-    static func findSubviews(in element: XMLIndexer) throws -> [IBView]  {
-        return ElementKeys.viewTypes.flatMap{  (try? element[ElementKeys.subviews][$0].all.map(IBView.deserialize)) ?? []}
+    static func findSubviews(in element: XMLIndexer) -> [IBView]  {
+        let subviews = element[ElementKeys.subviews]
+        
+        switch subviews {
+        case .xmlError(_):
+            return []
+        default: break
+        }
+        
+        let foundViews = ElementKeys.viewTypes.flatMap{subviews[$0].all }
+        let parsedViews = foundViews.compactMap{ try? IBView.deserialize($0)}
+        return parsedViews
     }
 }
 
@@ -140,7 +172,7 @@ public struct IBConnection: XMLIndexerDeserializable {
     let segues: [IBSegue]
     
     public static func deserialize(_ node: XMLIndexer) throws -> IBConnection {
-        return try IBConnection(segues: node[ElementKeys.segue].all.map(IBSegue.deserialize))
+        return IBConnection(segues: (try? node[ElementKeys.segue].all.map(IBSegue.deserialize)) ?? [])
     }
 }
 
