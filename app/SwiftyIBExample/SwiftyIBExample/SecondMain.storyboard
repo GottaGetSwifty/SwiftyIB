@@ -63,6 +63,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dx-nf-FvV" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ouU-OZ-H1z"/>
             </objects>
+            <point key="canvasLocation" x="52" y="90"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bVt-3m-jkj">
@@ -94,5 +95,26 @@
             </objects>
             <point key="canvasLocation" x="670" y="890"/>
         </scene>
+        <!--Child Second View Controller-->
+        <scene sceneID="ijV-3o-E8M">
+            <objects>
+                <viewController storyboardIdentifier="ChildSecondViewController" id="tU2-8D-kr2" customClass="ChildSecondViewController" customModule="SwiftyIBExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Mh-Jb-Flt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5pv-bw-cmR"/>
+                    </view>
+                    <connections>
+                        <segue destination="Fkv-19-3YV" kind="show" identifier="GoToDetail" id="ldW-H5-cwS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vDa-b7-Rpj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="-612"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ldW-H5-cwS"/>
+    </inferredMetricsTieBreakers>
 </document>

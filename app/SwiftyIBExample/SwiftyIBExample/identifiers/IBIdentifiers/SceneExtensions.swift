@@ -1,95 +1,12 @@
 /// Automatically generated from SwiftyIB
-import UIKit        
+import UIKit           
         
-extension AssetGroupsViewController {
-                        
-    var Scene: _Scene { return _Scene(_viewController: self) }
-    struct _Scene: IBScene {
+private protocol SecondViewControllerSceneContainer: SceneContainer { }
         
-        fileprivate let _viewController: AssetGroupsViewController
-        var viewController: UIViewController { return _viewController }
-        static let storyboardIdentifier: StoryboardIdentifier = .Assets
-        static let sceneIdentifier: SceneIdentifier = .AssetGroupsViewController        
-        
-        var Segues: _Segues { return _Segues(_viewController: _viewController) }
-        struct _Segues {
-            fileprivate let _viewController: AssetGroupsViewController
-            var viewController: UIViewController { return _viewController }    
-            var AssetGroupsCollectionViewController: IBSegue { return IBSegue(segueIdentifier: .AssetGroupsCollectionViewController, viewController: viewController)}
-        }     
-    }        
-}
-                
-        
-extension AssetsSplitViewController {
-                        
-    var Scene: _Scene { return _Scene(_viewController: self) }
-    struct _Scene: IBScene {
-        
-        fileprivate let _viewController: AssetsSplitViewController
-        var viewController: UIViewController { return _viewController }
-        static let storyboardIdentifier: StoryboardIdentifier = .Assets
-        static let sceneIdentifier: SceneIdentifier = .SplitView     
-    }        
-}
-                
-        
-extension AssetViewerViewController {
-                        
-    var Scene: _Scene { return _Scene(_viewController: self) }
-    struct _Scene: IBScene {
-        
-        fileprivate let _viewController: AssetViewerViewController
-        var viewController: UIViewController { return _viewController }
-        static let storyboardIdentifier: StoryboardIdentifier = .Assets
-        static let sceneIdentifier: SceneIdentifier = .AssetViewerViewController     
-    }        
-}
-                
-        
-extension FileListViewController {
-                    
-}
-                
-        
-extension AssetGroupsCollectionViewController {
-                        
-    var Scene: _Scene { return _Scene(_viewController: self) }
-    struct _Scene: IBScene {
-        
-        fileprivate let _viewController: AssetGroupsCollectionViewController
-        var viewController: UIViewController { return _viewController }
-        static let storyboardIdentifier: StoryboardIdentifier = .Assets
-        static let sceneIdentifier: SceneIdentifier = .AssetGroupsCollectionViewController        
-        
-        var Segues: _Segues { return _Segues(_viewController: _viewController) }
-        struct _Segues {
-            fileprivate let _viewController: AssetGroupsCollectionViewController
-            var viewController: UIViewController { return _viewController }    
-            var AssetsSplitVC: IBSegue { return IBSegue(segueIdentifier: .AssetsSplitVC, viewController: viewController)}
-        }     
-    }        
-}
-                
-        
-extension MainTabBarController {
-                        
-    var Scene: _Scene { return _Scene(_viewController: self) }
-    struct _Scene: IBScene {
-        
-        fileprivate let _viewController: MainTabBarController
-        var viewController: UIViewController { return _viewController }
-        static let storyboardIdentifier: StoryboardIdentifier = .MainScreen
-        static let sceneIdentifier: SceneIdentifier = .MainTabBarController     
-    }        
-}
-                
-        
-extension SecondViewController {
-                        
-    var Scene: _Scene { return _Scene(_viewController: self) }
-    struct _Scene: IBScene {
-        
+extension SecondViewController: SecondViewControllerSceneContainer {             
+    typealias SceneType = SecondViewControllerScene
+    struct SecondViewControllerScene: IBScene {
+        init(_viewController: SecondViewController) { self._viewController = _viewController }
         fileprivate let _viewController: SecondViewController
         var viewController: UIViewController { return _viewController }
         static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
@@ -101,12 +18,9 @@ extension SecondViewController {
             var viewController: UIViewController { return _viewController }    
             var GoToDetail: IBSegue { return IBSegue(segueIdentifier: .GoToDetail, viewController: viewController)}
         }     
-    }        
-}
-                
-        
-extension ViewController {
-                    
+    }
+}           
+extension ViewController {        
     var Scenes: _Scenes { return _Scenes(_viewController: self) }
     struct _Scenes {
     
@@ -115,7 +29,7 @@ extension ViewController {
                     
         var SecondMainSecondMainVCScene: _SecondMainSecondMainVCScene { return _SecondMainSecondMainVCScene(_viewController: _viewController) }
         struct _SecondMainSecondMainVCScene: IBScene {
-        
+            init(_viewController: ViewController) { self._viewController = _viewController }
             fileprivate let _viewController: ViewController
             var viewController: UIViewController { return _viewController }
             static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
@@ -132,7 +46,7 @@ extension ViewController {
                 
         var SecondMainEmbededVC: _SecondMainEmbededVC { return _SecondMainEmbededVC(_viewController: _viewController) }
         struct _SecondMainEmbededVC: IBScene {
-        
+            init(_viewController: ViewController) { self._viewController = _viewController }
             fileprivate let _viewController: ViewController
             var viewController: UIViewController { return _viewController }
             static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
@@ -141,7 +55,7 @@ extension ViewController {
                 
         var MainMainVCScene: _MainMainVCScene { return _MainMainVCScene(_viewController: _viewController) }
         struct _MainMainVCScene: IBScene {
-        
+            init(_viewController: ViewController) { self._viewController = _viewController }
             fileprivate let _viewController: ViewController
             var viewController: UIViewController { return _viewController }
             static let storyboardIdentifier: StoryboardIdentifier = .Main
@@ -158,7 +72,7 @@ extension ViewController {
                 
         var MainEmbededVC: _MainEmbededVC { return _MainEmbededVC(_viewController: _viewController) }
         struct _MainEmbededVC: IBScene {
-        
+            init(_viewController: ViewController) { self._viewController = _viewController }
             fileprivate let _viewController: ViewController
             var viewController: UIViewController { return _viewController }
             static let storyboardIdentifier: StoryboardIdentifier = .Main
@@ -166,27 +80,33 @@ extension ViewController {
         }
      
         
-        var scenes: [IBScene] { return [SecondMainSecondMainVCScene, SecondMainEmbededVC, MainMainVCScene, MainEmbededVC, ] }
+        var scenes: [AnyIBScene] { return [SecondMainSecondMainVCScene, SecondMainEmbededVC, MainMainVCScene, MainEmbededVC, ] }
         
-        var currentSceneFromRestorationID: IBScene? {
+        var currentSceneFromRestorationID: AnyIBScene? {
             guard let restorationID = viewController.restorationIdentifier else {
                 return nil
             }
             return scenes.first { $0.sceneIdentifier.rawValue == restorationID }
         }
-    }        
-}
-                
+    }
+}           
         
-extension PDFAssetViewController {
-                        
-    var Scene: _Scene { return _Scene(_viewController: self) }
-    struct _Scene: IBScene {
+private protocol ChildSecondViewControllerSceneContainer: SceneContainer { }
         
-        fileprivate let _viewController: PDFAssetViewController
+extension ChildSecondViewController: ChildSecondViewControllerSceneContainer {             
+    typealias SceneType = ChildSecondViewControllerScene
+    struct ChildSecondViewControllerScene: IBScene {
+        init(_viewController: ChildSecondViewController) { self._viewController = _viewController }
+        fileprivate let _viewController: ChildSecondViewController
         var viewController: UIViewController { return _viewController }
-        static let storyboardIdentifier: StoryboardIdentifier = .Assets
-        static let sceneIdentifier: SceneIdentifier = .PDFAssetViewController     
-    }        
-}
+        static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
+        static let sceneIdentifier: SceneIdentifier = .ChildSecondViewController        
         
+        var Segues: _Segues { return _Segues(_viewController: _viewController) }
+        struct _Segues {
+            fileprivate let _viewController: ChildSecondViewController
+            var viewController: UIViewController { return _viewController }    
+            var GoToDetail: IBSegue { return IBSegue(segueIdentifier: .GoToDetail, viewController: viewController)}
+        }     
+    }
+}

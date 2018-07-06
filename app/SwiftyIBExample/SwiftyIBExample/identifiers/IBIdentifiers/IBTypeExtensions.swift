@@ -58,7 +58,10 @@ extension IBScene {
     var storyboardIdentifier: StoryboardIdentifier { 
         return Self.storyboardIdentifier
     }
+}
 
+/// Convenience properties get the identifiers from within an instance.
+extension SceneIdentifiable {
     var sceneIdentifier: SceneIdentifier { 
         return Self.sceneIdentifier
     }
@@ -103,4 +106,18 @@ extension StoryboardIdentifier {
         return UIStoryboard(identifier: self, bundle: bundle).instantiateInitialViewController()!
     }
 }
+
+/// Convenience accessor
+extension SceneContainer {
+    static var _Scene: SceneType.Type {
+        return SceneType.self
+    }
+}
+
+/// Convenience accessor/initializer 
+extension SceneContainer where Self: UIViewController, Self == SceneType.ViewControllerType {
+    var Scene: SceneType { return SceneType.init(_viewController: self) }
+}
+
+
 

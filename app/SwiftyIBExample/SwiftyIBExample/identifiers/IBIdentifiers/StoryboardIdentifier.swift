@@ -9,10 +9,8 @@
 /// Automatically generated from SwiftyIB
 /// Each case represents a distinct Storyboard file
 enum StoryboardIdentifier: String {
-	case Assets
 	case LaunchScreen
 	case Main
-	case MainScreen
 	case SecondMain
 	case none
 }

@@ -47,17 +47,12 @@ public class StoryboardStructureExtensionGenerator {
             return "" 
         }
         
+        let hasMultipleScenes = scenes.count > 1
+        
         let extensionText = """
-        
-        
-extension \(className) {
-            
-"""         + (scenes.count > 1 ? buildMultipleScenesStruct(scenes: scenes, viewControllerClassName: className) : buildSingleSceneStruct(scene: scenes[0], viewControllerClassName: className))
-            + """
-        
-}
-        
-"""
+   
+""" + (hasMultipleScenes ? buildMultipleScenesStruct(scenes: scenes, viewControllerClassName: className) : buildSingleSceneStruct(scene: scenes[0], viewControllerClassName: className))
+
         return extensionText
     }
     
@@ -65,6 +60,8 @@ extension \(className) {
         
         return """
         
+        
+extension \(viewControllerClassName) {        
     var Scenes: _Scenes { return _Scenes(_viewController: self) }
     struct _Scenes {
     
@@ -79,7 +76,7 @@ extension \(className) {
             
         var \(sceneName): _\(sceneName) { return _\(sceneName)(_viewController: _viewController) }
         struct _\(sceneName): IBScene {
-        
+            init(_viewController: \(viewControllerClassName)) { self._viewController = _viewController }
             fileprivate let _viewController: \(viewControllerClassName)
             var viewController: UIViewController { return _viewController }
             static let storyboardIdentifier: StoryboardIdentifier = .\($0.storyboardName)
@@ -89,37 +86,66 @@ extension \(className) {
 """
         }.reduce("", +)) 
         
-        var scenes: [IBScene] { return [\(scenes.map {
+        var scenes: [AnyIBScene] { return [\(scenes.map {
             guard let storyboardID = $0.viewController?.storyboardIdentifier else {
                 return ""
             }
             return "\($0.storyboardName + storyboardID), "
             }.reduce("", +))] }
         
-        var currentSceneFromRestorationID: IBScene? {
+        var currentSceneFromRestorationID: AnyIBScene? {
             guard let restorationID = viewController.restorationIdentifier else {
                 return nil
             }
             return scenes.first { $0.sceneIdentifier.rawValue == restorationID }
         }
     }
+}
 """
     }
     
+    /*
+ extension SecondViewController: SceneContainer {
+ typealias SceneType = SecondViewControllerScenes
+ var Scene: SceneType { return SceneType(_viewController: self) }
+ struct SecondViewControllerScenes: IBScene {
+ init(_viewController: SecondViewController) {
+ self._viewController = _viewController
+ }
+ 
+ 
+ fileprivate let _viewController: SecondViewController
+ var viewController: UIViewController { return _viewController }
+ static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
+ static let sceneIdentifier: SceneIdentifier = .SecondVC        
+ 
+ var Segues: _Segues { return _Segues(_viewController: _viewController) }
+ struct _Segues {
+ fileprivate let _viewController: SecondViewController
+ var viewController: UIViewController { return _viewController }    
+ var GoToDetail: IBSegue { return IBSegue(segueIdentifier: .GoToDetail, viewController: viewController)}
+ }     
+ }        
+ }*/
     private static func buildSingleSceneStruct(scene: IBScene, viewControllerClassName: String) -> String {
         guard let sceneName = scene.viewController?.storyboardIdentifier else {
             return ""
         }
         return """
-            
-    var Scene: _Scene { return _Scene(_viewController: self) }
-    struct _Scene: IBScene {
         
+        
+private protocol \(viewControllerClassName)SceneContainer: SceneContainer { }
+        
+extension \(viewControllerClassName): \(viewControllerClassName)SceneContainer {             
+    typealias SceneType = \(viewControllerClassName)Scene
+    struct \(viewControllerClassName)Scene: IBScene {
+        init(_viewController: \(viewControllerClassName)) { self._viewController = _viewController }
         fileprivate let _viewController: \(viewControllerClassName)
         var viewController: UIViewController { return _viewController }
         static let storyboardIdentifier: StoryboardIdentifier = .\(scene.storyboardName)
         static let sceneIdentifier: SceneIdentifier = .\(sceneName)\(makeSingleSceneSegueExtensionText(segues: scene.viewController?.allSegues ?? [], viewControllerClassName: viewControllerClassName) )     
     }
+}
 """
     }
     

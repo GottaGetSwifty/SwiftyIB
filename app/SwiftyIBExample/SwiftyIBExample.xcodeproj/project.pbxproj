@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9204893920EE76E600305F4A /* ChildSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9204893820EE76E600305F4A /* ChildSecondViewController.swift */; };
 		920737321FFB35DA00E0FA92 /* ScenesIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207372F1FFB35DA00E0FA92 /* ScenesIdentifier.swift */; };
 		920737331FFB35DA00E0FA92 /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920737301FFB35DA00E0FA92 /* SegueIdentifier.swift */; };
 		920737341FFB35DA00E0FA92 /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920737311FFB35DA00E0FA92 /* StoryboardIdentifier.swift */; };
-		9282A84520D0B57A00695D86 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9282A84320D0B57900695D86 /* MainScreen.storyboard */; };
 		9288B23B20C0707A00176AE8 /* SceneExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B23A20C0707A00176AE8 /* SceneExtensions.swift */; };
 		9288B24120C0934400176AE8 /* SecondMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9288B24020C0934400176AE8 /* SecondMain.storyboard */; };
 		9299EEA41FF47A390083320B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299EEA31FF47A390083320B /* AppDelegate.swift */; };
@@ -46,10 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9204893820EE76E600305F4A /* ChildSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildSecondViewController.swift; sourceTree = "<group>"; };
 		9207372F1FFB35DA00E0FA92 /* ScenesIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesIdentifier.swift; sourceTree = "<group>"; };
 		920737301FFB35DA00E0FA92 /* SegueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
 		920737311FFB35DA00E0FA92 /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifier.swift; sourceTree = "<group>"; };
-		9282A84420D0B57900695D86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainScreen.storyboard; sourceTree = "<group>"; };
 		9288B23A20C0707A00176AE8 /* SceneExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneExtensions.swift; sourceTree = "<group>"; };
 		9288B23C20C0732D00176AE8 /* IBTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBTypes.swift; sourceTree = "<group>"; };
 		9288B23E20C0795700176AE8 /* IBTypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBTypeExtensions.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 				9299EEA31FF47A390083320B /* AppDelegate.swift */,
 				9299EEA51FF47A390083320B /* ViewController.swift */,
 				92B24DD520C1C25B00AEE476 /* SecondViewController.swift */,
-				9282A84320D0B57900695D86 /* MainScreen.storyboard */,
+				9204893820EE76E600305F4A /* ChildSecondViewController.swift */,
 				9299EEA71FF47A390083320B /* Main.storyboard */,
 				9288B24020C0934400176AE8 /* SecondMain.storyboard */,
 				9299EEAD1FF47A390083320B /* Assets.xcassets */,
@@ -298,7 +298,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9299EEB11FF47A390083320B /* LaunchScreen.storyboard in Resources */,
-				9282A84520D0B57A00695D86 /* MainScreen.storyboard in Resources */,
 				9288B24120C0934400176AE8 /* SecondMain.storyboard in Resources */,
 				9299EEAE1FF47A390083320B /* Assets.xcassets in Resources */,
 				9299EEA91FF47A390083320B /* Main.storyboard in Resources */,
@@ -324,7 +323,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		922501591FF6F32D00AD828A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -333,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#gdate is used here. \n#Comment out if you don't have coreutils installed\n#or install with homebrew: \"brew install coreutils\"\necho \"$(gdate +%s.%N)\"\n# vars for building the generator. Should only be used if the full project is available to build.\nbuildscript_path=../SwiftyIB/SwiftyIBBuild.sh\ngenerator_path=SwiftyIBGenerator\ngenerator_file_name=SwiftyIBGenerator\ngenerator_file_path=$generator_path/$generator_file_name\n\n#vars for generation\nIB_search_directory=SwiftyIBExample # This directory is searched recurssively for all IB files. \nIB_files_export_path=SwiftyIBExample/identifiers\n\n#Uncomment to remove the generator and rebuild it from source\n#rm -r $generator_file_path\n\nif [ -e \"$generator_file_path\" ]\n    then echo \"Generator already built.\"\nelse\n    #Builds the generator. This should only happen once. Delete the generator if you want to re-build\n    echo \"Will build generator\"\n    sh $buildscript_path -o $generator_path -n $generator_file_name\nfi\n\n# This should be the only line that runs every time.\n./$generator_file_path -s $IB_search_directory -o $IB_files_export_path\n\necho \"$(gdate +%s.%N)\"";
+			shellScript = "#gdate is used here. \n#Comment out if you don't have coreutils installed\n#or install with homebrew: \"brew install coreutils\"\necho \"$(gdate +%s.%N)\"\n# vars for building the generator. Should only be used if the full project is available to build.\nbuildscript_path=../SwiftyIB/SwiftyIBBuild.sh\ngenerator_path=SwiftyIBGenerator\ngenerator_file_name=SwiftyIBGenerator\ngenerator_file_path=$generator_path/$generator_file_name\n\n#vars for generation\nIB_search_directory=SwiftyIBExample # This directory is searched recurssively for all IB files. \nIB_files_export_path=SwiftyIBExample/identifiers\n\n#Uncomment to remove the generator and rebuild it from source\n#rm -r $generator_file_path\nif ! [ -e \"$generator_file_path\" ]; then\n\n#Builds the generator. This should only happen once. Delete the generator if you want to re-build\necho \"Will build generator\"\nsh $buildscript_path -o $generator_path -n $generator_file_name\n\nfi\n\nlatest_version=\"$(sh $buildscript_path -v)\"\nbuild_version=\"$(./$generator_file_path -v)\"\n\necho \"latest version: $(echo $latest_version)\"\necho \"build version: $(echo $build_version)\"\n\nfunction version { printf \"%03d%03d%03d%03d\" $(echo \"$1\" | tr '.' ' '); }\n\nif [ \"$(version \"$latest_version\")\" -gt \"$(version \"$build_version\")\" ]; then\necho \"There is an updated version, so will rebuild\"\nsh $buildscript_path -o $generator_path -n $generator_file_name\n\nelse\necho \"Generator already built. and updated\"\nfi\n\n# This should be the only line that runs every time.\n./$generator_file_path -s $IB_search_directory -o $IB_files_export_path\n\necho \"$(gdate +%s.%N)\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -348,6 +347,7 @@
 				920737321FFB35DA00E0FA92 /* ScenesIdentifier.swift in Sources */,
 				920737331FFB35DA00E0FA92 /* SegueIdentifier.swift in Sources */,
 				9299EEA41FF47A390083320B /* AppDelegate.swift in Sources */,
+				9204893920EE76E600305F4A /* ChildSecondViewController.swift in Sources */,
 				92B24DDF20C1CBDE00AEE476 /* IBTypeExtensions.swift in Sources */,
 				9288B23B20C0707A00176AE8 /* SceneExtensions.swift in Sources */,
 				92B24DD620C1C25B00AEE476 /* SecondViewController.swift in Sources */,
@@ -387,14 +387,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9282A84320D0B57900695D86 /* MainScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9282A84420D0B57900695D86 /* Base */,
-			);
-			name = MainScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		9299EEA71FF47A390083320B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

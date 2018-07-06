@@ -3,8 +3,16 @@
 
 import UIKit
 
-protocol IBScene: StoryboardIdentifiable, SceneIdentifiable {
+protocol AnyIBScene: StoryboardIdentifiable, SceneIdentifiable { }
 
+protocol IBScene: AnyIBScene {
+    associatedtype ViewControllerType: UIViewController
+    init(_viewController: ViewControllerType)
+}
+
+protocol SceneContainer {
+    associatedtype SceneType: IBScene
+    var Scene: SceneType { get }
 }
 
 protocol StoryboardIdentifiable {
@@ -26,3 +34,4 @@ struct IBSegue: SegueIdentifiable {
     let segueIdentifier: SegueIdentifier
     let viewController: UIViewController
 }
+        

@@ -9,21 +9,16 @@
 /// Automatically generated from SwiftyIB
 /// Each case represents a distinct scene from a storyboard
 enum SceneIdentifier: String {
-	case AssetGroupsCollectionViewController
-	case AssetGroupsViewController
-	case AssetViewerViewController
+	case ChildSecondViewController
 	case CollectionVC
 	case EmbededVC
-	case MainTabBarController
 	case MainVCScene
-	case PDFAssetViewController
 	case SecondMainVCScene
 	case SecondVC
 	case SplitChildVC
 	case SplitNav
 	case SplitNavTable
 	case SplitVC
-	case SplitView
 	case TableVC
 	case none
 }
