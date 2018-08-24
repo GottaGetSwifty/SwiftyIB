@@ -67,7 +67,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/Fechner/ActsMedia/3m/MediaFramework/iOS/SubModules/SwiftyIB/app/SwiftyIBExample/SwiftyIBExample"
+            argument = "SwiftyIBExample/SwiftyIBExample/Test"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -75,7 +75,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/Fechner/ActsMedia/3m/MediaFramework/iOS/SubModules/SwiftyIB/app/SwiftyIBExample/SwiftyIBExample/Identifiers"
+            argument = "SwiftyIBExample/SwiftyIBExample/Identifiers"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

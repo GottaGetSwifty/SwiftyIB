@@ -52,8 +52,10 @@ extension IBViewController {
         case containerView
         case collectionView
         case tableView
+        case scrollView
+        case stackView
         
-        static let viewTypes: [ElementKeys] = [ .view, .imageView, .containerView, .collectionView, .tableView ]
+        static let viewTypes: [ElementKeys] = [ .view, .imageView, .containerView, .collectionView, .tableView, .scrollView, stackView ]
     }
 }
 
@@ -74,8 +76,10 @@ extension IBView {
         case containerView
         case collectionView
         case tableView
+        case scrollView
+        case stackView
      
-        static let viewTypes: [ElementKeys] = [ .view, .imageView, .containerView, .collectionView, .tableView ]
+        static let viewTypes: [ElementKeys] = [ .view, .imageView, .containerView, .collectionView, .tableView, .scrollView, stackView  ]
     }
 }
 

@@ -67,17 +67,21 @@ extension SceneIdentifiable {
     }
 }
 
-/// Builds a storyboard from the storyboardIdentifier
+//// Builds a storyboard from the storyboardIdentifier
 extension StoryboardIdentifiable {
     static var storyboard: UIStoryboard {
-        return UIStoryboard(identifier: storyboardIdentifier, bundle: nil)
+        return storyboard(bundle: nil)
+    }
+    
+    static func storyboard(bundle: Bundle? = nil) -> UIStoryboard {
+        return UIStoryboard(identifier: storyboardIdentifier, bundle: bundle)
     }
 }
 
 /// builds the scene from the identifiers.
 extension SceneIdentifiable where Self: StoryboardIdentifiable {
-    static func makeFromStoryboard<T: UIViewController>() -> T {
-        return storyboard.makeViewController(with: sceneIdentifier) as! T
+    static func makeFromStoryboard<T: UIViewController>(bundle: Bundle? = nil) -> T {
+        return storyboard(bundle: bundle).makeViewController(with: sceneIdentifier) as! T
     }
 }
 
