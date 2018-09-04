@@ -6,6 +6,12 @@
 //  Copyright © 2017 peejweej.inc. All rights reserved.
 //
 
+extension IBNib {
+    enum ElementKeys: String {
+        case objects
+        case document
+    }
+}
 extension IBStoryboard {
     enum AttributeKeys: String {
         case initialViewController
@@ -54,8 +60,6 @@ extension IBViewController {
         case tableView
         case scrollView
         case stackView
-        
-        static let viewTypes: [ElementKeys] = [ .view, .imageView, .containerView, .collectionView, .tableView, .scrollView, stackView ]
     }
 }
 
@@ -64,6 +68,7 @@ extension IBView {
         case id
         case userLabel
         case customClass
+        case reuseIdentifier
     }
     
     enum ElementKeys: String {
@@ -78,8 +83,11 @@ extension IBView {
         case tableView
         case scrollView
         case stackView
+        case tableViewCell
+        case collectionViewCell
+        case collectionReusableView
      
-        static let viewTypes: [ElementKeys] = [ .view, .imageView, .containerView, .collectionView, .tableView, .scrollView, stackView  ]
+        static let viewTypes: [ElementKeys] = [ .view, .imageView, .containerView, .collectionView, .tableView, .scrollView, stackView, .tableViewCell, .collectionViewCell, .collectionReusableView ]
     }
 }
 

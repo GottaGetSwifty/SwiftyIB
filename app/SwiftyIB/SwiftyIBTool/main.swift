@@ -103,13 +103,23 @@ struct LaunchOptions {
 
 func exportIBInfo(with launchOptions: LaunchOptions) {
     print("Launched successfully with\nsource: \(launchOptions.source)\ndestination: \(launchOptions.destination)")
-    guard let foundStoryboards = SwiftyIB(containingURL: launchOptions.source)?.buildStoryboards() else {
+    guard let swiftyIB = SwiftyIB(containingURL: launchOptions.source) else {
         print("Did not find/parse storboards")
         return
     }
+    let foundStoryboards = swiftyIB.buildStoryboards()
+    
     do {
         print("Found and parsed storboards, will attempt exporting")
         try SwiftyIB.export(storboards: foundStoryboards, to: launchOptions.destination, isAbsoluteURL: launchOptions.isAbsoluteURL)
+    }
+    catch let e {
+        print(e.localizedDescription)
+    }
+    let foundNibs = swiftyIB.buildNibs()
+    do {
+        print("Found and parsed nibs, will attempt exporting")
+        try SwiftyIB.export(nibs: foundNibs, to: launchOptions.destination, isAbsoluteURL: launchOptions.isAbsoluteURL)
     }
     catch let e {
         print(e.localizedDescription)

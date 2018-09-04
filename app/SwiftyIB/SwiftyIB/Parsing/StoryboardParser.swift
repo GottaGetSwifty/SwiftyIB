@@ -113,13 +113,10 @@ public struct IBViewController: XMLIndexerDeserializable {
                                     restorationIdentifier: node.value(of: AttributeKeys.restorationIdentifier),
                                     customClass: node.value(of: AttributeKeys.customClass), 
                                     segues: getSegues(from: node), 
-                                    view: findView(in: node))
+                                    view: IBView.findView(in: node))
     }
     
-    static func findView(in element: XMLIndexer)  -> IBView?  {
-        let views = ElementKeys.viewTypes.compactMap{ try? IBView.deserialize(element[$0])} 
-        return views.first
-    }
+    
     
     static func getSegues(from element: XMLIndexer) -> [IBSegue] {
         let segues = element[ElementKeys.connections][ElementKeys.segue].all
@@ -135,6 +132,7 @@ public struct IBViewController: XMLIndexerDeserializable {
 
 public struct IBView: XMLIndexerDeserializable {
     let id: String
+    let reuseIdentifier: String?
     let customClass: String?
     let userLabel: String?
     let connections: [IBConnection]
@@ -146,10 +144,30 @@ public struct IBView: XMLIndexerDeserializable {
     
     public static func deserialize(_ node: XMLIndexer) throws -> IBView {
         return try IBView(id: node.value(of: AttributeKeys.id),
+                          reuseIdentifier: try? node.value(of: AttributeKeys.reuseIdentifier),
                           customClass: try? node.value(of: AttributeKeys.customClass), 
                           userLabel: try? node.value(of: AttributeKeys.customClass), 
                           connections: (try? node[ElementKeys.connections].all.map(IBConnection.deserialize)) ?? [], 
                           subViews: findSubviews(in: node)) 
+    }
+    
+    static func findView(in element: XMLIndexer)  -> IBView?  {
+        let views = ElementKeys.viewTypes.compactMap{ try? IBView.deserialize(element[$0])} 
+        let foundView = views.first
+        return foundView
+    }
+    
+    static func findNibView(in element: XMLIndexer)  -> IBView?  {
+        guard let name = element.element?.name else {
+            return nil
+        }
+        let views = ElementKeys.viewTypes.compactMap{ (elementKey) -> IBView? in  
+            guard name == elementKey.rawValue else {
+                return nil
+            }  
+            return try? IBView.deserialize(element)
+        } 
+        return views.first
     }
     
     static func findSubviews(in element: XMLIndexer) -> [IBView]  {

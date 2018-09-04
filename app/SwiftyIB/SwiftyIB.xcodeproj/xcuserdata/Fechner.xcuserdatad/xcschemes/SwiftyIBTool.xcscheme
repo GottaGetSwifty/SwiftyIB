@@ -67,7 +67,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "SwiftyIBExample/SwiftyIBExample/Test"
+            argument = "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIBExample/SwiftyIBExample"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -75,7 +75,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "SwiftyIBExample/SwiftyIBExample/Identifiers"
+            argument = "/Users/Fechner/Documents/LibraryProjects/SwiftyIB/app/SwiftyIBExample/SwiftyIBExample/Identifiers"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

@@ -26,6 +26,16 @@
 		92B24DDE20C1CBBB00AEE476 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B24DDD20C1CBBB00AEE476 /* Foundation.framework */; };
 		92B24DDF20C1CBDE00AEE476 /* IBTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B23E20C0795700176AE8 /* IBTypeExtensions.swift */; };
 		92B24DE020C1CBE000AEE476 /* IBTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B23C20C0732D00176AE8 /* IBTypes.swift */; };
+		92BD7BEA213F342D00798578 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7BE9213F342D00798578 /* TableViewCell.swift */; };
+		92BD7BEC213F343900798578 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7BEB213F343900798578 /* CollectionViewCell.swift */; };
+		92BD7BEE213F344B00798578 /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7BED213F344B00798578 /* CollectionReusableView.swift */; };
+		92BD7BF0213F346D00798578 /* TableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7BEF213F346D00798578 /* TableViewHeaderFooterView.swift */; };
+		92BD7BF2213F347700798578 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BD7BF1213F347700798578 /* TableViewCell.xib */; };
+		92BD7BF5213F348A00798578 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BD7BF4213F348A00798578 /* CollectionViewCell.xib */; };
+		92BD7BF7213F349200798578 /* CollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BD7BF6213F349200798578 /* CollectionReusableView.xib */; };
+		92BD7BF9213F349C00798578 /* TableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BD7BF8213F349C00798578 /* TableViewHeaderFooterView.xib */; };
+		92BD7C10213F4AFA00798578 /* CellIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C0E213F4AF900798578 /* CellIdentifier.swift */; };
+		92BD7C11213F4AFA00798578 /* NibIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C0F213F4AF900798578 /* NibIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +82,16 @@
 		92B24DD820C1C76500AEE476 /* SwiftyIBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyIBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B24DDB20C1CBB400AEE476 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		92B24DDD20C1CBBB00AEE476 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		92BD7BE9213F342D00798578 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		92BD7BEB213F343900798578 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		92BD7BED213F344B00798578 /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
+		92BD7BEF213F346D00798578 /* TableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		92BD7BF1213F347700798578 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		92BD7BF4213F348A00798578 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		92BD7BF6213F349200798578 /* CollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionReusableView.xib; sourceTree = "<group>"; };
+		92BD7BF8213F349C00798578 /* TableViewHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewHeaderFooterView.xib; sourceTree = "<group>"; };
+		92BD7C0E213F4AF900798578 /* CellIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdentifier.swift; sourceTree = "<group>"; };
+		92BD7C0F213F4AF900798578 /* NibIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +132,8 @@
 		9207372E1FFB35DA00E0FA92 /* IBIdentifiers */ = {
 			isa = PBXGroup;
 			children = (
+				92BD7C0E213F4AF900798578 /* CellIdentifier.swift */,
+				92BD7C0F213F4AF900798578 /* NibIdentifier.swift */,
 				9288B23C20C0732D00176AE8 /* IBTypes.swift */,
 				9288B23E20C0795700176AE8 /* IBTypeExtensions.swift */,
 				9288B23A20C0707A00176AE8 /* SceneExtensions.swift */,
@@ -146,6 +168,7 @@
 		9299EEA21FF47A390083320B /* SwiftyIBExample */ = {
 			isa = PBXGroup;
 			children = (
+				92BD7BF3213F347C00798578 /* Cells */,
 				9207372D1FFB35DA00E0FA92 /* identifiers */,
 				9299EEA31FF47A390083320B /* AppDelegate.swift */,
 				9299EEA51FF47A390083320B /* ViewController.swift */,
@@ -187,6 +210,21 @@
 				92B24DD820C1C76500AEE476 /* SwiftyIBKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92BD7BF3213F347C00798578 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				92BD7BE9213F342D00798578 /* TableViewCell.swift */,
+				92BD7BF1213F347700798578 /* TableViewCell.xib */,
+				92BD7BEB213F343900798578 /* CollectionViewCell.swift */,
+				92BD7BF4213F348A00798578 /* CollectionViewCell.xib */,
+				92BD7BED213F344B00798578 /* CollectionReusableView.swift */,
+				92BD7BF6213F349200798578 /* CollectionReusableView.xib */,
+				92BD7BEF213F346D00798578 /* TableViewHeaderFooterView.swift */,
+				92BD7BF8213F349C00798578 /* TableViewHeaderFooterView.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +336,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9299EEB11FF47A390083320B /* LaunchScreen.storyboard in Resources */,
+				92BD7BF7213F349200798578 /* CollectionReusableView.xib in Resources */,
+				92BD7BF2213F347700798578 /* TableViewCell.xib in Resources */,
+				92BD7BF5213F348A00798578 /* CollectionViewCell.xib in Resources */,
+				92BD7BF9213F349C00798578 /* TableViewHeaderFooterView.xib in Resources */,
 				9288B24120C0934400176AE8 /* SecondMain.storyboard in Resources */,
 				9299EEAE1FF47A390083320B /* Assets.xcassets in Resources */,
 				9299EEA91FF47A390083320B /* Main.storyboard in Resources */,
@@ -342,14 +384,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				92B24DE020C1CBE000AEE476 /* IBTypes.swift in Sources */,
+				92BD7C11213F4AFA00798578 /* NibIdentifier.swift in Sources */,
 				9299EEA61FF47A390083320B /* ViewController.swift in Sources */,
+				92BD7C10213F4AFA00798578 /* CellIdentifier.swift in Sources */,
 				920737341FFB35DA00E0FA92 /* StoryboardIdentifier.swift in Sources */,
 				920737321FFB35DA00E0FA92 /* ScenesIdentifier.swift in Sources */,
+				92BD7BF0213F346D00798578 /* TableViewHeaderFooterView.swift in Sources */,
 				920737331FFB35DA00E0FA92 /* SegueIdentifier.swift in Sources */,
 				9299EEA41FF47A390083320B /* AppDelegate.swift in Sources */,
 				9204893920EE76E600305F4A /* ChildSecondViewController.swift in Sources */,
+				92BD7BEE213F344B00798578 /* CollectionReusableView.swift in Sources */,
 				92B24DDF20C1CBDE00AEE476 /* IBTypeExtensions.swift in Sources */,
+				92BD7BEC213F343900798578 /* CollectionViewCell.swift in Sources */,
 				9288B23B20C0707A00176AE8 /* SceneExtensions.swift in Sources */,
+				92BD7BEA213F342D00798578 /* TableViewCell.swift in Sources */,
 				92B24DD620C1C25B00AEE476 /* SecondViewController.swift in Sources */,
 				9299EEAC1FF47A390083320B /* SwiftyIBExample.xcdatamodeld in Sources */,
 			);

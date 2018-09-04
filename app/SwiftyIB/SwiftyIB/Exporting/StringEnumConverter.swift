@@ -18,6 +18,15 @@ public struct StringEnumConverter {
         return result
     }
     
+    static func makeEnum(with name: String, and documentation: String, using identifierFinder: (() -> ([String])) ) -> String? {
+        let results = identifierFinder()
+        guard !name.isEmpty, !results.isEmpty else {
+            return nil
+        }
+        let resultEnum = makeEnum(with: name, and: documentation, from: identifierFinder())
+        return resultEnum
+    }
+    
     private static func makeCase(from name: String) -> String {
         return "\n\tcase \(name)"
     }
