@@ -47,7 +47,10 @@ public class SwiftyIB {
     }
     
     public static func export(nibs: [IBNib], to destination: URL, isAbsoluteURL: Bool) throws {
+        try NibExporter.exportIBNibTypes(to: destination, isAbsoluteURL: isAbsoluteURL)
         try NibExporter.exportIdentifiers(nibs: nibs, to: destination, isAbsoluteURL: isAbsoluteURL)
+        try NibExporter.exportNibExtensions(nibs: nibs, to: destination, isAbsoluteURL: isAbsoluteURL)
+        try NibExporter.exportReuseExtensions(nibs: nibs, to: destination, isAbsoluteURL: isAbsoluteURL)
     }
 }
 

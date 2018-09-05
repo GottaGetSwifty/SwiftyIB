@@ -30,29 +30,30 @@ class NibExporter {
     }
     
     
-//    static let sceneExtensionsFileName = "IBIdentifiers/SceneExtensions.swift"
-//    static func exportExtensions(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
-//        if let sceneExtensions = StoryboardStructureExtensionGenerator.makeScenesStructExtensions(from: storyboards) {
-//            let result = exportFile(fileText: sceneExtensions, to: destination.appendingPathComponent(sceneExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
-//            print("Exporting Scene extensions result: \(result)")
-//        }
-//    }
-//    
-//    static let ibTypesFileName = "IBIdentifiers/IBTypes.swift"
-//    static func exportIBTypes(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
-//        let ibTypes = StoryboardTypesGenerator.makeIBTypes() 
-//        let result = exportFile(fileText: ibTypes, to: destination.appendingPathComponent(ibTypesFileName), isAbsoluteURL: isAbsoluteURL)
-//        print("Exporting IBTypes result: \(result)")
-//        
-//    }
-//    
-//    static let ibTypeExtensionsFileName = "IBIdentifiers/IBTypeExtensions.swift"
-//    static func exportIBTypeExtensions(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
-//        let ibTypeExtensions = StoryboardExtensionsGenerator.makeIBTypeExtensions()
-//        let result = exportFile(fileText: ibTypeExtensions, to: destination.appendingPathComponent(ibTypeExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
-//        print("Exporting IBType Extensions result: \(result)")
-//        
-//    }
+    static let nibTypesFileName = "IBIdentifiers/IBNibTypes.swift"
+    static func exportIBNibTypes(to destination: URL, isAbsoluteURL: Bool) throws {
+        
+        let fileText = NibTypesAndExtensionsGenerator.makeNibTypesAndExtensions()
+        let result = exportFile(fileText: fileText, to: destination.appendingPathComponent(nibTypesFileName), isAbsoluteURL: isAbsoluteURL)
+        print("Exporting IBTypes result: \(result)")
+        
+    }
+    
+    static let nibExtensionsFileName = "IBIdentifiers/IBStructureNibExtensions.swift"
+    static func exportNibExtensions(nibs: [IBNib], to destination: URL, isAbsoluteURL: Bool) throws {
+        if let fileText = NibStructureExtensionsGenerator.makeNibExtensions(from: nibs) {
+            let result = exportFile(fileText: fileText, to: destination.appendingPathComponent(nibExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
+            print("Exporting IBNib Extensions result: \(result)")
+        }
+    }
+    
+    static let reuseExtensionsFileName = "IBIdentifiers/IBStructureReuseExtensions.swift"
+    static func exportReuseExtensions(nibs: [IBNib], to destination: URL, isAbsoluteURL: Bool) throws {
+        if let fileText = NibStructureExtensionsGenerator.makeReuseExtensions(from: nibs) {
+            let result = exportFile(fileText: fileText, to: destination.appendingPathComponent(reuseExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
+            print("Exporting IBNib Extensions result: \(result)")
+        }
+    }
     
     private static func exportFile(fileText: String, to url: URL, isAbsoluteURL: Bool) -> Bool {
         let filePath = isAbsoluteURL ? url.deletingLastPathComponent().absoluteString : url.deletingLastPathComponent().relativeString 

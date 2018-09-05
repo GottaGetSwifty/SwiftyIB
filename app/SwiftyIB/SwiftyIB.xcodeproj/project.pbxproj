@@ -47,6 +47,14 @@
 		92BD7C0B213F4A2600798578 /* NibEnumsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C03213F46F600798578 /* NibEnumsGenerator.swift */; };
 		92BD7C0C213F4A2600798578 /* NibEnumsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C03213F46F600798578 /* NibEnumsGenerator.swift */; };
 		92BD7C0D213F4A2700798578 /* NibEnumsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C03213F46F600798578 /* NibEnumsGenerator.swift */; };
+		92BD7C15213F52E600798578 /* NibTypesAndExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C14213F52E600798578 /* NibTypesAndExtensionsGenerator.swift */; };
+		92BD7C17213F52F400798578 /* NibStructureExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C16213F52F400798578 /* NibStructureExtensionsGenerator.swift */; };
+		92BD7C18213F540800798578 /* NibTypesAndExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C14213F52E600798578 /* NibTypesAndExtensionsGenerator.swift */; };
+		92BD7C19213F540900798578 /* NibTypesAndExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C14213F52E600798578 /* NibTypesAndExtensionsGenerator.swift */; };
+		92BD7C1B213F540B00798578 /* NibTypesAndExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C14213F52E600798578 /* NibTypesAndExtensionsGenerator.swift */; };
+		92BD7C1C213F540C00798578 /* NibStructureExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C16213F52F400798578 /* NibStructureExtensionsGenerator.swift */; };
+		92BD7C1D213F540D00798578 /* NibStructureExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C16213F52F400798578 /* NibStructureExtensionsGenerator.swift */; };
+		92BD7C1E213F540E00798578 /* NibStructureExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C16213F52F400798578 /* NibStructureExtensionsGenerator.swift */; };
 		92C06AA21FF47CC7004D6B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06AA11FF47CC7004D6B5C /* AppDelegate.swift */; };
 		92C06AA41FF47CC7004D6B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06AA31FF47CC7004D6B5C /* ViewController.swift */; };
 		92C06AA61FF47CC7004D6B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C06AA51FF47CC7004D6B5C /* Assets.xcassets */; };
@@ -198,6 +206,8 @@
 		92BD7BFA213F358900798578 /* NibParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibParser.swift; sourceTree = "<group>"; };
 		92BD7C01213F461600798578 /* NibExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibExporter.swift; sourceTree = "<group>"; };
 		92BD7C03213F46F600798578 /* NibEnumsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibEnumsGenerator.swift; sourceTree = "<group>"; };
+		92BD7C14213F52E600798578 /* NibTypesAndExtensionsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibTypesAndExtensionsGenerator.swift; sourceTree = "<group>"; };
+		92BD7C16213F52F400798578 /* NibStructureExtensionsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibStructureExtensionsGenerator.swift; sourceTree = "<group>"; };
 		92C06A9E1FF47CC7004D6B5C /* SwiftyIB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyIB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C06AA11FF47CC7004D6B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92C06AA31FF47CC7004D6B5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -373,8 +383,10 @@
 		92BD7C06213F49F200798578 /* Nib */ = {
 			isa = PBXGroup;
 			children = (
-				92BD7C03213F46F600798578 /* NibEnumsGenerator.swift */,
 				92BD7C01213F461600798578 /* NibExporter.swift */,
+				92BD7C03213F46F600798578 /* NibEnumsGenerator.swift */,
+				92BD7C14213F52E600798578 /* NibTypesAndExtensionsGenerator.swift */,
+				92BD7C16213F52F400798578 /* NibStructureExtensionsGenerator.swift */,
 			);
 			path = Nib;
 			sourceTree = "<group>";
@@ -799,7 +811,9 @@
 				92D20B3420E14A78002B21FA /* StoryboardExtensionsGenerator.swift in Sources */,
 				92D20B2F20E14A78002B21FA /* StoryboardExporter.swift in Sources */,
 				92D20B3120E14A78002B21FA /* StoryboardEnumsGenerator.swift in Sources */,
+				92BD7C19213F540900798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
 				92D20B2920E14A6F002B21FA /* SWXMLHash.swift in Sources */,
+				92BD7C1D213F540D00798578 /* NibStructureExtensionsGenerator.swift in Sources */,
 				92D20B3320E14A78002B21FA /* StoryboardTypesGenerator.swift in Sources */,
 				92BD7C09213F4A2200798578 /* NibExporter.swift in Sources */,
 				92D20B2C20E14A74002B21FA /* StoryboardParser.swift in Sources */,
@@ -823,9 +837,11 @@
 				92BD7C0D213F4A2700798578 /* NibEnumsGenerator.swift in Sources */,
 				92B24DD020C1B43300AEE476 /* IBKeys.swift in Sources */,
 				92B24DC420C1AEB700AEE476 /* StoryboardExporter.swift in Sources */,
+				92BD7C18213F540800798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
 				92B24DC920C1AEC900AEE476 /* StoryboardTypesGenerator.swift in Sources */,
 				92B24DC620C1AEC400AEE476 /* StoryboardEnumsGenerator.swift in Sources */,
 				92B24DD220C1B43D00AEE476 /* SwiftyIB.swift in Sources */,
+				92BD7C1E213F540E00798578 /* NibStructureExtensionsGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,7 +879,9 @@
 				92D20B1F20E147FB002B21FA /* StoryboardExtensionsGenerator.swift in Sources */,
 				92D20B1A20E147FB002B21FA /* StoryboardExporter.swift in Sources */,
 				92D20B1C20E147FB002B21FA /* StoryboardEnumsGenerator.swift in Sources */,
+				92BD7C1B213F540B00798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
 				92D20B1420E147F3002B21FA /* SWXMLHash.swift in Sources */,
+				92BD7C1C213F540C00798578 /* NibStructureExtensionsGenerator.swift in Sources */,
 				92D20B1E20E147FB002B21FA /* StoryboardTypesGenerator.swift in Sources */,
 				92BD7C0A213F4A2300798578 /* NibExporter.swift in Sources */,
 				92D20B1720E147F6002B21FA /* StoryboardParser.swift in Sources */,
@@ -877,6 +895,7 @@
 				92E3D0FD1FF755CB0080EC12 /* StringEnumConverter.swift in Sources */,
 				92B24DC120C1AAED00AEE476 /* StoryboardTypesGenerator.swift in Sources */,
 				92E3D0FA1FF755B20080EC12 /* StoryboardEnumsGenerator.swift in Sources */,
+				92BD7C15213F52E600798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
 				92E3D0EE1FF74D990080EC12 /* SWXMLHash.swift in Sources */,
 				92545F001FF97BC60037D166 /* FilesFinder.swift in Sources */,
 				92E3D0EF1FF74D990080EC12 /* SWXMLHash+TypeConversion.swift in Sources */,
@@ -890,6 +909,7 @@
 				92545EF91FF847A00037D166 /* ProjectParser.swift in Sources */,
 				92D8EF2C1FF49DC5005491E6 /* IBKeys.swift in Sources */,
 				92C06AA21FF47CC7004D6B5C /* AppDelegate.swift in Sources */,
+				92BD7C17213F52F400798578 /* NibStructureExtensionsGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
