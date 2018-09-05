@@ -84,4 +84,22 @@ extension \(nibAndClassInfo.1): IBNibIdentifiable {
         """
     }
     
+    static func makeNibReusableExtensions(from nibs: [IBNib]) -> String? {
+        
+        let nibReusableClasses = nibs.compactMap { (nib) -> String? in 
+            guard let view = nib.views?.first, let customClass = view.customClass, view.reuseIdentifier != nil else {
+                return nil
+            }
+            return customClass
+        }
+        return nibReusableClasses.map(makeNibReusableExtensions).joined()
+    }
+    
+    private static func makeNibReusableExtensions(for className: String) -> String {
+        return 
+"""
+
+extension \(className): NibReusable {}
+"""
+    }
 }

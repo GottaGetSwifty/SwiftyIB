@@ -12,7 +12,7 @@
 		<key>SwiftyIBBundle.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>10</integer>
 		</dict>
 		<key>SwiftyIBExport.xcscheme</key>
 		<dict>
@@ -22,7 +22,7 @@
 		<key>SwiftyIBKit.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<key>SwiftyIBTool.xcscheme</key>
 		<dict>

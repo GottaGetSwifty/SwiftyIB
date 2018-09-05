@@ -49,7 +49,8 @@ class NibExporter {
     
     static let reuseExtensionsFileName = "IBIdentifiers/IBStructureReuseExtensions.swift"
     static func exportReuseExtensions(nibs: [IBNib], to destination: URL, isAbsoluteURL: Bool) throws {
-        if let fileText = NibStructureExtensionsGenerator.makeReuseExtensions(from: nibs) {
+        if var fileText = NibStructureExtensionsGenerator.makeReuseExtensions(from: nibs) {
+            fileText += NibStructureExtensionsGenerator.makeNibReusableExtensions(from: nibs) ?? ""
             let result = exportFile(fileText: fileText, to: destination.appendingPathComponent(reuseExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
             print("Exporting IBNib Extensions result: \(result)")
         }
