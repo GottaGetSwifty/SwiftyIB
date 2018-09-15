@@ -40,9 +40,6 @@ class AssetExporter: Exporter {
     private static func makeEnum(from assets: AssetsContainer, for type: AssetsContainer.AssetType, addEnumHeader: Bool) -> String {
         
         let names = assets.values(for: type)
-        guard !names.isEmpty else {
-            return ""
-        }
     
         return StringEnumConverter.makeEnum(with: type.identifierEnumName, and: enumHeaderDocumentation, from: Array(names), addEnumHeader: addEnumHeader) ?? ""
     }
