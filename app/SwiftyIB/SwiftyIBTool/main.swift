@@ -124,6 +124,15 @@ func exportIBInfo(with launchOptions: LaunchOptions) {
     catch let e {
         print(e.localizedDescription)
     }
+    
+    let foundAssets = swiftyIB.buildAssetFolders()
+    do {
+        print("Found and parsed assets, will attempt exporting")
+        try SwiftyIB.export(assets: foundAssets, to: launchOptions.destination, isAbsoluteURL: launchOptions.isAbsoluteURL)
+    }
+    catch let e {
+        print(e.localizedDescription)
+    }
 }
 
 guard let launchOptions = LaunchOptions.makeFromArguments() else {

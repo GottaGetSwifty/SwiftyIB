@@ -18,6 +18,26 @@
 		92545EFC1FF965150037D166 /* ProjectParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFB1FF965150037D166 /* ProjectParserTests.swift */; };
 		92545EFE1FF966290037D166 /* EmptyFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92545EFD1FF966290037D166 /* EmptyFile.txt */; };
 		92545F001FF97BC60037D166 /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
+		9259E432214DB3700004BE85 /* AssetCatalogueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */; };
+		9259E436214DB4CE0004BE85 /* AssetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E435214DB4CE0004BE85 /* AssetModels.swift */; };
+		9259E437214DB5E80004BE85 /* AssetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E435214DB4CE0004BE85 /* AssetModels.swift */; };
+		9259E438214DB5E80004BE85 /* AssetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E435214DB4CE0004BE85 /* AssetModels.swift */; };
+		9259E439214DB5ED0004BE85 /* AssetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E435214DB4CE0004BE85 /* AssetModels.swift */; };
+		92687451214DBA15002CF5BF /* AssetCatalogueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */; };
+		92687452214DBA1C002CF5BF /* AssetCatalogueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */; };
+		92687453214DBA20002CF5BF /* AssetCatalogueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */; };
+		92687456214DC317002CF5BF /* AssetExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92687455214DC317002CF5BF /* AssetExporter.swift */; };
+		92687457214DC760002CF5BF /* AssetExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92687455214DC317002CF5BF /* AssetExporter.swift */; };
+		92687458214DC760002CF5BF /* AssetExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92687455214DC317002CF5BF /* AssetExporter.swift */; };
+		92687459214DC761002CF5BF /* AssetExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92687455214DC317002CF5BF /* AssetExporter.swift */; };
+		9268745B214DC7A9002CF5BF /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268745A214DC7A9002CF5BF /* Exporter.swift */; };
+		9268745C214DC7F0002CF5BF /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268745A214DC7A9002CF5BF /* Exporter.swift */; };
+		9268745D214DC7F0002CF5BF /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268745A214DC7A9002CF5BF /* Exporter.swift */; };
+		9268745E214DC7F1002CF5BF /* Exporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268745A214DC7A9002CF5BF /* Exporter.swift */; };
+		92687460214DCBE3002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268745F214DCBE3002CF5BF /* AssetTypesAndExtensionsGenerator.swift */; };
+		92687461214DCBE5002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268745F214DCBE3002CF5BF /* AssetTypesAndExtensionsGenerator.swift */; };
+		92687462214DCBE5002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268745F214DCBE3002CF5BF /* AssetTypesAndExtensionsGenerator.swift */; };
+		92687463214DCBE5002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9268745F214DCBE3002CF5BF /* AssetTypesAndExtensionsGenerator.swift */; };
 		9281365E1FFAEBD600DBB2D1 /* StoryboardExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */; };
 		9288B24920C09CA300176AE8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B24820C09CA300176AE8 /* main.swift */; };
 		92B24DC120C1AAED00AEE476 /* StoryboardTypesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC020C1AAED00AEE476 /* StoryboardTypesGenerator.swift */; };
@@ -193,6 +213,11 @@
 		92545EFD1FF966290037D166 /* EmptyFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmptyFile.txt; sourceTree = "<group>"; };
 		92545EFF1FF97BC60037D166 /* FilesFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesFinder.swift; sourceTree = "<group>"; };
 		92545F021FF99D8D0037D166 /* SwiftyIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyIB.swift; sourceTree = "<group>"; };
+		9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCatalogueParser.swift; sourceTree = "<group>"; };
+		9259E435214DB4CE0004BE85 /* AssetModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModels.swift; sourceTree = "<group>"; };
+		92687455214DC317002CF5BF /* AssetExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetExporter.swift; sourceTree = "<group>"; };
+		9268745A214DC7A9002CF5BF /* Exporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exporter.swift; sourceTree = "<group>"; };
+		9268745F214DCBE3002CF5BF /* AssetTypesAndExtensionsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTypesAndExtensionsGenerator.swift; sourceTree = "<group>"; };
 		9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExporter.swift; sourceTree = "<group>"; };
 		9288B24620C09CA300176AE8 /* SwiftyIBExport */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftyIBExport; sourceTree = BUILT_PRODUCTS_DIR; };
 		9288B24820C09CA300176AE8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -343,13 +368,24 @@
 		92545EF71FF8478D0037D166 /* Parsing */ = {
 			isa = PBXGroup;
 			children = (
+				9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */,
 				92545EF81FF847A00037D166 /* ProjectParser.swift */,
 				92D8EF201FF48058005491E6 /* StoryboardParser.swift */,
 				92BD7BFA213F358900798578 /* NibParser.swift */,
 				92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */,
 				92545EFF1FF97BC60037D166 /* FilesFinder.swift */,
+				9259E435214DB4CE0004BE85 /* AssetModels.swift */,
 			);
 			path = Parsing;
+			sourceTree = "<group>";
+		};
+		92687454214DC2ED002CF5BF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				92687455214DC317002CF5BF /* AssetExporter.swift */,
+				9268745F214DCBE3002CF5BF /* AssetTypesAndExtensionsGenerator.swift */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		9288B24720C09CA300176AE8 /* SwiftyIBExport */ = {
@@ -477,7 +513,9 @@
 		92E3D0FB1FF755BA0080EC12 /* Exporting */ = {
 			isa = PBXGroup;
 			children = (
+				9268745A214DC7A9002CF5BF /* Exporter.swift */,
 				92E3D0FC1FF755CB0080EC12 /* StringEnumConverter.swift */,
+				92687454214DC2ED002CF5BF /* Assets */,
 				92BD7C06213F49F200798578 /* Nib */,
 				92BD7C05213F49ED00798578 /* Storyboard */,
 			);
@@ -798,12 +836,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92687461214DCBE5002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */,
+				9259E437214DB5E80004BE85 /* AssetModels.swift in Sources */,
 				9211AF7C1FF747E6005E26D0 /* main.swift in Sources */,
 				92D20B2E20E14A74002B21FA /* FilesFinder.swift in Sources */,
 				92BD7BFD213F372300798578 /* NibParser.swift in Sources */,
 				92D20B2A20E14A6F002B21FA /* SWXMLHash+TypeConversion.swift in Sources */,
 				92D20B2D20E14A74002B21FA /* IBKeys.swift in Sources */,
 				92BD7C0C213F4A2600798578 /* NibEnumsGenerator.swift in Sources */,
+				92687457214DC760002CF5BF /* AssetExporter.swift in Sources */,
 				92D20B3020E14A78002B21FA /* StringEnumConverter.swift in Sources */,
 				92D20B3220E14A78002B21FA /* StoryboardStructureExtensionGenerator.swift in Sources */,
 				92D20B3520E14A78002B21FA /* SwiftyIB.swift in Sources */,
@@ -812,9 +853,11 @@
 				92D20B2F20E14A78002B21FA /* StoryboardExporter.swift in Sources */,
 				92D20B3120E14A78002B21FA /* StoryboardEnumsGenerator.swift in Sources */,
 				92BD7C19213F540900798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
+				92687452214DBA1C002CF5BF /* AssetCatalogueParser.swift in Sources */,
 				92D20B2920E14A6F002B21FA /* SWXMLHash.swift in Sources */,
 				92BD7C1D213F540D00798578 /* NibStructureExtensionsGenerator.swift in Sources */,
 				92D20B3320E14A78002B21FA /* StoryboardTypesGenerator.swift in Sources */,
+				9268745D214DC7F0002CF5BF /* Exporter.swift in Sources */,
 				92BD7C09213F4A2200798578 /* NibExporter.swift in Sources */,
 				92D20B2C20E14A74002B21FA /* StoryboardParser.swift in Sources */,
 			);
@@ -824,11 +867,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9268745C214DC7F0002CF5BF /* Exporter.swift in Sources */,
+				92687459214DC761002CF5BF /* AssetExporter.swift in Sources */,
 				92B24DC720C1AEC600AEE476 /* StoryboardStructureExtensionGenerator.swift in Sources */,
 				92D20B2720E14A6C002B21FA /* SWXMLHash.swift in Sources */,
 				92B24DC520C1AEC000AEE476 /* StringEnumConverter.swift in Sources */,
+				92687451214DBA15002CF5BF /* AssetCatalogueParser.swift in Sources */,
 				92B24DCF20C1B42F00AEE476 /* ProjectParser.swift in Sources */,
 				92B24DD120C1B43600AEE476 /* FilesFinder.swift in Sources */,
+				92687462214DCBE5002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */,
 				92B24DCE20C1B42700AEE476 /* StoryboardParser.swift in Sources */,
 				92BD7BFC213F372200798578 /* NibParser.swift in Sources */,
 				92D20B2820E14A6C002B21FA /* SWXMLHash+TypeConversion.swift in Sources */,
@@ -836,6 +883,7 @@
 				92BD7C07213F4A1F00798578 /* NibExporter.swift in Sources */,
 				92BD7C0D213F4A2700798578 /* NibEnumsGenerator.swift in Sources */,
 				92B24DD020C1B43300AEE476 /* IBKeys.swift in Sources */,
+				9259E438214DB5E80004BE85 /* AssetModels.swift in Sources */,
 				92B24DC420C1AEB700AEE476 /* StoryboardExporter.swift in Sources */,
 				92BD7C18213F540800798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
 				92B24DC920C1AEC900AEE476 /* StoryboardTypesGenerator.swift in Sources */,
@@ -866,12 +914,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92687463214DCBE5002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */,
+				9259E439214DB5ED0004BE85 /* AssetModels.swift in Sources */,
 				92B24E1120C1D34F00AEE476 /* SwiftyIBKit.framework in Sources */,
 				92D20B1920E147F6002B21FA /* FilesFinder.swift in Sources */,
 				92BD7BFE213F372400798578 /* NibParser.swift in Sources */,
 				92D20B1520E147F3002B21FA /* SWXMLHash+TypeConversion.swift in Sources */,
 				92D20B1820E147F6002B21FA /* IBKeys.swift in Sources */,
 				92BD7C0B213F4A2600798578 /* NibEnumsGenerator.swift in Sources */,
+				92687458214DC760002CF5BF /* AssetExporter.swift in Sources */,
 				92D20B1B20E147FB002B21FA /* StringEnumConverter.swift in Sources */,
 				92D20B1D20E147FB002B21FA /* StoryboardStructureExtensionGenerator.swift in Sources */,
 				92D20B2020E147FD002B21FA /* SwiftyIB.swift in Sources */,
@@ -880,9 +931,11 @@
 				92D20B1A20E147FB002B21FA /* StoryboardExporter.swift in Sources */,
 				92D20B1C20E147FB002B21FA /* StoryboardEnumsGenerator.swift in Sources */,
 				92BD7C1B213F540B00798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
+				92687453214DBA20002CF5BF /* AssetCatalogueParser.swift in Sources */,
 				92D20B1420E147F3002B21FA /* SWXMLHash.swift in Sources */,
 				92BD7C1C213F540C00798578 /* NibStructureExtensionsGenerator.swift in Sources */,
 				92D20B1E20E147FB002B21FA /* StoryboardTypesGenerator.swift in Sources */,
+				9268745E214DC7F1002CF5BF /* Exporter.swift in Sources */,
 				92BD7C0A213F4A2300798578 /* NibExporter.swift in Sources */,
 				92D20B1720E147F6002B21FA /* StoryboardParser.swift in Sources */,
 			);
@@ -892,11 +945,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9268745B214DC7A9002CF5BF /* Exporter.swift in Sources */,
+				92687456214DC317002CF5BF /* AssetExporter.swift in Sources */,
+				9259E436214DB4CE0004BE85 /* AssetModels.swift in Sources */,
 				92E3D0FD1FF755CB0080EC12 /* StringEnumConverter.swift in Sources */,
 				92B24DC120C1AAED00AEE476 /* StoryboardTypesGenerator.swift in Sources */,
 				92E3D0FA1FF755B20080EC12 /* StoryboardEnumsGenerator.swift in Sources */,
 				92BD7C15213F52E600798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
 				92E3D0EE1FF74D990080EC12 /* SWXMLHash.swift in Sources */,
+				92687460214DCBE3002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */,
 				92545F001FF97BC60037D166 /* FilesFinder.swift in Sources */,
 				92E3D0EF1FF74D990080EC12 /* SWXMLHash+TypeConversion.swift in Sources */,
 				92BD7BFB213F358900798578 /* NibParser.swift in Sources */,
@@ -909,6 +966,7 @@
 				92545EF91FF847A00037D166 /* ProjectParser.swift in Sources */,
 				92D8EF2C1FF49DC5005491E6 /* IBKeys.swift in Sources */,
 				92C06AA21FF47CC7004D6B5C /* AppDelegate.swift in Sources */,
+				9259E432214DB3700004BE85 /* AssetCatalogueParser.swift in Sources */,
 				92BD7C17213F52F400798578 /* NibStructureExtensionsGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

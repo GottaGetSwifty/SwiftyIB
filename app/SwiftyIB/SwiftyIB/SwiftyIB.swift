@@ -10,6 +10,18 @@ import Foundation
 import AppKit
 
 public class SwiftyIB {
+    
+    enum Error: LocalizedError {
+        case noResult(text: String)
+        
+        var localizedDescription: String {
+            switch self {
+            case .noResult(let text):
+                return "No result found for \(text)"
+            }
+        }
+    }
+    
     let containingURL: URL
     
     public init?(containingURL: URL) {
@@ -19,13 +31,18 @@ public class SwiftyIB {
         self.containingURL = containingURL
     }
     
-    public func findAllStorboardURLs() -> [URL] {
+    private func findAllStorboardURLs() -> [URL] {
         let allURLs = FilesFinder.getAllStoryboardFiles(in: self.containingURL) ?? []
         return allURLs
     }
     
-    public func findAllNibs() -> [URL] {
+    private func findAllNibs() -> [URL] {
         let allURLs = FilesFinder.getAllNibFiles(in: self.containingURL) ?? []
+        return allURLs
+    }
+    
+    private func findAllAssetFolders() -> [URL] {
+        let allURLs = FilesFinder.getAllAssetFolders(in: self.containingURL) ?? []
         return allURLs
     }
     
@@ -37,6 +54,13 @@ public class SwiftyIB {
     public func buildNibs() -> [IBNib] {
         let allNibs = findAllNibs().map(NibParser.init).compactMap { $0.parse() }
         return allNibs
+    }
+    
+    public func buildAssetFolders() -> AssetsContainer {
+        let result: AssetsContainer = findAllAssetFolders()
+            .map{AssetCatalogueParser(assetsURL: $0).parse()}
+            .reduce(AssetsContainer.emptyValue, +)
+        return result
     }
     
     public static func export(storboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws {
@@ -51,6 +75,14 @@ public class SwiftyIB {
         try NibExporter.exportIdentifiers(nibs: nibs, to: destination, isAbsoluteURL: isAbsoluteURL)
         try NibExporter.exportNibExtensions(nibs: nibs, to: destination, isAbsoluteURL: isAbsoluteURL)
         try NibExporter.exportReuseExtensions(nibs: nibs, to: destination, isAbsoluteURL: isAbsoluteURL)
+    }
+    
+    public static func export(assets: AssetsContainer, to destination: URL, isAbsoluteURL: Bool) throws {
+        if assets.isEmpty {
+            throw SwiftyIB.Error.noResult(text: "Assets")
+        }
+        try AssetExporter.exportIdentifiers(assets: assets, to: destination, isAbsoluteURL: isAbsoluteURL)
+        try AssetExporter.exportAssetExtensions(to: destination, isAbsoluteURL: isAbsoluteURL)
     }
 }
 

@@ -7,11 +7,17 @@
 //
 import Foundation
 
-public class StoryboardExporter {
+public class StoryboardExporter: Exporter {
     
-    static let storyboardIDFileName = "IBIdentifiers/StoryboardIdentifier.swift"
-    static let sceneseIDFileName = "IBIdentifiers/ScenesIdentifier.swift"
-    static let segueIDFileName = "IBIdentifiers/SegueIdentifier.swift"
+    private static let storyboardPath = "IBIdentifiers/Storyboard/"
+    
+    private static let storyboardIDFileName = "\(storyboardPath)StoryboardIdentifier.swift"
+    private static let sceneseIDFileName = "\(storyboardPath)ScenesIdentifier.swift"
+    private static let segueIDFileName = "\(storyboardPath)SegueIdentifier.swift"
+    
+    private static let sceneExtensionsFileName = "\(storyboardPath)SceneExtensions.swift"
+    private static let ibTypesFileName = "\(storyboardPath)IBTypes.swift"
+    private static let ibTypeExtensionsFileName = "\(storyboardPath)IBTypeExtensions.swift"
     
     public static func exportIdentifiers(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws {
         
@@ -38,8 +44,6 @@ public class StoryboardExporter {
         }
     }
     
-    
-    static let sceneExtensionsFileName = "IBIdentifiers/SceneExtensions.swift"
     static func exportExtensions(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
         if let sceneExtensions = StoryboardStructureExtensionGenerator.makeScenesStructExtensions(from: storyboards) {
             let result = exportFile(fileText: sceneExtensions, to: destination.appendingPathComponent(sceneExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
@@ -47,7 +51,6 @@ public class StoryboardExporter {
         }
     }
     
-    static let ibTypesFileName = "IBIdentifiers/IBTypes.swift"
     static func exportIBTypes(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
         let ibTypes = StoryboardTypesGenerator.makeIBTypes() 
         let result = exportFile(fileText: ibTypes, to: destination.appendingPathComponent(ibTypesFileName), isAbsoluteURL: isAbsoluteURL)
@@ -55,26 +58,10 @@ public class StoryboardExporter {
         
     }
     
-    static let ibTypeExtensionsFileName = "IBIdentifiers/IBTypeExtensions.swift"
     static func exportIBTypeExtensions(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
         let ibTypeExtensions = StoryboardExtensionsGenerator.makeIBTypeExtensions()
         let result = exportFile(fileText: ibTypeExtensions, to: destination.appendingPathComponent(ibTypeExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
         print("Exporting IBType Extensions result: \(result)")
         
-    }
-    
-    private static func exportFile(fileText: String, to url: URL, isAbsoluteURL: Bool) -> Bool {
-        let filePath = isAbsoluteURL ? url.deletingLastPathComponent().absoluteString : url.deletingLastPathComponent().relativeString 
-        do {
-            if !FileManager.default.fileExists(atPath: filePath) {
-                try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
-            }
-            try fileText.write(to: url, atomically: true, encoding: .utf8)
-            return true
-        }
-        catch let e {
-            print(e.localizedDescription)
-            return false
-        }
     }
 }

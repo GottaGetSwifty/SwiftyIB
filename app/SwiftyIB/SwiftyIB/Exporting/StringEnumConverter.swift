@@ -8,13 +8,13 @@
 
 public struct StringEnumConverter {
     
-    public static func makeEnum(with name: String, and documentation: String, from strings: [String]) -> String? {
+    public static func makeEnum(with name: String, and documentation: String, from strings: [String], addEnumHeader: Bool = false) -> String? {
         guard !name.isEmpty else {
             return nil
         }
         let preparedCases = Set(strings).sorted()
         
-        let result = "\(makeEnumStart(from: name, and: documentation))\(preparedCases.map(makeCase).reduce("", +))\(enumEnd)"
+        let result = "\(makeEnumStart(from: name, and: documentation, addEnumHeader: addEnumHeader))\(preparedCases.map(makeCase).reduce("", +))\(enumEnd)"
         return result
     }
     
@@ -31,8 +31,8 @@ public struct StringEnumConverter {
         return "\n\tcase \(name)"
     }
 
-    private static func makeEnumStart(from name: String, and documentation: String) -> String{
-        return "\(makeEnumHeader(for: name))\n\n\(documentation)\nenum \(name): String {"
+    private static func makeEnumStart(from name: String, and documentation: String, addEnumHeader: Bool = false) -> String{
+        return "\(addEnumHeader ? makeEnumHeader(for: name) : "")\n\n\(documentation)\nenum \(name): String {"
     }
     
     private static let enumEnd = "\n\tcase none\n}"

@@ -95,4 +95,12 @@ class FilesFinder {
     static func getAllNibFiles(in url: URL) -> [URL]? {
         return FilesFinder(fileExtension: "xib", baseFolderURL: url).findAllContained()
     }
+    
+    /// Convenience method for finding all asset folders
+    ///
+    /// - Parameter url: The url to search (should be a directory) 
+    /// - Returns: An array of any found URLs, or nil if the url was not a directory
+    static func getAllAssetFolders(in url: URL) -> [URL]? {
+        return FilesFinder(fileExtension: "xcassets", baseFolderURL: url).findAllContained()
+    }
 }

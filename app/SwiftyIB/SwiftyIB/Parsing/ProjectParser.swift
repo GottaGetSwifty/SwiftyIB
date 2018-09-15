@@ -5,6 +5,13 @@
 //  Created by Paul Fechner on 12/30/17.
 //  Copyright © 2017 peejweej.inc. All rights reserved.
 //
+
+
+/**************************************************
+ * NOT CURRENTLY USED.
+ * The project structure is annoyingly complex and not worth building a parser just for this.
+ * If we can find an existing parser, we should use that.
+ **************************************************/
 import Foundation
 class ProjectParser {
     
