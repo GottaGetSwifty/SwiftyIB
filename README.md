@@ -4,62 +4,181 @@ Generate a static, protocol-oriented structure to greatly simplify the usage of 
 
 
 ## Usage
-A few quick examples:
+
+Once everything's setup, all this functionality should be enabled for free.
+
+### Segues
+Before
+
+```
+func goToNextScreen() {
+    performSegue(withIdentifier: "MySegueID", sender: nil)
+}
+
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let identifier = segue.identifier else {
+        return
+    }
+    switch identifier {
+    case "MySegueIdentifier:
+        guard let destination = segue.destination as? MyNextViewController else {
+            return
+        }
+        //Set up your new screen, assuming the identifier ACTUALLY matches
+    default:
+        break
+    }
+    
+```
+After 
+
+```
+func goToNextScreen() {
+    performSegue(with: .MyNextSegue)
+}
+
+// or
+
+func goToNextScreen() {
+    Scene.Segues.MyNextSegue.perform()
+}
+
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.getSegueIdentifier() {
+        case Scene.Segues.MyNextSegue.segueIdentifier:
+            //You can be sure this is the right Segue now, and you'll get a build error if you change the segue ID
+        default:
+            break
+        }
+    }
+```
+
+
+### Storyboard finding and creation
+Before
+
+```
+func buildInitialVC() -> UIViewController? {
+    return UIStoryboard(name: "hopefullyRealStoryboardName", bundle: nil).instantiateInitialViewController()
+}
+
+func buildMyVC() -> MyRealViewControllerClass? {
+    return UIStoryboard(name: "hopefullyRealStoryboardName", bundle: nil).instantiateViewController(withIdentifier: "HopefullyRightIdentifier") as? MyRealViewControllerClass
+}
+    
+```
+After 
+
+```
+func buildInitialVC() -> UIViewController? {
+    return StoryboardIdentifier.MyRealStoryboardName.makeInitialVC()
+}
+
+func buildMyVC() -> MyRealViewControllerClass {
+    return MyRealViewControllerClass._Scene.makeFromStoryboard()
+}
 
 ```
 
-// Easily make the initial viewController for a storyboard
-let initialVC = StoryboardIdentifier.Main.makeInitialVC()
+### Cell management
+Before
 
-// Build ViewControllers programatically with no hassel.
-let secondViewController = SecondViewController._Scene.makeFromStoryboard()
-
-// Easily perform a segue WITH code completion! 
-func startDetailScreen() {
-    Scenes.GoToDetail.perform()
+```
+func registerCells() {
+    tableView.register(UINib(nibName: "hopefulyRealNibName", bundle: nil), forCellReuseIdentifier: "HopefullyRightReuseIdentifier")
+    tableView.register(UINib(nibName: "hopefulyRealNibName", bundle: nil), forHeaderFooterViewReuseIdentifier: "HopefullyRightReuseIdentifier")
 }
 
-// Easily get the segue identifier in prepare(for segue:)
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    switch segue.getSegueIdentifier() {
-    case .GoToDetail: break //do what you gotta do
-    default: break
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "HopefullyRealIdentifier", for: indexPath)
+    // Might not have worked, no way to guarentee the class of the Cell
+}
+
+override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HopefullyRightIdentifier")
+    //Hopefully this worked. No way to tell till you run it.
+}
+```
+After 
+
+```
+func registerCells() {
+    tableView.register(cellType: ActualCellClass.self)
+    tableView.register(viewType: ActualHeaderFooterClass.self)
+}
+
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    guard let cell: RealCellClass = tableView.dequeueTyped(with: .RealCellClass, for: indexPath)  as? else {
+        return UITableViewCell()
     }
+    // Not only is this cleaner, but now if the class name or identifier changes, you'll get a compile error
 }
 
+override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    guard let view: ActualHeaderFooterClass = tableView.dequeueTypedHeaderFooter(for: ActualHeaderFooterClass.self) else {
+        return nil
+    }
+    // Now if the class name or identifier changes, you'll get a compile error
+}
+```
+
+### Assets 
+Before
+
+```
+
+func setupView() {
+    let image = UIImage(named: "HopefullyRealName")
+    let color = UIColor(named: "HopefullyRealName")
+}
+    
+```
+After 
+
+```
+func setupView() {
+    let image = UIImage(identifier: .realImageIdentifier)
+    let color = UIColor(identifier: .realColorIdentifier)
+}
 ```
 
 ## Getting Started
 
 See the SwiftyIBExample project to see how the tooling is generally intended to work. (More tooling info at the bottom of the page)
 
-The quickest way to get going is to download the executable.
-https://github.com/PeeJWeeJ/SwiftyIB/blob/master/app/SwiftyIBExample/SwiftyIBGenerator/SwiftyIBGenerator
+The best way to get thigns setup is to have the SwiftyIB project in a sub-folder if your project. (ideally as a git-submodule)
 
-And in your project, add a `run script` build phase _before_ `compile sources` with this script:
+Then, in your project, add a `run script` build phase _before_ `compile sources` with this script:
 
 ```
 #!/bin/bash
 
-# vars for building the generator. Should only be used if the full project is available to build.
-buildscript_path=../SwiftyIB/SwiftyIBBuild.sh
-generator_path=SwiftyIBGenerator
-generator_file_name=SwiftyIBGenerator
-generator_file_path=$generator_path/$generator_file_name
+echo "Will run SwiftyIB"
+# Path variables
 
-#vars for generation
-IB_search_directory=SwiftyIBExample # This directory is searched recurssively for all IB files. 
-IB_files_export_path=SwiftyIBExample/identifiers
+# Build script from SwiftyIB. This is used in case we need to re-build the parser
+buildscript_path=../../SubModules/SwiftyIB/app/SwiftyIB/SwiftyIBBuild.sh
 
-#Uncomment to remove the generator and rebuild it from source
+generator_path=SwiftyIBGenerator # The export path for the executable parser
+generator_file_name=SwiftyIBGenerator # The name to use for the executable parser
+generator_file_path=$generator_path/$generator_file_name # Full path for the parser
+
+IB_search_directory=MyTestApp/AllFiles # The directory from which the parse will start the recursive search
+IB_files_export_path=MyTestApp/SwiftyIBGenerated # The path to export the generated files to add to your project
+# Ideally the above variables are the only things that will need to be changed for a given project.
+
+# Uncomment the following line to remove the generator and fully rebuild it from source.
 #rm -r $generator_file_path
 if ! [ -e "$generator_file_path" ]; then
 
-#Builds the generator. This should only happen once. Delete the generator if you want to re-build
+# Builds the generater executable. Should not be necessary every build.
 echo "Will build generator"
 sh $buildscript_path -o $generator_path -n $generator_file_name
 
 fi
+
+#This section checks if there is a new version available since the executable was built.
 
 latest_version="$(sh $buildscript_path -v)"
 build_version="$(./$generator_file_path -v)"
@@ -77,14 +196,13 @@ else
 echo "Generator already built. and updated"
 fi
 
-
-# This should be the only line that runs every time.
+# This is the line that actually generates the files.
 ./$generator_file_path -s $IB_search_directory -o $IB_files_export_path
 ```
 
- After the first build, simply add the files to your project located in the `IB_files_export_path`. Subsequent builds should update the files automatically.
+ After the first build, simply add the files/folders to your project located in the `IB_files_export_path`. Subsequent builds should update the files automatically and automatically update the generater if the SwiftyIB project has been updated with a new version.
 
-Anecdotally the generation is pretty fast. (~20 milliseconds for a simple storyboard on a 3 year old MBP). The goal is to keep it fast enough to run during every build.
+Anecdotally the generation is pretty fast. (~20 milliseconds for a simple storyboard on a 3 year old MBP). The goal is to keep this fast enough to run during every build, which is why an executable is used.
 
 ## Nerdy details / what's actually generated
 
@@ -248,10 +366,7 @@ For now the included extensions are focussed around simplifying creation and nav
 
 ## Planned Improvements
 
-* `xib` parsing and generation. This should be pretty simple, but was less of a priority compared to storyboards.
-* `UITableViewCell` and `UICollectionViewCell` parsing and generation. Make working with cell registring as easy and Type safe as possible
 * Type-safe view controllers in Segues.
-* Look into adding support for strings and colors. Although not a stability issue, it's the other most annoying thing about Interface Builder. It's possible this should be it's own project.
 * Improved tooling. Once everything's set up it works well, but any setup process beyond a few clicks is annyoing.
 * The IB parser could be moved to it's own project/framework for easy re-use for other things.
 

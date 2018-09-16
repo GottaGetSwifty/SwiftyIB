@@ -99,6 +99,22 @@ extension UITableView {
     func dequeueTypedHeaderFooter<T: UITableViewHeaderFooterView>(with identifier: ReuseIdentifier) -> T? {
         return self.dequeueHeaderFooter(with: identifier) as? T
     }
+        
+    func dequeue<T: NibReusable>(for cellType: T.Type, indexPath: IndexPath) -> UITableViewCell {
+        return dequeueReusableCell(withIdentifier: cellType.generatedReuseIdentifier, for: indexPath)
+    }
+    
+    func dequeueTyped<T: NibReusable, R: UITableViewCell>(for cellType: T.Type, indexPath: IndexPath) -> R? {
+        return dequeueReusableCell(withIdentifier: cellType.generatedReuseIdentifier, for: indexPath) as? R
+    }
+    
+    func dequeueHeaderFooter<T: NibReusable>(for cellType: T.Type) -> UIView? {
+        return dequeueReusableHeaderFooterView(withIdentifier: cellType.generatedReuseIdentifier)
+    }
+    
+    func dequeueTypedHeaderFooter<T: NibReusable, R: UITableViewHeaderFooterView>(for cellType: T.Type) -> R? {
+        return dequeueReusableHeaderFooterView(withIdentifier: cellType.generatedReuseIdentifier) as? R
+    }
 }
 
 extension UICollectionView {
