@@ -10,7 +10,7 @@ Once everything's setup, all this functionality should be enabled for free.
 ### Segues
 Before
 
-```
+```swift
 func goToNextScreen() {
     performSegue(withIdentifier: "MySegueID", sender: nil)
 }
@@ -32,7 +32,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 ```
 After 
 
-```
+```swift
 func goToNextScreen() {
     performSegue(with: .MyNextSegue)
 }
@@ -57,7 +57,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 ### Storyboard finding and creation
 Before
 
-```
+```swift
 func buildInitialVC() -> UIViewController? {
     return UIStoryboard(name: "hopefullyRealStoryboardName", bundle: nil).instantiateInitialViewController()
 }
@@ -69,7 +69,7 @@ func buildMyVC() -> MyRealViewControllerClass? {
 ```
 After 
 
-```
+```swift
 func buildInitialVC() -> UIViewController? {
     return StoryboardIdentifier.MyRealStoryboardName.makeInitialVC()
 }
@@ -83,7 +83,7 @@ func buildMyVC() -> MyRealViewControllerClass {
 ### Cell management
 Before
 
-```
+```swift
 func registerCells() {
     tableView.register(UINib(nibName: "hopefulyRealNibName", bundle: nil), forCellReuseIdentifier: "HopefullyRightReuseIdentifier")
     tableView.register(UINib(nibName: "hopefulyRealNibName", bundle: nil), forHeaderFooterViewReuseIdentifier: "HopefullyRightReuseIdentifier")
@@ -101,7 +101,7 @@ override func tableView(_ tableView: UITableView, viewForHeaderInSection section
 ```
 After 
 
-```
+```swift
 func registerCells() {
     tableView.register(cellType: ActualCellClass.self)
     tableView.register(viewType: ActualHeaderFooterClass.self)
@@ -126,7 +126,7 @@ override func tableView(_ tableView: UITableView, viewForHeaderInSection section
 ### Assets 
 Before
 
-```
+```swift
 
 func setupView() {
     let image = UIImage(named: "HopefullyRealName")
@@ -136,7 +136,7 @@ func setupView() {
 ```
 After 
 
-```
+```swift
 func setupView() {
     let image = UIImage(identifier: .realImageIdentifier)
     let color = UIColor(identifier: .realColorIdentifier)
@@ -151,7 +151,7 @@ The best way to get thigns setup is to have the SwiftyIB project in a sub-folder
 
 Then, in your project, add a `run script` build phase _before_ `compile sources` with this script:
 
-```
+```bash
 #!/bin/bash
 
 echo "Will run SwiftyIB"
@@ -212,7 +212,7 @@ See the example project to see full examples of what is generated and available.
 
 String-backed enums that match the file names and identifiers:
 
-```
+```swift
 enum StoryboardIdentifier: String {
 	case LaunchScreen
 	case MainScreen
@@ -245,7 +245,7 @@ enum SegueIdentifier: String {
 
 A Typed structur to generated from Interface Builder to give compile-time guarentees for scene/storyboard information and segues:
 
-```
+```swift
 extension SecondViewController {
                         
     var Scene: _Scene { return _Scene(_viewController: self) }
@@ -268,7 +268,7 @@ extension SecondViewController {
 
 This structure gives propper access from both a static/class context and an instance context. The static identifiers are always available, but the Segues are only available from within an instance of the ViewController subclass.
 
-```
+```swift
 // works
 SecondViewController._Scene.storyboardIdentifier
 
@@ -284,7 +284,7 @@ secondViewControllerInstance.Scene.Segues.GoToDetail
 
 Although it's not recommended (reduces the compile-time guarentees), ViewControllers used in multiple scenes will be generated with the additional scenes.
 
-```
+```swift
 extension ViewController {
             
     var Scenes: _Scenes { return _Scenes(_viewController: self) }
@@ -335,7 +335,7 @@ extension ViewController {
 ### Types
 To make things easily extendable, we use a set of protocols and Types:
 
-```
+```swift
 protocol IBScene: StoryboardIdentifiable, SceneIdentifiable { }
 
 protocol StoryboardIdentifiable {
