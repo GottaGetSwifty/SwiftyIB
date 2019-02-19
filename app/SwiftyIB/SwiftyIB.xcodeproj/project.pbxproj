@@ -125,6 +125,7 @@
 		92E3D0FD1FF755CB0080EC12 /* StringEnumConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0FC1FF755CB0080EC12 /* StringEnumConverter.swift */; };
 		92E3D0FF1FF7579B0080EC12 /* StringEnumConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0FE1FF7579B0080EC12 /* StringEnumConverterTests.swift */; };
 		92E3D1021FF75EE40080EC12 /* StoryboardConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D1011FF75EE40080EC12 /* StoryboardConverterTests.swift */; };
+		92F73AB5221C6C4D00A96C77 /* StoryboardStructureExtensionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B24E20C1AA7500176AE8 /* StoryboardStructureExtensionGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -965,6 +966,7 @@
 				9281365E1FFAEBD600DBB2D1 /* StoryboardExporter.swift in Sources */,
 				92545EF91FF847A00037D166 /* ProjectParser.swift in Sources */,
 				92D8EF2C1FF49DC5005491E6 /* IBKeys.swift in Sources */,
+				92F73AB5221C6C4D00A96C77 /* StoryboardStructureExtensionGenerator.swift in Sources */,
 				92C06AA21FF47CC7004D6B5C /* AppDelegate.swift in Sources */,
 				9259E432214DB3700004BE85 /* AssetCatalogueParser.swift in Sources */,
 				92BD7C17213F52F400798578 /* NibStructureExtensionsGenerator.swift in Sources */,

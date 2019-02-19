@@ -19,11 +19,13 @@ public struct StringEnumConverter {
     }
     
     static func makeEnum(with name: String, and documentation: String, using identifierFinder: (() -> ([String])) ) -> String? {
-        let results = identifierFinder()
-        guard !name.isEmpty, !results.isEmpty else {
+        
+        guard !name.isEmpty else {
             return nil
         }
-        let resultEnum = makeEnum(with: name, and: documentation, from: identifierFinder())
+       
+        let results = identifierFinder()
+        let resultEnum = makeEnum(with: name, and: documentation, from: results)
         return resultEnum
     }
     
