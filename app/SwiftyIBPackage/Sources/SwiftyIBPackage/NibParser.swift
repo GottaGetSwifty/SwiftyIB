@@ -6,6 +6,7 @@
 //  Copyright © 2017 peejweej.inc. All rights reserved.
 //
 import Foundation
+import SWXMLHash
 
 class NibParser {
     

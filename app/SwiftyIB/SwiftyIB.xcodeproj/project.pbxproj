@@ -3,10 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E62A7D523183F56007D551D /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 2E62A7D423183F56007D551D /* Quick */; };
+		2E62A7D723183F56007D551D /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 2E62A7D623183F56007D551D /* Nimble */; };
+		2E62A7D923183F56007D551D /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = 2E62A7D823183F56007D551D /* SWXMLHash */; };
+		2E62A7DB23183F66007D551D /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = 2E62A7DA23183F66007D551D /* SWXMLHash */; };
+		2E62A7DD23183F7C007D551D /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = 2E62A7DC23183F7C007D551D /* SWXMLHash */; };
+		2E62A7E523184137007D551D /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62A7DE23184137007D551D /* ProjectParser.swift */; };
+		2E62A7E623184137007D551D /* AssetCatalogueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62A7DF23184137007D551D /* AssetCatalogueParser.swift */; };
+		2E62A7E723184137007D551D /* NibParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62A7E023184137007D551D /* NibParser.swift */; };
+		2E62A7E823184137007D551D /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62A7E123184137007D551D /* FilesFinder.swift */; };
+		2E62A7E923184137007D551D /* IBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62A7E223184137007D551D /* IBKeys.swift */; };
+		2E62A7EA23184137007D551D /* StoryboardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62A7E323184137007D551D /* StoryboardParser.swift */; };
+		2E62A7EB23184137007D551D /* AssetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62A7E423184137007D551D /* AssetModels.swift */; };
 		9211AF7C1FF747E6005E26D0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9211AF7B1FF747E6005E26D0 /* main.swift */; };
 		9225013E1FF6F2A500AD828A /* SwiftyIBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922501351FF6F2A500AD828A /* SwiftyIBKit.framework */; };
 		922501451FF6F2A500AD828A /* SwiftyIBKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922501441FF6F2A500AD828A /* SwiftyIBKitTests.swift */; };
@@ -14,18 +26,8 @@
 		9225014A1FF6F2A500AD828A /* SwiftyIBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922501351FF6F2A500AD828A /* SwiftyIBKit.framework */; };
 		9225014B1FF6F2A500AD828A /* SwiftyIBKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 922501351FF6F2A500AD828A /* SwiftyIBKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92545EF51FF847760037D166 /* TestProject.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92545EF41FF847750037D166 /* TestProject.txt */; };
-		92545EF91FF847A00037D166 /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EF81FF847A00037D166 /* ProjectParser.swift */; };
 		92545EFC1FF965150037D166 /* ProjectParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFB1FF965150037D166 /* ProjectParserTests.swift */; };
 		92545EFE1FF966290037D166 /* EmptyFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92545EFD1FF966290037D166 /* EmptyFile.txt */; };
-		92545F001FF97BC60037D166 /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
-		9259E432214DB3700004BE85 /* AssetCatalogueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */; };
-		9259E436214DB4CE0004BE85 /* AssetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E435214DB4CE0004BE85 /* AssetModels.swift */; };
-		9259E437214DB5E80004BE85 /* AssetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E435214DB4CE0004BE85 /* AssetModels.swift */; };
-		9259E438214DB5E80004BE85 /* AssetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E435214DB4CE0004BE85 /* AssetModels.swift */; };
-		9259E439214DB5ED0004BE85 /* AssetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E435214DB4CE0004BE85 /* AssetModels.swift */; };
-		92687451214DBA15002CF5BF /* AssetCatalogueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */; };
-		92687452214DBA1C002CF5BF /* AssetCatalogueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */; };
-		92687453214DBA20002CF5BF /* AssetCatalogueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */; };
 		92687456214DC317002CF5BF /* AssetExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92687455214DC317002CF5BF /* AssetExporter.swift */; };
 		92687457214DC760002CF5BF /* AssetExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92687455214DC317002CF5BF /* AssetExporter.swift */; };
 		92687458214DC760002CF5BF /* AssetExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92687455214DC317002CF5BF /* AssetExporter.swift */; };
@@ -48,17 +50,8 @@
 		92B24DC720C1AEC600AEE476 /* StoryboardStructureExtensionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9288B24E20C1AA7500176AE8 /* StoryboardStructureExtensionGenerator.swift */; };
 		92B24DC920C1AEC900AEE476 /* StoryboardTypesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC020C1AAED00AEE476 /* StoryboardTypesGenerator.swift */; };
 		92B24DCB20C1AECC00AEE476 /* StoryboardExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC220C1AB1F00AEE476 /* StoryboardExtensionsGenerator.swift */; };
-		92B24DCE20C1B42700AEE476 /* StoryboardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF201FF48058005491E6 /* StoryboardParser.swift */; };
-		92B24DCF20C1B42F00AEE476 /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EF81FF847A00037D166 /* ProjectParser.swift */; };
-		92B24DD020C1B43300AEE476 /* IBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */; };
-		92B24DD120C1B43600AEE476 /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
 		92B24DD220C1B43D00AEE476 /* SwiftyIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545F021FF99D8D0037D166 /* SwiftyIB.swift */; };
 		92B24E1120C1D34F00AEE476 /* SwiftyIBKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = 922501351FF6F2A500AD828A /* SwiftyIBKit.framework */; };
-		92BD7BFB213F358900798578 /* NibParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7BFA213F358900798578 /* NibParser.swift */; };
-		92BD7BFC213F372200798578 /* NibParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7BFA213F358900798578 /* NibParser.swift */; };
-		92BD7BFD213F372300798578 /* NibParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7BFA213F358900798578 /* NibParser.swift */; };
-		92BD7BFE213F372400798578 /* NibParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7BFA213F358900798578 /* NibParser.swift */; };
-		92BD7BFF213F388800798578 /* NibParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7BFA213F358900798578 /* NibParser.swift */; };
 		92BD7C02213F461600798578 /* NibExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C01213F461600798578 /* NibExporter.swift */; };
 		92BD7C04213F46F600798578 /* NibEnumsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C03213F46F600798578 /* NibEnumsGenerator.swift */; };
 		92BD7C07213F4A1F00798578 /* NibExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C01213F461600798578 /* NibExporter.swift */; };
@@ -80,14 +73,8 @@
 		92C06AA61FF47CC7004D6B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92C06AA51FF47CC7004D6B5C /* Assets.xcassets */; };
 		92C06AA91FF47CC7004D6B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C06AA71FF47CC7004D6B5C /* Main.storyboard */; };
 		92C06AC01FF47CC8004D6B5C /* SwiftyIBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06ABF1FF47CC8004D6B5C /* SwiftyIBUITests.swift */; };
-		92C06AD01FF47DCC004D6B5C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C06AD11FF47DCC004D6B5C /* Quick.framework */; };
-		92C06AD21FF47E26004D6B5C /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C06AD31FF47E26004D6B5C /* Nimble.framework */; };
 		92D20B1420E147F3002B21FA /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0EC1FF74D980080EC12 /* SWXMLHash.swift */; };
 		92D20B1520E147F3002B21FA /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0ED1FF74D980080EC12 /* SWXMLHash+TypeConversion.swift */; };
-		92D20B1620E147F6002B21FA /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EF81FF847A00037D166 /* ProjectParser.swift */; };
-		92D20B1720E147F6002B21FA /* StoryboardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF201FF48058005491E6 /* StoryboardParser.swift */; };
-		92D20B1820E147F6002B21FA /* IBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */; };
-		92D20B1920E147F6002B21FA /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
 		92D20B1A20E147FB002B21FA /* StoryboardExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */; };
 		92D20B1B20E147FB002B21FA /* StringEnumConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0FC1FF755CB0080EC12 /* StringEnumConverter.swift */; };
 		92D20B1C20E147FB002B21FA /* StoryboardEnumsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0F91FF755B20080EC12 /* StoryboardEnumsGenerator.swift */; };
@@ -95,14 +82,6 @@
 		92D20B1E20E147FB002B21FA /* StoryboardTypesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC020C1AAED00AEE476 /* StoryboardTypesGenerator.swift */; };
 		92D20B1F20E147FB002B21FA /* StoryboardExtensionsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B24DC220C1AB1F00AEE476 /* StoryboardExtensionsGenerator.swift */; };
 		92D20B2020E147FD002B21FA /* SwiftyIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545F021FF99D8D0037D166 /* SwiftyIB.swift */; };
-		92D20B2720E14A6C002B21FA /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0EC1FF74D980080EC12 /* SWXMLHash.swift */; };
-		92D20B2820E14A6C002B21FA /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0ED1FF74D980080EC12 /* SWXMLHash+TypeConversion.swift */; };
-		92D20B2920E14A6F002B21FA /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0EC1FF74D980080EC12 /* SWXMLHash.swift */; };
-		92D20B2A20E14A6F002B21FA /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0ED1FF74D980080EC12 /* SWXMLHash+TypeConversion.swift */; };
-		92D20B2B20E14A74002B21FA /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EF81FF847A00037D166 /* ProjectParser.swift */; };
-		92D20B2C20E14A74002B21FA /* StoryboardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF201FF48058005491E6 /* StoryboardParser.swift */; };
-		92D20B2D20E14A74002B21FA /* IBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */; };
-		92D20B2E20E14A74002B21FA /* FilesFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545EFF1FF97BC60037D166 /* FilesFinder.swift */; };
 		92D20B2F20E14A78002B21FA /* StoryboardExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9281365D1FFAEBD600DBB2D1 /* StoryboardExporter.swift */; };
 		92D20B3020E14A78002B21FA /* StringEnumConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0FC1FF755CB0080EC12 /* StringEnumConverter.swift */; };
 		92D20B3120E14A78002B21FA /* StoryboardEnumsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0F91FF755B20080EC12 /* StoryboardEnumsGenerator.swift */; };
@@ -112,14 +91,9 @@
 		92D20B3520E14A78002B21FA /* SwiftyIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92545F021FF99D8D0037D166 /* SwiftyIB.swift */; };
 		92D20B3720E14B02002B21FA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92D20B3620E14B02002B21FA /* Info.plist */; };
 		92D8EF1F1FF48048005491E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C06AA71FF47CC7004D6B5C /* Main.storyboard */; };
-		92D8EF211FF48058005491E6 /* StoryboardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF201FF48058005491E6 /* StoryboardParser.swift */; };
 		92D8EF231FF48161005491E6 /* StoryboardParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF221FF48161005491E6 /* StoryboardParserTests.swift */; };
 		92D8EF261FF482B4005491E6 /* iOSTestStoryboard.xml in Resources */ = {isa = PBXBuildFile; fileRef = 92D8EF241FF4829A005491E6 /* iOSTestStoryboard.xml */; };
 		92D8EF271FF482BB005491E6 /* iOSTestStoryboard.xml in Resources */ = {isa = PBXBuildFile; fileRef = 92D8EF241FF4829A005491E6 /* iOSTestStoryboard.xml */; };
-		92D8EF281FF485FF005491E6 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C06ACF1FF47D38004D6B5C /* SWXMLHash.framework */; };
-		92D8EF2C1FF49DC5005491E6 /* IBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */; };
-		92E3D0EE1FF74D990080EC12 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0EC1FF74D980080EC12 /* SWXMLHash.swift */; };
-		92E3D0EF1FF74D990080EC12 /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0ED1FF74D980080EC12 /* SWXMLHash+TypeConversion.swift */; };
 		92E3D0F81FF74F820080EC12 /* EmptyStoryboard.xml in Resources */ = {isa = PBXBuildFile; fileRef = 92E3D0F71FF74F820080EC12 /* EmptyStoryboard.xml */; };
 		92E3D0FA1FF755B20080EC12 /* StoryboardEnumsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0F91FF755B20080EC12 /* StoryboardEnumsGenerator.swift */; };
 		92E3D0FD1FF755CB0080EC12 /* StringEnumConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E3D0FC1FF755CB0080EC12 /* StringEnumConverter.swift */; };
@@ -200,6 +174,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E62A7DE23184137007D551D /* ProjectParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectParser.swift; path = ../../../SwiftyIBPackage/Sources/SwiftyIBPackage/ProjectParser.swift; sourceTree = "<group>"; };
+		2E62A7DF23184137007D551D /* AssetCatalogueParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssetCatalogueParser.swift; path = ../../../SwiftyIBPackage/Sources/SwiftyIBPackage/AssetCatalogueParser.swift; sourceTree = "<group>"; };
+		2E62A7E023184137007D551D /* NibParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NibParser.swift; path = ../../../SwiftyIBPackage/Sources/SwiftyIBPackage/NibParser.swift; sourceTree = "<group>"; };
+		2E62A7E123184137007D551D /* FilesFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilesFinder.swift; path = ../../../SwiftyIBPackage/Sources/SwiftyIBPackage/FilesFinder.swift; sourceTree = "<group>"; };
+		2E62A7E223184137007D551D /* IBKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IBKeys.swift; path = ../../../SwiftyIBPackage/Sources/SwiftyIBPackage/IBKeys.swift; sourceTree = "<group>"; };
+		2E62A7E323184137007D551D /* StoryboardParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardParser.swift; path = ../../../SwiftyIBPackage/Sources/SwiftyIBPackage/StoryboardParser.swift; sourceTree = "<group>"; };
+		2E62A7E423184137007D551D /* AssetModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssetModels.swift; path = ../../../SwiftyIBPackage/Sources/SwiftyIBPackage/AssetModels.swift; sourceTree = "<group>"; };
 		9211AF791FF747E6005E26D0 /* SwiftyIBTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftyIBTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		9211AF7B1FF747E6005E26D0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		922501351FF6F2A500AD828A /* SwiftyIBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyIBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,13 +190,9 @@
 		922501441FF6F2A500AD828A /* SwiftyIBKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyIBKitTests.swift; sourceTree = "<group>"; };
 		922501461FF6F2A500AD828A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92545EF41FF847750037D166 /* TestProject.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestProject.txt; sourceTree = "<group>"; };
-		92545EF81FF847A00037D166 /* ProjectParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectParser.swift; sourceTree = "<group>"; };
 		92545EFB1FF965150037D166 /* ProjectParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectParserTests.swift; sourceTree = "<group>"; };
 		92545EFD1FF966290037D166 /* EmptyFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EmptyFile.txt; sourceTree = "<group>"; };
-		92545EFF1FF97BC60037D166 /* FilesFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesFinder.swift; sourceTree = "<group>"; };
 		92545F021FF99D8D0037D166 /* SwiftyIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyIB.swift; sourceTree = "<group>"; };
-		9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCatalogueParser.swift; sourceTree = "<group>"; };
-		9259E435214DB4CE0004BE85 /* AssetModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModels.swift; sourceTree = "<group>"; };
 		92687455214DC317002CF5BF /* AssetExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetExporter.swift; sourceTree = "<group>"; };
 		9268745A214DC7A9002CF5BF /* Exporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exporter.swift; sourceTree = "<group>"; };
 		9268745F214DCBE3002CF5BF /* AssetTypesAndExtensionsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTypesAndExtensionsGenerator.swift; sourceTree = "<group>"; };
@@ -229,7 +206,6 @@
 		92B24E0B20C1D33C00AEE476 /* SwiftyIBBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyIBBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B24E0D20C1D33C00AEE476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92B24E2220C1D67E00AEE476 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		92BD7BFA213F358900798578 /* NibParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibParser.swift; sourceTree = "<group>"; };
 		92BD7C01213F461600798578 /* NibExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibExporter.swift; sourceTree = "<group>"; };
 		92BD7C03213F46F600798578 /* NibEnumsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibEnumsGenerator.swift; sourceTree = "<group>"; };
 		92BD7C14213F52E600798578 /* NibTypesAndExtensionsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibTypesAndExtensionsGenerator.swift; sourceTree = "<group>"; };
@@ -250,10 +226,8 @@
 		92C06AD11FF47DCC004D6B5C /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C06AD31FF47E26004D6B5C /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D20B3620E14B02002B21FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92D8EF201FF48058005491E6 /* StoryboardParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardParser.swift; sourceTree = "<group>"; };
 		92D8EF221FF48161005491E6 /* StoryboardParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardParserTests.swift; sourceTree = "<group>"; };
 		92D8EF241FF4829A005491E6 /* iOSTestStoryboard.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = iOSTestStoryboard.xml; sourceTree = "<group>"; };
-		92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBKeys.swift; sourceTree = "<group>"; };
 		92E3D0EC1FF74D980080EC12 /* SWXMLHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SWXMLHash.swift; path = ../../SubModules/XML/SWXMLHash/Source/SWXMLHash.swift; sourceTree = "<group>"; };
 		92E3D0ED1FF74D980080EC12 /* SWXMLHash+TypeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SWXMLHash+TypeConversion.swift"; path = "../../SubModules/XML/SWXMLHash/Source/SWXMLHash+TypeConversion.swift"; sourceTree = "<group>"; };
 		92E3D0F71FF74F820080EC12 /* EmptyStoryboard.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = EmptyStoryboard.xml; sourceTree = "<group>"; };
@@ -268,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E62A7DD23183F7C007D551D /* SWXMLHash in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E62A7DB23183F66007D551D /* SWXMLHash in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,9 +288,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92D8EF281FF485FF005491E6 /* SWXMLHash.framework in Frameworks */,
-				92C06AD21FF47E26004D6B5C /* Nimble.framework in Frameworks */,
-				92C06AD01FF47DCC004D6B5C /* Quick.framework in Frameworks */,
+				2E62A7D923183F56007D551D /* SWXMLHash in Frameworks */,
+				2E62A7D523183F56007D551D /* Quick in Frameworks */,
+				2E62A7D723183F56007D551D /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,13 +345,13 @@
 		92545EF71FF8478D0037D166 /* Parsing */ = {
 			isa = PBXGroup;
 			children = (
-				9259E431214DB3700004BE85 /* AssetCatalogueParser.swift */,
-				92545EF81FF847A00037D166 /* ProjectParser.swift */,
-				92D8EF201FF48058005491E6 /* StoryboardParser.swift */,
-				92BD7BFA213F358900798578 /* NibParser.swift */,
-				92D8EF2B1FF49DC5005491E6 /* IBKeys.swift */,
-				92545EFF1FF97BC60037D166 /* FilesFinder.swift */,
-				9259E435214DB4CE0004BE85 /* AssetModels.swift */,
+				2E62A7DF23184137007D551D /* AssetCatalogueParser.swift */,
+				2E62A7E423184137007D551D /* AssetModels.swift */,
+				2E62A7E123184137007D551D /* FilesFinder.swift */,
+				2E62A7E223184137007D551D /* IBKeys.swift */,
+				2E62A7E023184137007D551D /* NibParser.swift */,
+				2E62A7DE23184137007D551D /* ProjectParser.swift */,
+				2E62A7E323184137007D551D /* StoryboardParser.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -551,6 +527,9 @@
 			dependencies = (
 			);
 			name = SwiftyIBTool;
+			packageProductDependencies = (
+				2E62A7DC23183F7C007D551D /* SWXMLHash */,
+			);
 			productName = SwiftyIBTool;
 			productReference = 9211AF791FF747E6005E26D0 /* SwiftyIBTool */;
 			productType = "com.apple.product-type.tool";
@@ -569,6 +548,9 @@
 			dependencies = (
 			);
 			name = SwiftyIBKit;
+			packageProductDependencies = (
+				2E62A7DA23183F66007D551D /* SWXMLHash */,
+			);
 			productName = SwiftyIBKit;
 			productReference = 922501351FF6F2A500AD828A /* SwiftyIBKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -642,6 +624,8 @@
 				922501491FF6F2A500AD828A /* PBXTargetDependency */,
 			);
 			name = SwiftyIB;
+			packageProductDependencies = (
+			);
 			productName = SwiftyIB;
 			productReference = 92C06A9E1FF47CC7004D6B5C /* SwiftyIB.app */;
 			productType = "com.apple.product-type.application";
@@ -660,6 +644,11 @@
 				92C06AB21FF47CC8004D6B5C /* PBXTargetDependency */,
 			);
 			name = SwiftyIBTests;
+			packageProductDependencies = (
+				2E62A7D423183F56007D551D /* Quick */,
+				2E62A7D623183F56007D551D /* Nimble */,
+				2E62A7D823183F56007D551D /* SWXMLHash */,
+			);
 			productName = SwiftyIBTests;
 			productReference = 92C06AB01FF47CC8004D6B5C /* SwiftyIBTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -738,6 +727,11 @@
 				Base,
 			);
 			mainGroup = 92C06A951FF47CC7004D6B5C;
+			packageReferences = (
+				2E62A7CB23183F17007D551D /* XCRemoteSwiftPackageReference "Quick" */,
+				2E62A7CE23183F2A007D551D /* XCRemoteSwiftPackageReference "Nimble" */,
+				2E62A7D123183F48007D551D /* XCRemoteSwiftPackageReference "SWXMLHash" */,
+			);
 			productRefGroup = 92C06A9F1FF47CC7004D6B5C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -838,29 +832,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				92687461214DCBE5002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */,
-				9259E437214DB5E80004BE85 /* AssetModels.swift in Sources */,
 				9211AF7C1FF747E6005E26D0 /* main.swift in Sources */,
-				92D20B2E20E14A74002B21FA /* FilesFinder.swift in Sources */,
-				92BD7BFD213F372300798578 /* NibParser.swift in Sources */,
-				92D20B2A20E14A6F002B21FA /* SWXMLHash+TypeConversion.swift in Sources */,
-				92D20B2D20E14A74002B21FA /* IBKeys.swift in Sources */,
 				92BD7C0C213F4A2600798578 /* NibEnumsGenerator.swift in Sources */,
 				92687457214DC760002CF5BF /* AssetExporter.swift in Sources */,
 				92D20B3020E14A78002B21FA /* StringEnumConverter.swift in Sources */,
 				92D20B3220E14A78002B21FA /* StoryboardStructureExtensionGenerator.swift in Sources */,
 				92D20B3520E14A78002B21FA /* SwiftyIB.swift in Sources */,
-				92D20B2B20E14A74002B21FA /* ProjectParser.swift in Sources */,
 				92D20B3420E14A78002B21FA /* StoryboardExtensionsGenerator.swift in Sources */,
 				92D20B2F20E14A78002B21FA /* StoryboardExporter.swift in Sources */,
 				92D20B3120E14A78002B21FA /* StoryboardEnumsGenerator.swift in Sources */,
 				92BD7C19213F540900798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
-				92687452214DBA1C002CF5BF /* AssetCatalogueParser.swift in Sources */,
-				92D20B2920E14A6F002B21FA /* SWXMLHash.swift in Sources */,
 				92BD7C1D213F540D00798578 /* NibStructureExtensionsGenerator.swift in Sources */,
 				92D20B3320E14A78002B21FA /* StoryboardTypesGenerator.swift in Sources */,
 				9268745D214DC7F0002CF5BF /* Exporter.swift in Sources */,
 				92BD7C09213F4A2200798578 /* NibExporter.swift in Sources */,
-				92D20B2C20E14A74002B21FA /* StoryboardParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,20 +856,11 @@
 				9268745C214DC7F0002CF5BF /* Exporter.swift in Sources */,
 				92687459214DC761002CF5BF /* AssetExporter.swift in Sources */,
 				92B24DC720C1AEC600AEE476 /* StoryboardStructureExtensionGenerator.swift in Sources */,
-				92D20B2720E14A6C002B21FA /* SWXMLHash.swift in Sources */,
 				92B24DC520C1AEC000AEE476 /* StringEnumConverter.swift in Sources */,
-				92687451214DBA15002CF5BF /* AssetCatalogueParser.swift in Sources */,
-				92B24DCF20C1B42F00AEE476 /* ProjectParser.swift in Sources */,
-				92B24DD120C1B43600AEE476 /* FilesFinder.swift in Sources */,
 				92687462214DCBE5002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */,
-				92B24DCE20C1B42700AEE476 /* StoryboardParser.swift in Sources */,
-				92BD7BFC213F372200798578 /* NibParser.swift in Sources */,
-				92D20B2820E14A6C002B21FA /* SWXMLHash+TypeConversion.swift in Sources */,
 				92B24DCB20C1AECC00AEE476 /* StoryboardExtensionsGenerator.swift in Sources */,
 				92BD7C07213F4A1F00798578 /* NibExporter.swift in Sources */,
 				92BD7C0D213F4A2700798578 /* NibEnumsGenerator.swift in Sources */,
-				92B24DD020C1B43300AEE476 /* IBKeys.swift in Sources */,
-				9259E438214DB5E80004BE85 /* AssetModels.swift in Sources */,
 				92B24DC420C1AEB700AEE476 /* StoryboardExporter.swift in Sources */,
 				92BD7C18213F540800798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
 				92B24DC920C1AEC900AEE476 /* StoryboardTypesGenerator.swift in Sources */,
@@ -906,7 +882,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92BD7BFF213F388800798578 /* NibParser.swift in Sources */,
 				9288B24920C09CA300176AE8 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -916,29 +891,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				92687463214DCBE5002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */,
-				9259E439214DB5ED0004BE85 /* AssetModels.swift in Sources */,
 				92B24E1120C1D34F00AEE476 /* SwiftyIBKit.framework in Sources */,
-				92D20B1920E147F6002B21FA /* FilesFinder.swift in Sources */,
-				92BD7BFE213F372400798578 /* NibParser.swift in Sources */,
 				92D20B1520E147F3002B21FA /* SWXMLHash+TypeConversion.swift in Sources */,
-				92D20B1820E147F6002B21FA /* IBKeys.swift in Sources */,
 				92BD7C0B213F4A2600798578 /* NibEnumsGenerator.swift in Sources */,
 				92687458214DC760002CF5BF /* AssetExporter.swift in Sources */,
 				92D20B1B20E147FB002B21FA /* StringEnumConverter.swift in Sources */,
 				92D20B1D20E147FB002B21FA /* StoryboardStructureExtensionGenerator.swift in Sources */,
 				92D20B2020E147FD002B21FA /* SwiftyIB.swift in Sources */,
-				92D20B1620E147F6002B21FA /* ProjectParser.swift in Sources */,
 				92D20B1F20E147FB002B21FA /* StoryboardExtensionsGenerator.swift in Sources */,
 				92D20B1A20E147FB002B21FA /* StoryboardExporter.swift in Sources */,
 				92D20B1C20E147FB002B21FA /* StoryboardEnumsGenerator.swift in Sources */,
 				92BD7C1B213F540B00798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
-				92687453214DBA20002CF5BF /* AssetCatalogueParser.swift in Sources */,
 				92D20B1420E147F3002B21FA /* SWXMLHash.swift in Sources */,
 				92BD7C1C213F540C00798578 /* NibStructureExtensionsGenerator.swift in Sources */,
 				92D20B1E20E147FB002B21FA /* StoryboardTypesGenerator.swift in Sources */,
 				9268745E214DC7F1002CF5BF /* Exporter.swift in Sources */,
 				92BD7C0A213F4A2300798578 /* NibExporter.swift in Sources */,
-				92D20B1720E147F6002B21FA /* StoryboardParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,27 +916,25 @@
 			files = (
 				9268745B214DC7A9002CF5BF /* Exporter.swift in Sources */,
 				92687456214DC317002CF5BF /* AssetExporter.swift in Sources */,
-				9259E436214DB4CE0004BE85 /* AssetModels.swift in Sources */,
+				2E62A7E923184137007D551D /* IBKeys.swift in Sources */,
+				2E62A7E523184137007D551D /* ProjectParser.swift in Sources */,
 				92E3D0FD1FF755CB0080EC12 /* StringEnumConverter.swift in Sources */,
 				92B24DC120C1AAED00AEE476 /* StoryboardTypesGenerator.swift in Sources */,
 				92E3D0FA1FF755B20080EC12 /* StoryboardEnumsGenerator.swift in Sources */,
+				2E62A7E623184137007D551D /* AssetCatalogueParser.swift in Sources */,
+				2E62A7EB23184137007D551D /* AssetModels.swift in Sources */,
 				92BD7C15213F52E600798578 /* NibTypesAndExtensionsGenerator.swift in Sources */,
-				92E3D0EE1FF74D990080EC12 /* SWXMLHash.swift in Sources */,
+				2E62A7EA23184137007D551D /* StoryboardParser.swift in Sources */,
 				92687460214DCBE3002CF5BF /* AssetTypesAndExtensionsGenerator.swift in Sources */,
-				92545F001FF97BC60037D166 /* FilesFinder.swift in Sources */,
-				92E3D0EF1FF74D990080EC12 /* SWXMLHash+TypeConversion.swift in Sources */,
-				92BD7BFB213F358900798578 /* NibParser.swift in Sources */,
-				92D8EF211FF48058005491E6 /* StoryboardParser.swift in Sources */,
 				92B24DC320C1AB1F00AEE476 /* StoryboardExtensionsGenerator.swift in Sources */,
 				92BD7C02213F461600798578 /* NibExporter.swift in Sources */,
 				92BD7C04213F46F600798578 /* NibEnumsGenerator.swift in Sources */,
 				92C06AA41FF47CC7004D6B5C /* ViewController.swift in Sources */,
 				9281365E1FFAEBD600DBB2D1 /* StoryboardExporter.swift in Sources */,
-				92545EF91FF847A00037D166 /* ProjectParser.swift in Sources */,
-				92D8EF2C1FF49DC5005491E6 /* IBKeys.swift in Sources */,
+				2E62A7E823184137007D551D /* FilesFinder.swift in Sources */,
+				2E62A7E723184137007D551D /* NibParser.swift in Sources */,
 				92F73AB5221C6C4D00A96C77 /* StoryboardStructureExtensionGenerator.swift in Sources */,
 				92C06AA21FF47CC7004D6B5C /* AppDelegate.swift in Sources */,
-				9259E432214DB3700004BE85 /* AssetCatalogueParser.swift in Sources */,
 				92BD7C17213F52F400798578 /* NibStructureExtensionsGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1079,7 +1045,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = SwiftyIBKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1104,7 +1074,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = SwiftyIBKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1122,7 +1096,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1138,7 +1116,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1315,7 +1297,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -1330,7 +1313,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIB/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1347,7 +1333,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIB/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1363,7 +1352,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1380,7 +1373,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1396,7 +1393,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1412,7 +1413,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1505,6 +1510,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E62A7CB23183F17007D551D /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+		2E62A7CE23183F2A007D551D /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.2;
+			};
+		};
+		2E62A7D123183F48007D551D /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/drmohundro/SWXMLHash.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E62A7D423183F56007D551D /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E62A7CB23183F17007D551D /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		2E62A7D623183F56007D551D /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E62A7CE23183F2A007D551D /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		2E62A7D823183F56007D551D /* SWXMLHash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E62A7D123183F48007D551D /* XCRemoteSwiftPackageReference "SWXMLHash" */;
+			productName = SWXMLHash;
+		};
+		2E62A7DA23183F66007D551D /* SWXMLHash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E62A7D123183F48007D551D /* XCRemoteSwiftPackageReference "SWXMLHash" */;
+			productName = SWXMLHash;
+		};
+		2E62A7DC23183F7C007D551D /* SWXMLHash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E62A7D123183F48007D551D /* XCRemoteSwiftPackageReference "SWXMLHash" */;
+			productName = SWXMLHash;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 92C06A961FF47CC7004D6B5C /* Project object */;
 }
