@@ -1,6 +1,0 @@
-[submodule "SubModules/XML/SWXMLHash"]
-	path = SubModules/XML/SWXMLHash
-	url = https://github.com/drmohundro/SWXMLHash.git
-[submodule "SubModules/Quick/Quick"]
-	path = SubModules/Quick/Quick
-	url = ../../Quick/Quick.git
