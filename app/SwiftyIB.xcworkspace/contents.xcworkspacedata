@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SwiftyIBPackage">
-   </FileRef>
-   <FileRef
-      location = "group:SwiftyIB/Package.swift">
-   </FileRef>
-   <FileRef
       location = "group:SwiftyIB/SwiftyIB.xcodeproj">
    </FileRef>
    <FileRef
