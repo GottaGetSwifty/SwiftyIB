@@ -8,7 +8,7 @@
 
 
 import Foundation
-
+import SwiftyIB
 
 let VERSION_NUMBER = 1
 enum CommandLineOption: String {
