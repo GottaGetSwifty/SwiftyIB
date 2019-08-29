@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -286,6 +286,8 @@
 			dependencies = (
 			);
 			name = SwiftyIBExample;
+			packageProductDependencies = (
+			);
 			productName = SwiftyIBExample;
 			productReference = 9299EEA01FF47A390083320B /* SwiftyIBExample.app */;
 			productType = "com.apple.product-type.application";
@@ -361,6 +363,9 @@
 				Base,
 			);
 			mainGroup = 9299EE971FF47A390083320B;
+			packageReferences = (
+				2E62A80E231853A2007D551D /* XCRemoteSwiftPackageReference "SwiftyIB" */,
+			);
 			productRefGroup = 9299EEA11FF47A390083320B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -416,7 +421,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#gdate is used here. \n#Comment out if you don't have coreutils installed\n#or install with homebrew: \"brew install coreutils\"\necho \"$(gdate +%s.%N)\"\n# vars for building the generator. Should only be used if the full project is available to build.\nbuildscript_path=../SwiftyIB/SwiftyIBBuild.sh\ngenerator_path=SwiftyIBGenerator\ngenerator_file_name=SwiftyIBGenerator\ngenerator_file_path=$generator_path/$generator_file_name\n\n#vars for generation\nIB_search_directory=SwiftyIBExample # This directory is searched recurssively for all IB files. \nIB_files_export_path=SwiftyIBExample/identifiers\n\n#Uncomment to remove the generator and rebuild it from source\n#rm -r $generator_file_path\nif ! [ -e \"$generator_file_path\" ]; then\n\n#Builds the generator. This should only happen once. Delete the generator if you want to re-build\necho \"Will build generator\"\nsh $buildscript_path -o $generator_path -n $generator_file_name\n\nfi\n\nlatest_version=\"$(sh $buildscript_path -v)\"\nbuild_version=\"$(./$generator_file_path -v)\"\n\necho \"latest version: $(echo $latest_version)\"\necho \"build version: $(echo $build_version)\"\n\nfunction version { printf \"%03d%03d%03d%03d\" $(echo \"$1\" | tr '.' ' '); }\n\nif [ \"$(version \"$latest_version\")\" -gt \"$(version \"$build_version\")\" ]; then\necho \"There is an updated version, so will rebuild\"\nsh $buildscript_path -o $generator_path -n $generator_file_name\n\nelse\necho \"Generator already built. and updated\"\nfi\n\n# This should be the only line that runs every time.\n./$generator_file_path -s $IB_search_directory -o $IB_files_export_path\n\necho \"$(gdate +%s.%N)\"\n";
+			shellScript = "#gdate is used here. \n#Comment out if you don't have coreutils installed\n#or install with homebrew: \"brew install coreutils\"\n#echo \"$(gdate +%s.%N)\"\n\npackage_name=SwiftyIBExample\necho $package_name\nbuild_dir=`xcodebuild -project $package_name.xcodeproj -showBuildSettings | grep -m 1 \"BUILD_DIR\" | grep -oEi \"\\/.*\"`\necho $build_dir\ndata_dir=$build_dir/../..\necho $data_dir\nswift_ib_dir=$data_dir/SourcePackages/checkouts/SwiftyIB\necho $swift_ib_dir\n# vars for building the generator. Should only be used if the full project is available to build.\nbuildscript_path=$swift_ib_dir/app/SwiftyIB/SwiftyIBBuild.sh\necho $buildscript_path\ngenerator_path=SwiftyIBGenerator\ngenerator_file_name=SwiftyIBGenerator\ngenerator_file_path=$generator_path/$generator_file_name\n\n#vars for generation\nIB_search_directory=SwiftyIBExample # This directory is searched recurssively for all IB files. \nIB_files_export_path=SwiftyIBExample/identifiers\n\n#Uncomment to remove the generator and rebuild it from source\n#rm -r $generator_file_path\nif ! [ -e \"$generator_file_path\" ]; then\n\n#Builds the generator. This should only happen once. Delete the generator if you want to re-build\necho \"Will build generator\"\nsh $buildscript_path -o $generator_path -n $generator_file_name\n\nfi\n\nlatest_version=\"$(sh $buildscript_path -v)\"\nbuild_version=\"$(./$generator_file_path -v)\"\n\necho \"latest version: $(echo $latest_version)\"\necho \"build version: $(echo $build_version)\"\n\nfunction version { printf \"%03d%03d%03d%03d\" $(echo \"$1\" | tr '.' ' '); }\n\nif [ \"$(version \"$latest_version\")\" -gt \"$(version \"$build_version\")\" ]; then\necho \"There is an updated version, so will rebuild\"\nsh $buildscript_path -o $generator_path -n $generator_file_name\n\nelse\necho \"Generator already built. and updated\"\nfi\n\n# This should be the only line that runs every time.\n./$generator_file_path -s $IB_search_directory -o $IB_files_export_path\n\necho \"$(gdate +%s.%N)\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -608,7 +613,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -620,7 +626,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -635,7 +644,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -651,7 +663,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -668,7 +684,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -684,7 +704,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -700,7 +724,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -749,6 +777,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E62A80E231853A2007D551D /* XCRemoteSwiftPackageReference "SwiftyIB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PeeJWeeJ/SwiftyIB.git";
+			requirement = {
+				branch = SPM;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		9299EEAA1FF47A390083320B /* SwiftyIBExample.xcdatamodeld */ = {

@@ -1,26 +1,6 @@
 /// Automatically generated from SwiftyIB
 import UIKit           
         
-private protocol SecondViewControllerSceneContainer: SceneContainer { }
-        
-extension SecondViewController: SecondViewControllerSceneContainer {             
-    typealias SceneType = SecondViewControllerScene
-    struct SecondViewControllerScene: IBScene {
-        init(_viewController: SecondViewController) { self._viewController = _viewController }
-        fileprivate let _viewController: SecondViewController
-        var viewController: UIViewController { return _viewController }
-        static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
-        static let sceneIdentifier: SceneIdentifier = .SecondVC        
-        
-        var Segues: _Segues { return _Segues(_viewController: _viewController) }
-        struct _Segues {
-            fileprivate let _viewController: SecondViewController
-            var viewController: UIViewController { return _viewController }    
-            var GoToDetail: IBSegue { return IBSegue(segueIdentifier: .GoToDetail, viewController: viewController)}
-        }     
-    }
-}           
-        
 extension ViewController {        
     var Scenes: _Scenes { return _Scenes(_viewController: self) }
     struct _Scenes {
@@ -89,6 +69,26 @@ extension ViewController {
             }
             return scenes.first { $0.sceneIdentifier.rawValue == restorationID }
         }
+    }
+}           
+        
+private protocol SecondViewControllerSceneContainer: SceneContainer { }
+        
+extension SecondViewController: SecondViewControllerSceneContainer {             
+    typealias SceneType = SecondViewControllerScene
+    struct SecondViewControllerScene: IBScene {
+        init(_viewController: SecondViewController) { self._viewController = _viewController }
+        fileprivate let _viewController: SecondViewController
+        var viewController: UIViewController { return _viewController }
+        static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
+        static let sceneIdentifier: SceneIdentifier = .SecondVC        
+        
+        var Segues: _Segues { return _Segues(_viewController: _viewController) }
+        struct _Segues {
+            fileprivate let _viewController: SecondViewController
+            var viewController: UIViewController { return _viewController }    
+            var GoToDetail: IBSegue { return IBSegue(segueIdentifier: .GoToDetail, viewController: viewController)}
+        }     
     }
 }           
         

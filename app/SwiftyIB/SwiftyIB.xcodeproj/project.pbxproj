@@ -14,6 +14,7 @@
 		2E62A7DD23183F7C007D551D /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = 2E62A7DC23183F7C007D551D /* SWXMLHash */; };
 		2E62A805231849B4007D551D /* SwiftyIB in Frameworks */ = {isa = PBXBuildFile; productRef = 2E62A804231849B4007D551D /* SwiftyIB */; };
 		2E62A807231849C2007D551D /* SwiftyIB in Frameworks */ = {isa = PBXBuildFile; productRef = 2E62A806231849C2007D551D /* SwiftyIB */; };
+		2E62A80A23184E49007D551D /* SwiftyIB in Frameworks */ = {isa = PBXBuildFile; productRef = 2E62A80923184E49007D551D /* SwiftyIB */; };
 		9211AF7C1FF747E6005E26D0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9211AF7B1FF747E6005E26D0 /* main.swift */; };
 		9225013E1FF6F2A500AD828A /* SwiftyIBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922501351FF6F2A500AD828A /* SwiftyIBKit.framework */; };
 		922501451FF6F2A500AD828A /* SwiftyIBKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922501441FF6F2A500AD828A /* SwiftyIBKitTests.swift */; };
@@ -200,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E62A807231849C2007D551D /* SwiftyIB in Frameworks */,
+				2E62A80A23184E49007D551D /* SwiftyIB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +487,7 @@
 			name = SwiftyIB;
 			packageProductDependencies = (
 				2E62A806231849C2007D551D /* SwiftyIB */,
+				2E62A80923184E49007D551D /* SwiftyIB */,
 			);
 			productName = SwiftyIB;
 			productReference = 92C06A9E1FF47CC7004D6B5C /* SwiftyIB.app */;
@@ -591,6 +594,7 @@
 				2E62A7CB23183F17007D551D /* XCRemoteSwiftPackageReference "Quick" */,
 				2E62A7CE23183F2A007D551D /* XCRemoteSwiftPackageReference "Nimble" */,
 				2E62A7D123183F48007D551D /* XCRemoteSwiftPackageReference "SWXMLHash" */,
+				2E62A80823184E49007D551D /* XCRemoteSwiftPackageReference "SwiftyIB" */,
 			);
 			productRefGroup = 92C06A9F1FF47CC7004D6B5C /* Products */;
 			projectDirPath = "";
@@ -1330,6 +1334,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		2E62A80823184E49007D551D /* XCRemoteSwiftPackageReference "SwiftyIB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PeeJWeeJ/SwiftyIB.git";
+			requirement = {
+				branch = SPM;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1364,6 +1376,11 @@
 		};
 		2E62A806231849C2007D551D /* SwiftyIB */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = SwiftyIB;
+		};
+		2E62A80923184E49007D551D /* SwiftyIB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E62A80823184E49007D551D /* XCRemoteSwiftPackageReference "SwiftyIB" */;
 			productName = SwiftyIB;
 		};
 /* End XCSwiftPackageProductDependency section */

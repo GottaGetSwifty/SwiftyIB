@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "SwiftyIBPackage",
+        "repositoryURL": "https://github.com/PeeJWeeJ/SwiftyIB.git",
+        "state": {
+          "branch": "SPM",
+          "revision": "b6618d8f700283e61f6070206583fa75c9679136",
+          "version": null
+        }
+      },
+      {
         "package": "SWXMLHash",
         "repositoryURL": "https://github.com/drmohundro/SWXMLHash.git",
         "state": {
