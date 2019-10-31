@@ -3,9 +3,9 @@
 
 import UIKit
 
-protocol AnyIBScene: StoryboardIdentifiable, SceneIdentifiable { }
+protocol IBScene: StoryboardIdentifiable, SceneIdentifiable { }
 
-protocol IBScene: AnyIBScene {
+protocol IBScene: IBScene {
     associatedtype ViewControllerType: UIViewController
     init(_viewController: ViewControllerType)
 }

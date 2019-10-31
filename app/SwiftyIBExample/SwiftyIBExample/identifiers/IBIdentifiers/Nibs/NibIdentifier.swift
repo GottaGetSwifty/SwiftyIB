@@ -2,10 +2,10 @@
 
 /// Automatically generated from SwiftyIB
 /// Each case represents a distinct Nib file
-enum NibIdentifier: String {
-	case CollectionReusableView
-	case CollectionViewCell
-	case TableViewCell
-	case TableViewHeaderFooterView
-	case none
+import SwiftyIB
+extension NibIdentifier {
+	static var CollectionReusableView: NibIdentifier {NibIdentifier(name: "CollectionReusableView")}
+	static var CollectionViewCell: NibIdentifier {NibIdentifier(name: "CollectionViewCell")}
+	static var TableViewCell: NibIdentifier {NibIdentifier(name: "TableViewCell")}
+	static var TableViewHeaderFooterView: NibIdentifier {NibIdentifier(name: "TableViewHeaderFooterView")}
 }

@@ -14,13 +14,14 @@ public class NibEnumsGenerator {
     private static let nibIDEnumDocumentation =     """
                                                 /// Automatically generated from SwiftyIB
                                                 /// Each case represents a distinct Nib file
+                                                import SwiftyIB
                                                 """
     
     private static let nibIDName = "NibIdentifier"
     
     public static func makeNibNameEnum(from nibs: [IBNib]) -> String? {
         let identifierAction = { nibs.map{ $0.nibName } }
-        return StringEnumConverter.makeEnum(with: nibIDName, and: nibIDEnumDocumentation, using: identifierAction)
+        return IBIdentifiersConverter.makeIdentifiersExtension(with: nibIDName, and: nibIDEnumDocumentation, using: identifierAction)
     }
     
     
@@ -30,12 +31,13 @@ public class NibEnumsGenerator {
     private static let cellIDEnumDocumentation =     """
                                             /// Automatically generated from SwiftyIB
                                             /// Each case represents a found reuseIdentifier
+                                            import SwiftyIB
                                             """
     
     private static let cellIDEnumName = "ReuseIdentifier"
     
     public static func makeCellIdentifierEnum(from nibs: [IBNib]) -> String? {
         let identifierAction = { nibs.flatMap{ $0.views?.compactMap{$0.reuseIdentifier} ?? [] } }
-        return StringEnumConverter.makeEnum(with: cellIDEnumName, and: cellIDEnumDocumentation, using: identifierAction) 
+        return IBIdentifiersConverter.makeIdentifiersExtension(with: cellIDEnumName, and: cellIDEnumDocumentation, using: identifierAction)
     }
 }

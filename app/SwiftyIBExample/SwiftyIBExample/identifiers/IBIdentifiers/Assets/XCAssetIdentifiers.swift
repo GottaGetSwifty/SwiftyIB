@@ -4,39 +4,35 @@
 //
 // **DO NOT EDIT**
 // 
-// Any changes will be overwritten when next generated 
+// Any changes will be overwritten when next generated
+import SwiftyIB
 
 /// Automatically generated from SwiftyIB
 /// Each case represents a distinct Asset
-enum AssetImageIdentifier: String {
-	case TestImage
-	case none
+extension AssetImageIdentifier {
+	static var TestImage: AssetImageIdentifier {AssetImageIdentifier(name: "TestImage")}
 }
 
 /// Automatically generated from SwiftyIB
 /// Each case represents a distinct Asset
-enum AssetColorIdentifier: String {
-	case TestColor
-	case none
+extension AssetColorIdentifier {
+	static var TestColor: AssetColorIdentifier {AssetColorIdentifier(name: "TestColor")}
 }
 
 /// Automatically generated from SwiftyIB
 /// Each case represents a distinct Asset
-enum AssetDataIdentifier: String {
-	case TestData
-	case none
+extension AssetDataIdentifier {
+	static var TestData: AssetDataIdentifier {AssetDataIdentifier(name: "TestData")}
 }
 
 /// Automatically generated from SwiftyIB
 /// Each case represents a distinct Asset
-enum AssetTextureIdentifier: String {
-	case TestTexture
-	case none
+extension AssetTextureIdentifier {
+	static var TestTexture: AssetTextureIdentifier {AssetTextureIdentifier(name: "TestTexture")}
 }
 
 /// Automatically generated from SwiftyIB
 /// Each case represents a distinct Asset
-enum AssetCubeTextureIdentifier: String {
-	case TestCube
-	case none
+extension AssetCubeTextureIdentifier {
+	static var TestCube: AssetCubeTextureIdentifier {AssetCubeTextureIdentifier(name: "TestCube")}
 }

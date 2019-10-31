@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyIB
 
 class SecondViewController: UIViewController {
 
@@ -37,7 +38,7 @@ class SecondViewController: UIViewController {
 
     
     // Easily make the initial viewController for a storyboard
-    let initialVC = StoryboardIdentifier.Main.makeInitialVC()
+    let initialVC = StoryboardIdentifier.Main.makeStoryboard()?.instantiateInitialViewController()
     
     // Build ViewControllers programatically with no hassel.
     let secondViewController = SecondViewController._Scene.makeFromStoryboard()

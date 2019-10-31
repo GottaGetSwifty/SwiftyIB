@@ -51,17 +51,17 @@ public class StoryboardExporter: Exporter {
         }
     }
     
-    static func exportIBTypes(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
-        let ibTypes = StoryboardTypesGenerator.makeIBTypes() 
-        let result = exportFile(fileText: ibTypes, to: destination.appendingPathComponent(ibTypesFileName), isAbsoluteURL: isAbsoluteURL)
-        print("Exporting IBTypes result: \(result)")
+//    static func exportIBTypes(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws {
+//        let ibTypes = StoryboardTypesGenerator.makeIBTypes()
+//        let result = exportFile(fileText: ibTypes, to: destination.appendingPathComponent(ibTypesFileName), isAbsoluteURL: isAbsoluteURL)
+//        print("Exporting IBTypes result: \(result)")
         
-    }
+//    }
     
-    static func exportIBTypeExtensions(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
-        let ibTypeExtensions = StoryboardExtensionsGenerator.makeIBTypeExtensions()
-        let result = exportFile(fileText: ibTypeExtensions, to: destination.appendingPathComponent(ibTypeExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
-        print("Exporting IBType Extensions result: \(result)")
-        
-    }
+//    static func exportIBTypeExtensions(storyboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws { 
+//        let ibTypeExtensions = StoryboardExtensionsGenerator.makeIBTypeExtensions()
+//        let result = exportFile(fileText: ibTypeExtensions, to: destination.appendingPathComponent(ibTypeExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
+//        print("Exporting IBType Extensions result: \(result)")
+//        
+//    }
 }

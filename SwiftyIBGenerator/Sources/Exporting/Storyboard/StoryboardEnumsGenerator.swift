@@ -14,13 +14,14 @@ public class StoryboardEnumsGenerator {
     private static let storboardEnumDocumentation =     """
                                                 /// Automatically generated from SwiftyIB
                                                 /// Each case represents a distinct Storyboard file
+                                                import SwiftyIB
                                                 """
     
     private static let storyboardEnumName = "StoryboardIdentifier"
     
     public static func makeStoryboardNameEnum(from storyboards: [IBStoryboard]) -> String? {
         let identifierAction = { storyboards.map{ $0.name } }
-        return StringEnumConverter.makeEnum(with: storyboardEnumName, and: storboardEnumDocumentation, using: identifierAction)
+        return IBIdentifiersConverter.makeIdentifiersExtension(with: storyboardEnumName, and: storboardEnumDocumentation, using: identifierAction)
     }
     
     
@@ -30,13 +31,14 @@ public class StoryboardEnumsGenerator {
     private static let sceneEnumDocumentation =     """
                                             /// Automatically generated from SwiftyIB
                                             /// Each case represents a distinct scene from a storyboard
+                                            import SwiftyIB
                                             """
     
     private static let scenesEnumName = "SceneIdentifier"
     
     public static func makeSceneNameEnum(from storyboards: [IBStoryboard]) -> String? {
         let identifierAction = { storyboards.flatMap{ $0.scenes }.compactMap{$0.viewController?.storyboardIdentifier} }
-        return StringEnumConverter.makeEnum(with: scenesEnumName, and: sceneEnumDocumentation, using: identifierAction) 
+        return IBIdentifiersConverter.makeIdentifiersExtension(with: scenesEnumName, and: sceneEnumDocumentation, using: identifierAction)
     }
     
     
@@ -46,10 +48,11 @@ public class StoryboardEnumsGenerator {
     private static let segueEnumDocumentation =     """
                                             /// Automatically generated from SwiftyIB
                                             /// Each case represents a segue from a storyboard
+                                            import SwiftyIB
                                             """
     private static let segueEnumName = "SegueIdentifier"
     public static func makeSegueNameEnum(from storyboards: [IBStoryboard]) -> String? {
         let identifierAction = { storyboards.flatMap{ $0.scenes }.flatMap{$0.viewController?.allSegues ?? []}.compactMap{$0.identifier} }
-        return StringEnumConverter.makeEnum(with: segueEnumName, and: segueEnumDocumentation, using: identifierAction) 
+        return IBIdentifiersConverter.makeIdentifiersExtension(with: segueEnumName, and: segueEnumDocumentation, using: identifierAction) 
     }
 }

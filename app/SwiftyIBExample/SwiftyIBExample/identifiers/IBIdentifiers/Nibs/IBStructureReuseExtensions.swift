@@ -1,22 +1,20 @@
 /// Automatically generated from SwiftyIB
+import SwiftyIB
 
-extension CollectionReusableView: IBReusableIdentifiable {
-    static var ibReuseIdentifier: ReuseIdentifier { 
+extension CollectionReusableView: IBReusable {
+    static var reuseIBIdentifier: ReuseIdentifier {
         return .CollectionReusableView
     }
 }
 
-extension TableViewCell: IBReusableIdentifiable {
-    static var ibReuseIdentifier: ReuseIdentifier { 
+extension TableViewCell: IBReusable {
+    static var reuseIBIdentifier: ReuseIdentifier {
         return .TableViewCell
     }
 }
 
-extension CollectionViewCell: IBReusableIdentifiable {
-    static var ibReuseIdentifier: ReuseIdentifier { 
+extension CollectionViewCell: IBReusable {
+    static var reuseIBIdentifier: ReuseIdentifier {
         return .CollectionViewCell
     }
 }
-extension CollectionReusableView: NibReusable {}
-extension TableViewCell: NibReusable {}
-extension CollectionViewCell: NibReusable {}

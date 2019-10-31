@@ -14,7 +14,7 @@ class AssetExporter: Exporter {
                                                 /// Automatically generated from SwiftyIB
                                                 /// Each case represents a distinct Asset
                                                 """
-    
+
     private static let assetsPath = "IBIdentifiers/Assets/"
     private static let assetIDFilePath = "\(assetsPath)XCAssetIdentifiers.swift"
     private static let assetExtensionsPath = "\(assetsPath)XCAssetExtensions.swift"
@@ -26,7 +26,7 @@ class AssetExporter: Exporter {
             hasMadeHeader = true
             return !value
         }
-        let enums = AssetsContainer.AssetType.allValues.map{ makeEnum(from: assets, for: $0, addEnumHeader: triggerHeader()) }
+        let enums = AssetsContainer.AssetType.allValues.map{ makeEnum(from: assets, for: $0, addHeader: triggerHeader()) }
         let allEnums = enums.joined()
         if !allEnums.isEmpty {
             let result = exportFile(fileText: allEnums, to: destination.appendingPathComponent(assetIDFilePath), isAbsoluteURL: isAbsoluteURL)
@@ -37,17 +37,17 @@ class AssetExporter: Exporter {
         }
     }
     
-    private static func makeEnum(from assets: AssetsContainer, for type: AssetsContainer.AssetType, addEnumHeader: Bool) -> String {
+    private static func makeEnum(from assets: AssetsContainer, for type: AssetsContainer.AssetType, addHeader: Bool) -> String {
         
         let names = assets.values(for: type)
     
-        return StringEnumConverter.makeEnum(with: type.identifierEnumName, and: enumHeaderDocumentation, from: Array(names), addEnumHeader: addEnumHeader) ?? ""
+        return IBIdentifiersConverter.makeIdentifiersExtension(with: type.identifierEnumName, and: enumHeaderDocumentation, from: Array(names), addHeader: addHeader) ?? ""
     }
     
-    static func exportAssetExtensions(to destination: URL, isAbsoluteURL: Bool) throws {
-        let fileText = AssetTypesAndExtensionsGenerator.makeAssetsTypesAndExtensions() 
-        let result = exportFile(fileText: fileText, to: destination.appendingPathComponent(assetExtensionsPath), isAbsoluteURL: isAbsoluteURL)
-        print("Exporting XCAsset Extensions result: \(result)")
-        
-    }
+//    static func exportAssetExtensions(to destination: URL, isAbsoluteURL: Bool) throws {
+//        let fileText = AssetTypesAndExtensionsGenerator.makeAssetsTypesAndExtensions()
+//        let result = exportFile(fileText: fileText, to: destination.appendingPathComponent(assetExtensionsPath), isAbsoluteURL: isAbsoluteURL)
+//        print("Exporting XCAsset Extensions result: \(result)")
+//
+//    }
 }

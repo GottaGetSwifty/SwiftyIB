@@ -1,4 +1,6 @@
 /// Automatically generated from SwiftyIB
+
+import SwiftyIB
         
 extension CollectionReusableView: IBNibIdentifiable {
     static var nibIdentifier: NibIdentifier { 

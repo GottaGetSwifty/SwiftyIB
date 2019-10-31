@@ -3,23 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9204893920EE76E600305F4A /* ChildSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9204893820EE76E600305F4A /* ChildSecondViewController.swift */; };
-		926874DF214DD195002CF5BF /* IBTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874D0214DD195002CF5BF /* IBTypeExtensions.swift */; };
 		926874E0214DD195002CF5BF /* SegueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874D1214DD195002CF5BF /* SegueIdentifier.swift */; };
-		926874E1214DD195002CF5BF /* IBTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874D2214DD195002CF5BF /* IBTypes.swift */; };
 		926874E2214DD195002CF5BF /* SceneExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874D3214DD195002CF5BF /* SceneExtensions.swift */; };
 		926874E3214DD195002CF5BF /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874D4214DD195002CF5BF /* StoryboardIdentifier.swift */; };
 		926874E4214DD195002CF5BF /* ScenesIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874D5214DD195002CF5BF /* ScenesIdentifier.swift */; };
-		926874E5214DD195002CF5BF /* CellIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874D7214DD195002CF5BF /* CellIdentifier.swift */; };
-		926874E6214DD195002CF5BF /* NibIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874D8214DD195002CF5BF /* NibIdentifier.swift */; };
-		926874E7214DD195002CF5BF /* IBStructureReuseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874D9214DD195002CF5BF /* IBStructureReuseExtensions.swift */; };
-		926874E8214DD195002CF5BF /* IBNibTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874DA214DD195002CF5BF /* IBNibTypes.swift */; };
-		926874E9214DD195002CF5BF /* IBStructureNibExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874DB214DD195002CF5BF /* IBStructureNibExtensions.swift */; };
-		926874EA214DD195002CF5BF /* XCAssetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874DD214DD195002CF5BF /* XCAssetExtensions.swift */; };
 		926874EB214DD195002CF5BF /* XCAssetIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926874DE214DD195002CF5BF /* XCAssetIdentifiers.swift */; };
 		9288B24120C0934400176AE8 /* SecondMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9288B24020C0934400176AE8 /* SecondMain.storyboard */; };
 		9299EEA41FF47A390083320B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299EEA31FF47A390083320B /* AppDelegate.swift */; };
@@ -42,6 +34,12 @@
 		92BD7BF7213F349200798578 /* CollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BD7BF6213F349200798578 /* CollectionReusableView.xib */; };
 		92BD7BF9213F349C00798578 /* TableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BD7BF8213F349C00798578 /* TableViewHeaderFooterView.xib */; };
 		92BD7C13213F4BE700798578 /* TestNibStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BD7C12213F4BE700798578 /* TestNibStuff.swift */; };
+		92DFEDA8236B8B0700BACA1E /* SwiftyIB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DFEDA7236B8B0700BACA1E /* SwiftyIB.framework */; };
+		92DFEDA9236B8B0700BACA1E /* SwiftyIB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 92DFEDA7236B8B0700BACA1E /* SwiftyIB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92DFEDB0236B909800BACA1E /* CellIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFEDAC236B909700BACA1E /* CellIdentifier.swift */; };
+		92DFEDB1236B909800BACA1E /* NibIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFEDAD236B909700BACA1E /* NibIdentifier.swift */; };
+		92DFEDB2236B909800BACA1E /* IBStructureReuseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFEDAE236B909700BACA1E /* IBStructureReuseExtensions.swift */; };
+		92DFEDB3236B909800BACA1E /* IBStructureNibExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DFEDAF236B909700BACA1E /* IBStructureNibExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,21 +59,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		92DFEDAA236B8B0700BACA1E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				92DFEDA9236B8B0700BACA1E /* SwiftyIB.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9204893820EE76E600305F4A /* ChildSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildSecondViewController.swift; sourceTree = "<group>"; };
-		926874D0214DD195002CF5BF /* IBTypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBTypeExtensions.swift; sourceTree = "<group>"; };
 		926874D1214DD195002CF5BF /* SegueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifier.swift; sourceTree = "<group>"; };
-		926874D2214DD195002CF5BF /* IBTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBTypes.swift; sourceTree = "<group>"; };
 		926874D3214DD195002CF5BF /* SceneExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneExtensions.swift; sourceTree = "<group>"; };
 		926874D4214DD195002CF5BF /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifier.swift; sourceTree = "<group>"; };
 		926874D5214DD195002CF5BF /* ScenesIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesIdentifier.swift; sourceTree = "<group>"; };
-		926874D7214DD195002CF5BF /* CellIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdentifier.swift; sourceTree = "<group>"; };
-		926874D8214DD195002CF5BF /* NibIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibIdentifier.swift; sourceTree = "<group>"; };
-		926874D9214DD195002CF5BF /* IBStructureReuseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStructureReuseExtensions.swift; sourceTree = "<group>"; };
-		926874DA214DD195002CF5BF /* IBNibTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBNibTypes.swift; sourceTree = "<group>"; };
-		926874DB214DD195002CF5BF /* IBStructureNibExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStructureNibExtensions.swift; sourceTree = "<group>"; };
-		926874DD214DD195002CF5BF /* XCAssetExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCAssetExtensions.swift; sourceTree = "<group>"; };
 		926874DE214DD195002CF5BF /* XCAssetIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCAssetIdentifiers.swift; sourceTree = "<group>"; };
+		9276D3A5236B8A2E00FD2639 /* SwiftyIB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyIB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9288B24020C0934400176AE8 /* SecondMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondMain.storyboard; sourceTree = "<group>"; };
 		9299EEA01FF47A390083320B /* SwiftyIBExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyIBExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9299EEA31FF47A390083320B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +109,11 @@
 		92BD7BF6213F349200798578 /* CollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionReusableView.xib; sourceTree = "<group>"; };
 		92BD7BF8213F349C00798578 /* TableViewHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewHeaderFooterView.xib; sourceTree = "<group>"; };
 		92BD7C12213F4BE700798578 /* TestNibStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNibStuff.swift; sourceTree = "<group>"; };
+		92DFEDA7236B8B0700BACA1E /* SwiftyIB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyIB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DFEDAC236B909700BACA1E /* CellIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdentifier.swift; sourceTree = "<group>"; };
+		92DFEDAD236B909700BACA1E /* NibIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibIdentifier.swift; sourceTree = "<group>"; };
+		92DFEDAE236B909700BACA1E /* IBStructureReuseExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStructureReuseExtensions.swift; sourceTree = "<group>"; };
+		92DFEDAF236B909700BACA1E /* IBStructureNibExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBStructureNibExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +123,7 @@
 			files = (
 				92B24DDE20C1CBBB00AEE476 /* Foundation.framework in Frameworks */,
 				92B24DDC20C1CBB400AEE476 /* UIKit.framework in Frameworks */,
+				92DFEDA8236B8B0700BACA1E /* SwiftyIB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				926874CF214DD195002CF5BF /* Storyboard */,
-				926874D6214DD195002CF5BF /* Nibs */,
+				92DFEDAB236B909700BACA1E /* Nibs */,
 				926874DC214DD195002CF5BF /* Assets */,
 			);
 			path = IBIdentifiers;
@@ -155,9 +166,7 @@
 		926874CF214DD195002CF5BF /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				926874D0214DD195002CF5BF /* IBTypeExtensions.swift */,
 				926874D1214DD195002CF5BF /* SegueIdentifier.swift */,
-				926874D2214DD195002CF5BF /* IBTypes.swift */,
 				926874D3214DD195002CF5BF /* SceneExtensions.swift */,
 				926874D4214DD195002CF5BF /* StoryboardIdentifier.swift */,
 				926874D5214DD195002CF5BF /* ScenesIdentifier.swift */,
@@ -165,22 +174,9 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		926874D6214DD195002CF5BF /* Nibs */ = {
-			isa = PBXGroup;
-			children = (
-				926874D7214DD195002CF5BF /* CellIdentifier.swift */,
-				926874D8214DD195002CF5BF /* NibIdentifier.swift */,
-				926874D9214DD195002CF5BF /* IBStructureReuseExtensions.swift */,
-				926874DA214DD195002CF5BF /* IBNibTypes.swift */,
-				926874DB214DD195002CF5BF /* IBStructureNibExtensions.swift */,
-			);
-			path = Nibs;
-			sourceTree = "<group>";
-		};
 		926874DC214DD195002CF5BF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				926874DD214DD195002CF5BF /* XCAssetExtensions.swift */,
 				926874DE214DD195002CF5BF /* XCAssetIdentifiers.swift */,
 			);
 			path = Assets;
@@ -247,6 +243,8 @@
 		92B24DD720C1C76500AEE476 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92DFEDA7236B8B0700BACA1E /* SwiftyIB.framework */,
+				9276D3A5236B8A2E00FD2639 /* SwiftyIB.framework */,
 				92B24DDD20C1CBBB00AEE476 /* Foundation.framework */,
 				92B24DDB20C1CBB400AEE476 /* UIKit.framework */,
 				92B24DD820C1C76500AEE476 /* SwiftyIBKit.framework */,
@@ -269,6 +267,17 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		92DFEDAB236B909700BACA1E /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				92DFEDAC236B909700BACA1E /* CellIdentifier.swift */,
+				92DFEDAD236B909700BACA1E /* NibIdentifier.swift */,
+				92DFEDAE236B909700BACA1E /* IBStructureReuseExtensions.swift */,
+				92DFEDAF236B909700BACA1E /* IBStructureNibExtensions.swift */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +289,7 @@
 				9299EE9C1FF47A390083320B /* Sources */,
 				9299EE9D1FF47A390083320B /* Frameworks */,
 				9299EE9E1FF47A390083320B /* Resources */,
+				92DFEDAA236B8B0700BACA1E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -340,15 +350,18 @@
 				TargetAttributes = {
 					9299EE9F1FF47A390083320B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 					};
 					9299EEB61FF47A390083320B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9299EE9F1FF47A390083320B;
 					};
 					9299EEC11FF47A390083320B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9299EE9F1FF47A390083320B;
 					};
@@ -364,7 +377,6 @@
 			);
 			mainGroup = 9299EE971FF47A390083320B;
 			packageReferences = (
-				2E62A80E231853A2007D551D /* XCRemoteSwiftPackageReference "SwiftyIB" */,
 			);
 			productRefGroup = 9299EEA11FF47A390083320B /* Products */;
 			projectDirPath = "";
@@ -421,7 +433,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#gdate is used here. \n#Comment out if you don't have coreutils installed\n#or install with homebrew: \"brew install coreutils\"\n#echo \"$(gdate +%s.%N)\"\ncd ../../\nswift build\n.build/debug/swiftyib -s app/SwiftyIBExample -o app/SwiftyIBExample/SwiftyIBExample/identifiers\n";
+			shellScript = "#gdate is used here. \n#Comment out if you don't have coreutils installed\n#or install with homebrew: \"brew install coreutils\"\n#echo \"$(gdate +%s.%N)\"\n\nswift run --package-path ../../ SwiftyIBGenerator -s SwiftyIBExample -o SwiftyIBExample/identifiers\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -430,28 +442,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				926874E9214DD195002CF5BF /* IBStructureNibExtensions.swift in Sources */,
+				92DFEDB3236B909800BACA1E /* IBStructureNibExtensions.swift in Sources */,
 				926874E2214DD195002CF5BF /* SceneExtensions.swift in Sources */,
 				926874E3214DD195002CF5BF /* StoryboardIdentifier.swift in Sources */,
 				926874E0214DD195002CF5BF /* SegueIdentifier.swift in Sources */,
 				926874E4214DD195002CF5BF /* ScenesIdentifier.swift in Sources */,
+				92DFEDB2236B909800BACA1E /* IBStructureReuseExtensions.swift in Sources */,
 				92BD7C13213F4BE700798578 /* TestNibStuff.swift in Sources */,
 				9299EEA61FF47A390083320B /* ViewController.swift in Sources */,
-				926874DF214DD195002CF5BF /* IBTypeExtensions.swift in Sources */,
+				92DFEDB0236B909800BACA1E /* CellIdentifier.swift in Sources */,
 				92BD7BF0213F346D00798578 /* TableViewHeaderFooterView.swift in Sources */,
 				9299EEA41FF47A390083320B /* AppDelegate.swift in Sources */,
 				9204893920EE76E600305F4A /* ChildSecondViewController.swift in Sources */,
-				926874E7214DD195002CF5BF /* IBStructureReuseExtensions.swift in Sources */,
 				926874EB214DD195002CF5BF /* XCAssetIdentifiers.swift in Sources */,
-				926874E8214DD195002CF5BF /* IBNibTypes.swift in Sources */,
 				92BD7BEE213F344B00798578 /* CollectionReusableView.swift in Sources */,
-				926874E1214DD195002CF5BF /* IBTypes.swift in Sources */,
-				926874E6214DD195002CF5BF /* NibIdentifier.swift in Sources */,
+				92DFEDB1236B909800BACA1E /* NibIdentifier.swift in Sources */,
 				92BD7BEC213F343900798578 /* CollectionViewCell.swift in Sources */,
 				92BD7BEA213F342D00798578 /* TableViewCell.swift in Sources */,
-				926874EA214DD195002CF5BF /* XCAssetExtensions.swift in Sources */,
 				92B24DD620C1C25B00AEE476 /* SecondViewController.swift in Sources */,
-				926874E5214DD195002CF5BF /* CellIdentifier.swift in Sources */,
 				9299EEAC1FF47A390083320B /* SwiftyIBExample.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,8 +621,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -626,13 +633,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -644,13 +649,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -663,14 +666,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyIBExample.app/SwiftyIBExample";
 			};
@@ -684,14 +683,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftyIBExample.app/SwiftyIBExample";
 			};
@@ -704,14 +699,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SwiftyIBExample;
 			};
@@ -724,14 +715,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94XNHP29JN;
 				INFOPLIST_FILE = SwiftyIBExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = inc.peejweej.SwiftyIBExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = SwiftyIBExample;
 			};
@@ -777,17 +764,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2E62A80E231853A2007D551D /* XCRemoteSwiftPackageReference "SwiftyIB" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/PeeJWeeJ/SwiftyIB.git";
-			requirement = {
-				branch = SPM;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		9299EEAA1FF47A390083320B /* SwiftyIBExample.xcdatamodeld */ = {

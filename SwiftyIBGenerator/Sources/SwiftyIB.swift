@@ -66,8 +66,8 @@ public class SwiftyIB {
     public static func export(storboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws {
         try StoryboardExporter.exportIdentifiers(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
         try StoryboardExporter.exportExtensions(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
-        try StoryboardExporter.exportIBTypes(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
-        try StoryboardExporter.exportIBTypeExtensions(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)   
+//        try StoryboardExporter.exportIBTypes(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
+//        try StoryboardExporter.exportIBTypeExtensions(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)   
     }
     
     public static func export(nibs: [IBNib], to destination: URL, isAbsoluteURL: Bool) throws {
@@ -82,7 +82,7 @@ public class SwiftyIB {
             throw SwiftyIB.Error.noResult(text: "Assets")
         }
         try AssetExporter.exportIdentifiers(assets: assets, to: destination, isAbsoluteURL: isAbsoluteURL)
-        try AssetExporter.exportAssetExtensions(to: destination, isAbsoluteURL: isAbsoluteURL)
+//        try AssetExporter.exportAssetExtensions(to: destination, isAbsoluteURL: isAbsoluteURL)
     }
 }
 

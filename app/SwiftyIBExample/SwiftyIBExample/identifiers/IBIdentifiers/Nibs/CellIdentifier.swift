@@ -2,9 +2,9 @@
 
 /// Automatically generated from SwiftyIB
 /// Each case represents a found reuseIdentifier
-enum ReuseIdentifier: String {
-	case CollectionReusableView
-	case CollectionViewCell
-	case TableViewCell
-	case none
+import SwiftyIB
+extension ReuseIdentifier {
+	static var CollectionReusableView: ReuseIdentifier {ReuseIdentifier(name: "CollectionReusableView")}
+	static var CollectionViewCell: ReuseIdentifier {ReuseIdentifier(name: "CollectionViewCell")}
+	static var TableViewCell: ReuseIdentifier {ReuseIdentifier(name: "TableViewCell")}
 }

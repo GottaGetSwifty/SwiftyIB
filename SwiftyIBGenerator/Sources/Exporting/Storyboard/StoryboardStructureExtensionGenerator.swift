@@ -15,6 +15,7 @@ public class StoryboardStructureExtensionGenerator {
     private static let scenesStructDocumentation = """
                                             /// Automatically generated from SwiftyIB
                                             import UIKit
+                                            import SwiftyIB
                                             """
     public static func makeScenesStructExtensions(from storyboards: [IBStoryboard]) -> String? {
         let scenesDictionary = makeScenesDictionary(from: storyboards)
@@ -86,18 +87,19 @@ extension \(viewControllerClassName) {
 """
         }.reduce("", +)) 
         
-        var scenes: [AnyIBScene] { return [\(scenes.map {
-            guard let storyboardID = $0.viewController?.storyboardIdentifier else {
-                return ""
-            }
-            return "\($0.storyboardName + storyboardID), "
+        var scenes: [AnyIBScene] { 
+             [\(scenes.map {
+                guard let storyboardID = $0.viewController?.storyboardIdentifier else {
+                    return ""
+                }
+                return "\($0.storyboardName + storyboardID), "
             }.reduce("", +))] }
         
         var currentSceneFromRestorationID: AnyIBScene? {
             guard let restorationID = viewController.restorationIdentifier else {
                 return nil
             }
-            return scenes.first { $0.sceneIdentifier.rawValue == restorationID }
+            return scenes.first { type(of: $0).sceneIdentifier.name == restorationID }
         }
     }
 }
