@@ -142,9 +142,9 @@ public struct IBView: XMLIndexerDeserializable {
     
     public static func deserialize(_ node: XMLIndexer) throws -> IBView {
         return try IBView(id: node.value(of: AttributeKeys.id),
-                          reuseIdentifier: try? node.value(of: AttributeKeys.reuseIdentifier),
-                          customClass: try? node.value(of: AttributeKeys.customClass), 
-                          userLabel: try? node.value(of: AttributeKeys.customClass), 
+                          reuseIdentifier: node.value(of: AttributeKeys.reuseIdentifier),
+                          customClass:  node.value(of: AttributeKeys.customClass),
+                          userLabel:  node.value(of: AttributeKeys.customClass),
                           connections: (try? node[ElementKeys.connections].all.map(IBConnection.deserialize)) ?? [], 
                           subViews: findSubviews(in: node)) 
     }

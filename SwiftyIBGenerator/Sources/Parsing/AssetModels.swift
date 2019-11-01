@@ -14,6 +14,13 @@ public struct AssetsContainer {
     let dataNames: Set<String>
     let textureNames: Set<String>
     let cubeTextureNames: Set<String>
+    var allAssets: [Set<String>] {
+        [imageNames, colorNames, dataNames, textureNames, cubeTextureNames]
+    }
+
+    var count:Int {
+        allAssets.map{$0.count}.reduce(0, +)
+    }
     
     var isEmpty: Bool {
          imageNames.isEmpty && colorNames.isEmpty && dataNames.isEmpty && textureNames.isEmpty && cubeTextureNames.isEmpty
