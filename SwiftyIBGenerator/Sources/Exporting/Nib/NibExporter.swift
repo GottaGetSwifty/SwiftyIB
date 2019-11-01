@@ -34,15 +34,7 @@ class NibExporter: Exporter {
             print("Did not find any cell identifiers")
         }
     }
-    
-    static func exportIBNibTypes(to destination: URL, isAbsoluteURL: Bool) throws {
-        
-//        let fileText = NibTypesAndExtensionsGenerator.makeNibTypesAndExtensions()
-//        let result = exportFile(fileText: fileText, to: destination.appendingPathComponent(nibTypesFileName), isAbsoluteURL: isAbsoluteURL)
-//        print("Exporting IBTypes result: \(result)")
-        
-    }
-    
+
     static func exportNibExtensions(nibs: [IBNib], to destination: URL, isAbsoluteURL: Bool) throws {
         if let fileText = NibStructureExtensionsGenerator.makeNibExtensions(from: nibs) {
             let result = exportFile(fileText: fileText, to: destination.appendingPathComponent(nibExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
@@ -51,8 +43,7 @@ class NibExporter: Exporter {
     }
     
     static func exportReuseExtensions(nibs: [IBNib], to destination: URL, isAbsoluteURL: Bool) throws {
-        if var fileText = NibStructureExtensionsGenerator.makeReuseExtensions(from: nibs) {
-//            fileText += NibStructureExtensionsGenerator.makeNibReusableExtensions(from: nibs) ?? ""
+        if let fileText = NibStructureExtensionsGenerator.makeReuseExtensions(from: nibs) {
             let result = exportFile(fileText: fileText, to: destination.appendingPathComponent(reuseExtensionsFileName), isAbsoluteURL: isAbsoluteURL)
             print("Exporting IBNib Extensions result: \(result)")
         }

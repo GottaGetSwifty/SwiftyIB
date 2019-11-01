@@ -7,6 +7,7 @@
 //
 import Foundation
 import SWXMLHash
+
 class StoryboardParser {
     
     enum Errors: Error {
@@ -46,7 +47,6 @@ class StoryboardParser {
         }
         let storyboard = IBStoryboard.deserialize(document, with: storyboardPath.deletingPathExtension().lastPathComponent)
         return storyboard
-        
     }
 }
 
@@ -67,7 +67,6 @@ public struct IBStoryboard: XMLIndexerDeserializable {
         }
         
         return IBStoryboard(initialScene: initalScene, scenes: scenes, name: name)
-
     }
 }
 
@@ -116,9 +115,7 @@ public struct IBViewController: XMLIndexerDeserializable {
                                     segues: getSegues(from: node), 
                                     view: IBView.findView(in: node))
     }
-    
-    
-    
+
     static func getSegues(from element: XMLIndexer) -> [IBSegue] {
         let segues = element[ElementKeys.connections][ElementKeys.segue].all
         do {

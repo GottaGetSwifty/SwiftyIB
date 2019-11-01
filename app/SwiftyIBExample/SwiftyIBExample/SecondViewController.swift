@@ -33,7 +33,7 @@ class SecondViewController: UIViewController {
 //        SecondViewController._Scene._Segues.GoToDetail
         
         // works
-        Scene.Segues.GoToDetail
+        Scene.Segues.GoToDetail.perform()
     }
 
     

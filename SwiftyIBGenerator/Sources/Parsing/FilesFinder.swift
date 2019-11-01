@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 /// Class to find all the files of a type
 class FilesFinder {
     
@@ -16,7 +15,6 @@ class FilesFinder {
     let fileExtension: String
     ///The url from which to start the search
     let baseFolderURL: URL
-    
     
     /// Primary initializer
     ///
@@ -27,8 +25,7 @@ class FilesFinder {
         self.fileExtension = fileExtension
         self.baseFolderURL = baseFolderURL
     }
-    
-    
+
     /// Primary find method for all contained files
     ///
     /// - Returns: All URLs with the fileExtension, or nil if the baseFolderURL is not a directory
@@ -78,8 +75,7 @@ class FilesFinder {
         let allOtherFiles = foundDirs.flatMap { findAllFiles(in: $0, for: fileExtension) } 
         return foundFiles + allOtherFiles
     }
-    
-    
+
     /// Convenience method for finding all storyboard files
     ///
     /// - Parameter url: The url to search (should be a directory) 

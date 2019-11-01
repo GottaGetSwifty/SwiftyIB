@@ -22,27 +22,27 @@ public class SwiftyIB {
         }
     }
     
-    let containingURL: URL
+    let searchURL: URL
     
-    public init?(containingURL: URL) {
-        guard containingURL.hasDirectoryPath else{
+    public init?(searchURL: URL) {
+        guard searchURL.hasDirectoryPath else{
             return nil
         }
-        self.containingURL = containingURL
+        self.searchURL = searchURL
     }
     
     private func findAllStorboardURLs() -> [URL] {
-        let allURLs = FilesFinder.getAllStoryboardFiles(in: self.containingURL) ?? []
+        let allURLs = FilesFinder.getAllStoryboardFiles(in: self.searchURL) ?? []
         return allURLs
     }
     
     private func findAllNibs() -> [URL] {
-        let allURLs = FilesFinder.getAllNibFiles(in: self.containingURL) ?? []
+        let allURLs = FilesFinder.getAllNibFiles(in: self.searchURL) ?? []
         return allURLs
     }
     
     private func findAllAssetFolders() -> [URL] {
-        let allURLs = FilesFinder.getAllAssetFolders(in: self.containingURL) ?? []
+        let allURLs = FilesFinder.getAllAssetFolders(in: self.searchURL) ?? []
         return allURLs
     }
     
@@ -66,8 +66,6 @@ public class SwiftyIB {
     public static func export(storboards: [IBStoryboard], to destination: URL, isAbsoluteURL: Bool) throws {
         try StoryboardExporter.exportIdentifiers(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
         try StoryboardExporter.exportExtensions(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
-//        try StoryboardExporter.exportIBTypes(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)
-//        try StoryboardExporter.exportIBTypeExtensions(storyboards: storboards, to: destination, isAbsoluteURL: isAbsoluteURL)   
     }
     
     public static func export(nibs: [IBNib], to destination: URL, isAbsoluteURL: Bool) throws {
@@ -82,7 +80,6 @@ public class SwiftyIB {
             throw SwiftyIB.Error.noResult(text: "Assets")
         }
         try AssetExporter.exportIdentifiers(assets: assets, to: destination, isAbsoluteURL: isAbsoluteURL)
-//        try AssetExporter.exportAssetExtensions(to: destination, isAbsoluteURL: isAbsoluteURL)
     }
 }
 

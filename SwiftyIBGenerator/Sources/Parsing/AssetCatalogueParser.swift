@@ -5,12 +5,10 @@
 //  Created by Paul Fechner on 9/15/18.
 //  Copyright © 2018 peejweej.inc. All rights reserved.
 //
-
 import Foundation
 
 class AssetCatalogueParser {
-    
-    
+
     let assetsURL: URL
     
     init(assetsURL: URL) {

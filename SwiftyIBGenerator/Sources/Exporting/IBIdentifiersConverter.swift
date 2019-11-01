@@ -34,7 +34,7 @@ public struct IBIdentifiersConverter {
     }
 
     private static func makeTypeStart(from name: String, and documentation: String, addHeader: Bool = false) -> String{
-        return "\(addHeader ? makeHeader(for: name) : "")\n\n\(documentation)\nextension \(name) {"
+        return "\(addHeader ? makeHeader(for: name) + "\n\n" : "")\(documentation)\nextension \(name) {"
     }
     
     private static let typeEnd = "\n}"

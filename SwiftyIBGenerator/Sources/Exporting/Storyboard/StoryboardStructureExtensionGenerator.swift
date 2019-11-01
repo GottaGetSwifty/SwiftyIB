@@ -60,8 +60,8 @@ public class StoryboardStructureExtensionGenerator {
     private static func buildMultipleScenesStruct(scenes: [IBScene], viewControllerClassName: String) -> String {
         
         return """
-        
-        
+
+
 extension \(viewControllerClassName) {        
     var Scenes: _Scenes { return _Scenes(_viewController: self) }
     struct _Scenes {
@@ -83,10 +83,10 @@ extension \(viewControllerClassName) {
             static let storyboardIdentifier: StoryboardIdentifier = .\($0.storyboardName)
             static let sceneIdentifier: SceneIdentifier = .\(storyboardID)\(makeSegueExtensionText(segues: $0.viewController?.allSegues ?? [], viewControllerClassName: viewControllerClassName) )     
         }
-    
+
 """
         }.reduce("", +)) 
-        
+
         var scenes: [AnyIBScene] { 
              [\(scenes.map {
                 guard let storyboardID = $0.viewController?.storyboardIdentifier else {
@@ -105,39 +105,16 @@ extension \(viewControllerClassName) {
 }
 """
     }
-    
-    /*
- extension SecondViewController: SceneContainer {
- typealias SceneType = SecondViewControllerScenes
- var Scene: SceneType { return SceneType(_viewController: self) }
- struct SecondViewControllerScenes: IBScene {
- init(_viewController: SecondViewController) {
- self._viewController = _viewController
- }
- 
- 
- fileprivate let _viewController: SecondViewController
- var viewController: UIViewController { return _viewController }
- static let storyboardIdentifier: StoryboardIdentifier = .SecondMain
- static let sceneIdentifier: SceneIdentifier = .SecondVC        
- 
- var Segues: _Segues { return _Segues(_viewController: _viewController) }
- struct _Segues {
- fileprivate let _viewController: SecondViewController
- var viewController: UIViewController { return _viewController }    
- var GoToDetail: IBSegue { return IBSegue(segueIdentifier: .GoToDetail, viewController: viewController)}
- }     
- }        
- }*/
+
     private static func buildSingleSceneStruct(scene: IBScene, viewControllerClassName: String) -> String {
         guard let sceneName = scene.viewController?.storyboardIdentifier else {
             return ""
         }
         return """
-        
-        
+
+
 private protocol \(viewControllerClassName)SceneContainer: SceneContainer { }
-        
+
 extension \(viewControllerClassName): \(viewControllerClassName)SceneContainer {             
     typealias SceneType = \(viewControllerClassName)Scene
     struct \(viewControllerClassName)Scene: IBScene {
@@ -157,7 +134,7 @@ extension \(viewControllerClassName): \(viewControllerClassName)SceneContainer {
             return ""
         }
         return """
-        
+
 
             var Segues: _Segues { return _Segues(_viewController: _viewController) }
             struct _Segues {
@@ -167,7 +144,7 @@ extension \(viewControllerClassName): \(viewControllerClassName)SceneContainer {
                         return nil
                     }
                     return """
-        
+
                 var \(identifier): IBSegue { return IBSegue(segueIdentifier: .\(identifier), viewController: viewController)}
 """
                     }.reduce("", +))
@@ -181,8 +158,8 @@ extension \(viewControllerClassName): \(viewControllerClassName)SceneContainer {
             return ""
         }
         return """
-        
-        
+
+
         var Segues: _Segues { return _Segues(_viewController: _viewController) }
         struct _Segues {
             fileprivate let _viewController: \(viewControllerClassName)
@@ -191,7 +168,7 @@ extension \(viewControllerClassName): \(viewControllerClassName)SceneContainer {
                     return nil
                 }
                 return """
-    
+
             var \(identifier): IBSegue { return IBSegue(segueIdentifier: .\(identifier), viewController: viewController)}
 """
                 }.reduce("", +))

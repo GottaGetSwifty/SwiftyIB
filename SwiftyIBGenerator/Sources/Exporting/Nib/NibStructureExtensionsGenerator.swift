@@ -12,10 +12,10 @@ import Foundation
 class NibStructureExtensionsGenerator {
     
     private static let nibExtensionsDocumentations = """
-                                            /// Automatically generated from SwiftyIB
+/// Automatically generated from SwiftyIB
 
-                                            import SwiftyIB
-                                            """
+import SwiftyIB
+"""
     
     static func  makeNibExtensions(from nibs: [IBNib]) -> String? {
     
@@ -38,7 +38,7 @@ class NibStructureExtensionsGenerator {
     private static func makeNibExtensions(from nibAndClassInfo: (String, String)) -> String {
         return """
 
-        
+
 extension \(nibAndClassInfo.1): IBNibIdentifiable {
     static var nibIdentifier: NibIdentifier { 
         return .\(nibAndClassInfo.0)
@@ -49,9 +49,9 @@ extension \(nibAndClassInfo.1): IBNibIdentifiable {
     
     
     private static let reuseExtensionDocumentation = """
-                                            /// Automatically generated from SwiftyIB
-                                            import SwiftyIB
-                                            """
+/// Automatically generated from SwiftyIB
+import SwiftyIB
+"""
     
     static func  makeReuseExtensions(from nibs: [IBNib]) -> String? {
         
@@ -69,40 +69,17 @@ extension \(nibAndClassInfo.1): IBNibIdentifiable {
     
     private static func makeReuseExtensions(for allClassAndReuseInfo: [(String, String)]) -> String {
         return reuseExtensionDocumentation + allClassAndReuseInfo.map(makeReuseExtensions).joined()
-//        return """
-//        \(reuseExtensionDocumentation)
-//        \(allClassAndReuseInfo.map(makeReuseExtensions))        
-//        """    
     } 
     
     private static func makeReuseExtensions(from classAndReuseInfo: (String, String)) -> String {
         return """
-        
-        
-        extension \(classAndReuseInfo.0): IBReusable {
-            static var reuseIBIdentifier: ReuseIdentifier {
-                return .\(classAndReuseInfo.1)
-            }
-        }
-        """
+
+
+extension \(classAndReuseInfo.0): IBReusable {
+    static var reuseIBIdentifier: ReuseIdentifier {
+        return .\(classAndReuseInfo.1)
     }
-    
-//    static func makeNibReusableExtensions(from nibs: [IBNib]) -> String? {
-//
-//        let nibReusableClasses = nibs.compactMap { (nib) -> String? in
-//            guard let view = nib.views?.first, let customClass = view.customClass, view.reuseIdentifier != nil else {
-//                return nil
-//            }
-//            return customClass
-//        }
-//        return nibReusableClasses.map(makeNibReusableExtensions).joined()
-//    }
-    
-//    private static func makeNibReusableExtensions(for className: String) -> String {
-//        return
-//"""
-//
-//extension \(className): IBNibIdentifiable {}
-//"""
-//    }
+}
+"""
+    }
 }

@@ -11,9 +11,9 @@ import Foundation
 class AssetExporter: Exporter {
     
     private static let enumHeaderDocumentation =     """
-                                                /// Automatically generated from SwiftyIB
-                                                /// Each case represents a distinct Asset
-                                                """
+/// Automatically generated from SwiftyIB
+/// Each case represents a distinct Asset
+"""
 
     private static let assetsPath = "IBIdentifiers/Assets/"
     private static let assetIDFilePath = "\(assetsPath)XCAssetIdentifiers.swift"
@@ -41,13 +41,6 @@ class AssetExporter: Exporter {
         
         let names = assets.values(for: type)
     
-        return IBIdentifiersConverter.makeIdentifiersExtension(with: type.identifierEnumName, and: enumHeaderDocumentation, from: Array(names), addHeader: addHeader) ?? ""
+        return IBIdentifiersConverter.makeIdentifiersExtension(with: type.identifierTypeName, and: enumHeaderDocumentation, from: Array(names), addHeader: addHeader) ?? ""
     }
-    
-//    static func exportAssetExtensions(to destination: URL, isAbsoluteURL: Bool) throws {
-//        let fileText = AssetTypesAndExtensionsGenerator.makeAssetsTypesAndExtensions()
-//        let result = exportFile(fileText: fileText, to: destination.appendingPathComponent(assetExtensionsPath), isAbsoluteURL: isAbsoluteURL)
-//        print("Exporting XCAsset Extensions result: \(result)")
-//
-//    }
 }

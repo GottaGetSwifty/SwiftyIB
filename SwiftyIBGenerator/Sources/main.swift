@@ -24,15 +24,15 @@ enum CommandLineOption: String {
             return
         }
         switch value {
-        case CommandLineOption.source.rawValue, "--Source", "-s", "-S": 
+        case CommandLineOption.source.rawValue, "--Source", "--source", "-s", "-S":
             self = .source
-        case CommandLineOption.destination.rawValue, "--Output-dir", "--Output-Dir", "-o", "-O": 
+        case CommandLineOption.destination.rawValue, "--output-dir", "--Output-dir", "--Output-Dir", "-o", "-O":
             self = .destination
-        case CommandLineOption.absolute.rawValue, "--Absolute", "-a", "-A":
+        case CommandLineOption.absolute.rawValue, "--Absolute-url", "--absolute-URL", "--absolute-url", "--Absolute-URL", "-a", "-A":
             self = .absolute
-        case CommandLineOption.help.rawValue, "--Help", "-h", "-H":
+        case CommandLineOption.help.rawValue, "--Help", "--help", "-h", "-H":
             self = .help
-        case CommandLineOption.version.rawValue, "--Version", "-v", "-V":
+        case CommandLineOption.version.rawValue, "--Version", "--version", "-v", "-V":
             self = .version
         default: self = .unknown
         }
@@ -101,15 +101,17 @@ struct LaunchOptions {
 }
 
 func exportIBInfo(with launchOptions: LaunchOptions) {
+
     print("Launched successfully with\nsource: \(launchOptions.source)\ndestination: \(launchOptions.destination)")
-    guard let swiftyIB = SwiftyIB(containingURL: launchOptions.source) else {
+
+    guard let swiftyIB = SwiftyIB(searchURL: launchOptions.source) else {
         print("Did not find/parse storboards")
         return
     }
     let foundStoryboards = swiftyIB.buildStoryboards()
     
     do {
-        print("Found and parsed storboards, will attempt exporting")
+        print("Found and parsed \(foundStoryboards.count) storboards, will attempt exporting")
         try SwiftyIB.export(storboards: foundStoryboards, to: launchOptions.destination, isAbsoluteURL: launchOptions.isAbsoluteURL)
     }
     catch let e {
@@ -117,7 +119,7 @@ func exportIBInfo(with launchOptions: LaunchOptions) {
     }
     let foundNibs = swiftyIB.buildNibs()
     do {
-        print("Found and parsed nibs, will attempt exporting")
+        print("Found and parsed \(foundNibs.count) nibs, will attempt exporting")
         try SwiftyIB.export(nibs: foundNibs, to: launchOptions.destination, isAbsoluteURL: launchOptions.isAbsoluteURL)
     }
     catch let e {
@@ -126,7 +128,7 @@ func exportIBInfo(with launchOptions: LaunchOptions) {
     
     let foundAssets = swiftyIB.buildAssetFolders()
     do {
-        print("Found and parsed assets, will attempt exporting")
+        print("Found and parsed \(foundAssets.count) assets, will attempt exporting")
         try SwiftyIB.export(assets: foundAssets, to: launchOptions.destination, isAbsoluteURL: launchOptions.isAbsoluteURL)
     }
     catch let e {
@@ -134,20 +136,26 @@ func exportIBInfo(with launchOptions: LaunchOptions) {
     }
 }
 
+func printHelp() {
+
+    let helpString = """
+    Swift IB Tool is a command line tool that generates Type safe code from Interface Builder files.
+
+    Usage:
+    """
+    print(helpString)
+    CommandLineOption.allValues.forEach{print("\($0.explanationText)")}
+}
+
 guard let launchOptions = LaunchOptions.makeFromArguments() else {
     print("Incorrect arguments")
+    printHelp()
     exit(1)
 }
 
 if launchOptions.isHelp || launchOptions.isVersion {
     if(launchOptions.isHelp) {
-        let helpString = """
-        Swift IB Tool is a command line tool that generates Type safe code from Interface Builder files.
-
-        Usage:
-        """
-        print(helpString)
-        CommandLineOption.allValues.forEach{print("\($0.explanationText)")}
+        printHelp()
     }
     if launchOptions.isVersion {
         print((Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String) ?? "No Version Found");

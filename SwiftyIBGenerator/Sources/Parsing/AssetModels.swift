@@ -16,8 +16,7 @@ public struct AssetsContainer {
     let cubeTextureNames: Set<String>
     
     var isEmpty: Bool {
-        let result = imageNames.isEmpty && colorNames.isEmpty && dataNames.isEmpty && textureNames.isEmpty && cubeTextureNames.isEmpty
-        return result
+         imageNames.isEmpty && colorNames.isEmpty && dataNames.isEmpty && textureNames.isEmpty && cubeTextureNames.isEmpty
     }
     
     func values(for type: AssetType) -> Set<String> {
@@ -50,7 +49,7 @@ extension AssetsContainer {
         case textureset
         case cubetextureset
         
-        var identifierEnumName: String {
+        var identifierTypeName: String {
             switch self {
             case .imageset:
                 return "AssetImageIdentifier"
