@@ -56,7 +56,7 @@ extension StoryboardIdentifiable {
 // Convenience methods for instantiating scenes/ViewControllers from identifiers
 extension UIStoryboard: IBIdentifierMakeable {
 
-    func makeViewController<T: UIViewController>(with name: SceneIdentifier) -> T? {
+    public func makeViewController<T: UIViewController>(with name: SceneIdentifier) -> T? {
         return instantiateViewController(withIdentifier: name.name) as? T
     }
 

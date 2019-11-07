@@ -38,7 +38,7 @@ public protocol SceneIdentifiable: StoryboardIdentifiable {
 }
 
 extension SceneIdentifiable {
-    var sceneIdentifier: SceneIdentifier { Self.sceneIdentifier }
+    public var sceneIdentifier: SceneIdentifier { Self.sceneIdentifier }
 }
 
 public protocol SegueIdentifiable {

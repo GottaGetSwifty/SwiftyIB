@@ -12,8 +12,8 @@ public protocol IBIdentifier: Hashable {
     var name: String { get }
     init(name: String)
 }
-public extension IBIdentifier {
-    static var none: Self {Self(name: "")}
+extension IBIdentifier {
+    public static var none: Self {Self(name: "")}
 }
 
 public protocol IBIdentifierMakeable {

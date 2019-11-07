@@ -26,19 +26,19 @@ extension UINib: IBIdentifierMakeable {
 
 extension UITableView {
 
-    final func register<T: UITableViewCell>(cellType: T.Type, bundle: Bundle? = nil) where T: IBNibReusable {
+    public final func register<T: UITableViewCell>(cellType: T.Type, bundle: Bundle? = nil) where T: IBNibReusable {
         self.register(UINib.make(with: cellType.nibIdentifier, in: bundle), forCellReuseIdentifier: T.reuseIBIdentifier.name)
     }
 
-    final func register<T: UITableViewHeaderFooterView>(viewType: T.Type, bundle: Bundle? = nil) where T: IBNibReusable {
+    public final func register<T: UITableViewHeaderFooterView>(viewType: T.Type, bundle: Bundle? = nil) where T: IBNibReusable {
         self.register(UINib.make(with: viewType.nibIdentifier, in: bundle), forHeaderFooterViewReuseIdentifier: T.reuseIBIdentifier.name)
     }
 
-    final func register<T: UITableViewCell>(cellType: T.Type) where T: IBReusable {
+    public final func register<T: UITableViewCell>(cellType: T.Type) where T: IBReusable {
         self.register(T.self, forCellReuseIdentifier: T.reuseIBIdentifier.name)
     }
 
-    final func register<T: UITableViewHeaderFooterView>(viewType: T.Type) where T: IBReusable {
+    public final func register<T: UITableViewHeaderFooterView>(viewType: T.Type) where T: IBReusable {
         self.register(T.self, forHeaderFooterViewReuseIdentifier: T.reuseIBIdentifier.name)
     }
 }
@@ -46,25 +46,25 @@ extension UITableView {
 //MARK: - UITableView Dequeueing
 
 extension UITableView {
-    func dequeue(with name: ReuseIdentifier, for indexPath: IndexPath) -> UITableViewCell {
+    public func dequeue(with name: ReuseIdentifier, for indexPath: IndexPath) -> UITableViewCell {
         dequeueReusableCell(withIdentifier: name.name, for: indexPath)
     }
-    func dequeueTyped< T: UITableViewCell>(with name: ReuseIdentifier, for indexPath: IndexPath) -> T? {
+    public func dequeueTyped< T: UITableViewCell>(with name: ReuseIdentifier, for indexPath: IndexPath) -> T? {
         dequeue(with: name, for: indexPath) as? T
     }
 
-    func dequeueHeaderFooter(with name: ReuseIdentifier) -> UITableViewHeaderFooterView? {
+    public func dequeueHeaderFooter(with name: ReuseIdentifier) -> UITableViewHeaderFooterView? {
         self.dequeueReusableHeaderFooterView(withIdentifier: name.name)
     }
-    func dequeueTypedHeaderFooter<T: UITableViewHeaderFooterView>(with name: ReuseIdentifier) -> T? {
+    public func dequeueTypedHeaderFooter<T: UITableViewHeaderFooterView>(with name: ReuseIdentifier) -> T? {
         self.dequeueHeaderFooter(with: name) as? T
     }
 
-    func dequeue<T: IBNibReusable>(for cellType: T.Type, indexPath: IndexPath) -> T? where T: UITableViewCell {
+    public func dequeue<T: IBNibReusable>(for cellType: T.Type, indexPath: IndexPath) -> T? where T: UITableViewCell {
         dequeueTyped(with: cellType.reuseIBIdentifier, for: indexPath)
     }
 
-    func dequeueHeaderFooter<T: IBNibReusable>(for cellType: T.Type)  -> T? where T: UITableViewHeaderFooterView {
+    public func dequeueHeaderFooter<T: IBNibReusable>(for cellType: T.Type)  -> T? where T: UITableViewHeaderFooterView {
         dequeueTypedHeaderFooter(with: cellType.reuseIBIdentifier)
     }
 }
@@ -73,19 +73,19 @@ extension UITableView {
 
 extension UICollectionView {
 
-    final func register<T: UICollectionViewCell>(cellType: T.Type, bundle: Bundle? = nil) where T: IBNibReusable {
+    public final func register<T: UICollectionViewCell>(cellType: T.Type, bundle: Bundle? = nil) where T: IBNibReusable {
         self.register(UINib.make(with: cellType.nibIdentifier, in: bundle), forCellWithReuseIdentifier: T.reuseIBIdentifier.name)
     }
 
-    final func register<T: UICollectionReusableView>(viewType: T.Type, bundle: Bundle? = nil, forSupplementaryViewOfKind kindOfView: String) where T: IBNibReusable {
+    public final func register<T: UICollectionReusableView>(viewType: T.Type, bundle: Bundle? = nil, forSupplementaryViewOfKind kindOfView: String) where T: IBNibReusable {
         self.register(UINib.make(with: viewType.nibIdentifier, in: bundle), forSupplementaryViewOfKind: kindOfView, withReuseIdentifier: T.reuseIBIdentifier.name)
     }
 
-    final func register<T: UICollectionViewCell>(cellType: T.Type) where T: IBReusable {
+    public final func register<T: UICollectionViewCell>(cellType: T.Type) where T: IBReusable {
         self.register(T.self, forCellWithReuseIdentifier: T.reuseIBIdentifier.name)
     }
 
-    final func register<T: UICollectionReusableView>(viewType: T.Type, forSupplementaryViewOfKind kindOfView: String) where T: IBReusable {
+    public final func register<T: UICollectionReusableView>(viewType: T.Type, forSupplementaryViewOfKind kindOfView: String) where T: IBReusable {
         self.register(T.self, forSupplementaryViewOfKind: kindOfView, withReuseIdentifier: T.reuseIBIdentifier.name)
     }
 }
@@ -94,26 +94,26 @@ extension UICollectionView {
 
 extension UICollectionView {
 
-    func dequeue(with name: ReuseIdentifier, for indexPath: IndexPath) -> UICollectionViewCell {
+    public func dequeue(with name: ReuseIdentifier, for indexPath: IndexPath) -> UICollectionViewCell {
         return self.dequeueReusableCell(withReuseIdentifier: name.name, for: indexPath)
     }
-    func dequeueTyped<T: UICollectionViewCell>(with name: ReuseIdentifier, for indexPath: IndexPath) -> T? {
+    public func dequeueTyped<T: UICollectionViewCell>(with name: ReuseIdentifier, for indexPath: IndexPath) -> T? {
         return self.dequeue(with: name, for: indexPath) as? T
     }
 
-    func dequeueView(with name: ReuseIdentifier, kind elementKind: String, for indexPath: IndexPath) -> UICollectionReusableView {
+    public func dequeueView(with name: ReuseIdentifier, kind elementKind: String, for indexPath: IndexPath) -> UICollectionReusableView {
 
         return self.dequeueReusableSupplementaryView(ofKind: elementKind, withReuseIdentifier: name.name, for: indexPath)
     }
-    func dequeueTypedView<T: UICollectionReusableView>(with name: ReuseIdentifier, kind elementKind: String, for indexPath: IndexPath) -> T? {
+    public func dequeueTypedView<T: UICollectionReusableView>(with name: ReuseIdentifier, kind elementKind: String, for indexPath: IndexPath) -> T? {
         return dequeueView(with: name, kind: elementKind, for: indexPath) as? T
     }
 
-    func dequeue<T: IBNibReusable>(for cellType: T.Type, indexPath: IndexPath) -> T? where T: UICollectionViewCell {
+    public func dequeue<T: IBNibReusable>(for cellType: T.Type, indexPath: IndexPath) -> T? where T: UICollectionViewCell {
         dequeueTyped(with: cellType.reuseIBIdentifier, for: indexPath)
     }
 
-    func dequeueHeaderFooter<T: IBNibReusable>(for cellType: T.Type, kind elementKind: String, for indexPath: IndexPath)  -> T? where T: UICollectionReusableView {
+    public func dequeueHeaderFooter<T: IBNibReusable>(for cellType: T.Type, kind elementKind: String, for indexPath: IndexPath)  -> T? where T: UICollectionReusableView {
         dequeueTypedView(with: cellType.reuseIBIdentifier, kind: elementKind, for: indexPath)
     }
 }
